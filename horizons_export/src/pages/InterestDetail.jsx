@@ -9,6 +9,7 @@ const InterestDetail = ({ language }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(parseInt(id) - 1);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   const interestsData = [
     {
@@ -113,15 +114,29 @@ const InterestDetail = ({ language }) => {
   }, [id]);
 
   const handlePrevious = () => {
-    const newIndex = currentIndex > 0 ? currentIndex - 1 : interestsData.length - 1;
-    setCurrentIndex(newIndex);
-    navigate(`/interests/${newIndex + 1}`, { replace: true });
+    if (currentInterest.id === 2) {
+      // For Music Experiences, navigate through videos
+      const newVideoIndex = currentVideoIndex > 0 ? currentVideoIndex - 1 : currentInterest.gallery.length - 1;
+      setCurrentVideoIndex(newVideoIndex);
+    } else {
+      // For other interests, navigate through interest categories
+      const newIndex = currentIndex > 0 ? currentIndex - 1 : interestsData.length - 1;
+      setCurrentIndex(newIndex);
+      navigate(`/interests/${newIndex + 1}`, { replace: true });
+    }
   };
 
   const handleNext = () => {
-    const newIndex = currentIndex < interestsData.length - 1 ? currentIndex + 1 : 0;
-    setCurrentIndex(newIndex);
-    navigate(`/interests/${newIndex + 1}`, { replace: true });
+    if (currentInterest.id === 2) {
+      // For Music Experiences, navigate through videos
+      const newVideoIndex = currentVideoIndex < currentInterest.gallery.length - 1 ? currentVideoIndex + 1 : 0;
+      setCurrentVideoIndex(newVideoIndex);
+    } else {
+      // For other interests, navigate through interest categories
+      const newIndex = currentIndex < interestsData.length - 1 ? currentIndex + 1 : 0;
+      setCurrentIndex(newIndex);
+      navigate(`/interests/${newIndex + 1}`, { replace: true });
+    }
   };
 
   const handleBackToHome = () => {
@@ -189,142 +204,153 @@ const InterestDetail = ({ language }) => {
         </div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+        <div className="space-y-12">
+          {/* Header */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="space-y-6"
+            className="text-center"
           >
-            <div>
-              <h1 className="text-4xl md:text-6xl font-display font-bold gradient-text mb-4">
-                {currentInterest.title}
-              </h1>
-              <p className="text-xl text-foreground/70 mb-6">
-                {currentInterest.subtitle}
-              </p>
-            </div>
-            
-            <p className="text-lg text-foreground/80 leading-relaxed">
+            <h1 className="text-4xl md:text-6xl font-display font-bold gradient-text mb-4">
+              {currentInterest.title}
+            </h1>
+            <p className="text-xl text-foreground/70 mb-6">
+              {currentInterest.subtitle}
+            </p>
+            <p className="text-lg text-foreground/80 leading-relaxed max-w-3xl mx-auto">
               {currentInterest.description}
             </p>
-
-            {/* Gallery Navigation */}
-            <div className="flex items-center space-x-4 pt-8">
-              <span className="text-sm text-foreground/60">
-                {currentIndex + 1} / {interestsData.length}
-              </span>
-              <div className="flex space-x-2">
-                {interestsData.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => {
-                      setCurrentIndex(index);
-                      navigate(`/interests/${index + 1}`, { replace: true });
-                    }}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      index === currentIndex ? 'bg-foreground' : 'bg-foreground/30'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
           </motion.div>
 
-          {/* Media Gallery */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 }}
-            className="relative"
-          >
-            <AnimatePresence mode="wait">
+          {/* Video Gallery for Music Experiences */}
+          {currentInterest.id === 2 ? (
+            <div className="space-y-8">
+              {/* Video Player */}
               <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0, rotateY: 90 }}
-                animate={{ opacity: 1, rotateY: 0 }}
-                exit={{ opacity: 0, rotateY: -90 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
                 className="relative"
               >
-                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
-                  {currentInterest.id === 2 ? (
-                    // Music Experiences - Video Gallery
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="text-center text-white p-8">
-                        <h3 className="text-2xl font-bold mb-4">
-                          {currentInterest.gallery[currentIndex]?.title}
-                        </h3>
-                        <p className="text-lg mb-4">
-                          {currentInterest.gallery[currentIndex]?.year}
-                        </p>
-                        <div className="mb-6">
-                          {currentInterest.gallery[currentIndex]?.platform === 'youtube' ? (
-                            <iframe
-                              width="100%"
-                              height="315"
-                              src={`https://www.youtube.com/embed/${currentInterest.gallery[currentIndex]?.videoId}`}
-                              title={currentInterest.gallery[currentIndex]?.title}
-                              frameBorder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                              className="rounded-lg"
-                            ></iframe>
-                          ) : (
-                            <iframe
-                              width="100%"
-                              height="315"
-                              src={`https://player.bilibili.com/player.html?bvid=${currentInterest.gallery[currentIndex]?.videoId}&autoplay=0`}
-                              title={currentInterest.gallery[currentIndex]?.title}
-                              frameBorder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                              className="rounded-lg"
-                            ></iframe>
-                          )}
-                        </div>
-                        <p className="text-sm leading-relaxed max-w-2xl mx-auto">
-                          {currentInterest.gallery[currentIndex]?.description}
-                        </p>
-                      </div>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentVideoIndex}
+                    initial={{ opacity: 0, rotateY: 90 }}
+                    animate={{ opacity: 1, rotateY: 0 }}
+                    exit={{ opacity: 0, rotateY: -90 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className="relative"
+                  >
+                    <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
+                      {currentInterest.gallery[currentVideoIndex]?.platform === 'youtube' ? (
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src={`https://www.youtube.com/embed/${currentInterest.gallery[currentVideoIndex]?.videoId}`}
+                          title={currentInterest.gallery[currentVideoIndex]?.title}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      ) : (
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src={`https://player.bilibili.com/player.html?bvid=${currentInterest.gallery[currentVideoIndex]?.videoId}&autoplay=0`}
+                          title={currentInterest.gallery[currentVideoIndex]?.title}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                      )}
                     </div>
-                  ) : (
-                    // Other interests - Image Gallery
-                    <>
-                      <img
-                        src={currentInterest.image}
-                        alt={currentInterest.title}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.target.src = 'https://images.unsplash.com/photo-1572177812156-58036aae439c';
-                        }}
-                      />
-                      
-                      {/* Gallery Items Overlay */}
-                      <div className="absolute inset-0 bg-black/20 rounded-2xl flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                        <div className="text-center text-white">
-                          <p className="text-lg font-semibold mb-2">
-                            {language === 'zh' ? '点击查看作品集' : 'Click to view portfolio'}
-                          </p>
-                          <div className="flex justify-center space-x-4">
-                            {currentInterest.gallery.map((item, index) => (
-                              <div key={index} className="text-center">
-                                <div className="w-16 h-16 bg-white/20 rounded-lg mb-2 flex items-center justify-center">
-                                  <span className="text-xs">{index + 1}</span>
-                                </div>
-                                <p className="text-xs">{item.title}</p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  )}
+                  </motion.div>
+                </AnimatePresence>
+              </motion.div>
+
+              {/* Video Info */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="text-center space-y-4"
+              >
+                <h3 className="text-3xl font-bold text-foreground">
+                  {currentInterest.gallery[currentVideoIndex]?.title}
+                </h3>
+                <p className="text-xl text-foreground/70">
+                  {currentInterest.gallery[currentVideoIndex]?.year}
+                </p>
+                <p className="text-lg text-foreground/80 leading-relaxed max-w-4xl mx-auto">
+                  {currentInterest.gallery[currentVideoIndex]?.description}
+                </p>
+              </motion.div>
+
+              {/* Video Navigation */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="flex items-center justify-center space-x-4"
+              >
+                <span className="text-sm text-foreground/60">
+                  {currentVideoIndex + 1} / {currentInterest.gallery.length}
+                </span>
+                <div className="flex space-x-2">
+                  {currentInterest.gallery.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentVideoIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-colors ${
+                        index === currentVideoIndex ? 'bg-foreground' : 'bg-foreground/30'
+                      }`}
+                    />
+                  ))}
                 </div>
               </motion.div>
-            </AnimatePresence>
-          </motion.div>
+            </div>
+          ) : (
+            /* Other interests - Image Gallery */
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="relative"
+            >
+              <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={currentInterest.image}
+                  alt={currentInterest.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.src = 'https://images.unsplash.com/photo-1572177812156-58036aae439c';
+                  }}
+                />
+                
+                {/* Gallery Items Overlay */}
+                <div className="absolute inset-0 bg-black/20 rounded-2xl flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-center text-white">
+                    <p className="text-lg font-semibold mb-2">
+                      {language === 'zh' ? '点击查看作品集' : 'Click to view portfolio'}
+                    </p>
+                    <div className="flex justify-center space-x-4">
+                      {currentInterest.gallery.map((item, index) => (
+                        <div key={index} className="text-center">
+                          <div className="w-16 h-16 bg-white/20 rounded-lg mb-2 flex items-center justify-center">
+                            <span className="text-xs">{index + 1}</span>
+                          </div>
+                          <p className="text-xs">{item.title}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
         </div>
       </div>
     </motion.div>
