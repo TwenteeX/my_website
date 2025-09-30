@@ -110,6 +110,24 @@ const ProjectDetail = ({ language }) => {
               <h3 className="text-xl font-semibold mb-4">{language === 'zh' ? '项目信息' : 'Project Info'}</h3>
               <div className="space-y-4">
                 <div>
+                  <p className="font-semibold text-foreground/80">{language === 'zh' ? '项目年份' : 'Year'}</p>
+                  <p className="mt-1 text-foreground/70">
+                    {project.id === 1 && '2025'}
+                    {project.id === 2 && '2023'}
+                    {project.id === 3 && '2024'}
+                    {project.id === 4 && '2024'}
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground/80">{language === 'zh' ? '项目成员' : 'Members'}</p>
+                  <p className="mt-1 text-foreground/70">
+                    {project.id === 1 && 'Xueyang Wang, Qinxuan Cen, Weitao Bi, Yunxiang Ma'}
+                    {project.id === 2 && (language === 'zh' ? '独立完成' : 'Individual Work')}
+                    {project.id === 3 && 'Yunxiang Ma, Yutong Wu'}
+                    {project.id === 4 && 'Yunxiang Ma, Jing Zhuang, Tino Zhu'}
+                  </p>
+                </div>
+                <div>
                   <p className="font-semibold text-foreground/80">{language === 'zh' ? '技术栈' : 'Technologies'}</p>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {tags.map((tag, index) => (
@@ -183,7 +201,7 @@ const ProjectDetail = ({ language }) => {
                   <img 
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                     alt="Cognitive Tracks实验设计" 
-                    src="/images/boardgame-experiement.png" 
+                    src="/images/boardgame-experiment.png" 
                   />
                 ) : project.id === 3 ? (
                   <>

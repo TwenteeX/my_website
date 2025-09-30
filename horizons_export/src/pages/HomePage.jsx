@@ -17,8 +17,8 @@ const HomePage = ({ language }) => {
       </Helmet>
       <main>
         <Hero language={language} />
-        <About language={language} />
         <Projects language={language} />
+        <About language={language} />
       </main>
     </>
   );
