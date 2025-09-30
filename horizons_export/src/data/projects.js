@@ -74,25 +74,25 @@ export const projectsData = {
     },
     {
       id: 4,
-      title: 'Interactive Music Installation',
-      category: 'creative',
-      description: 'Immersive interactive installation art combining AI and music',
-      tags: ['Installation Art', 'Music Tech', 'Interaction Design'],
-      image: 'Interactive music installation with AI-powered sound visualization',
+      title: 'Colors of Hongkong',
+      category: 'visualization',
+      description: 'Urban color analysis along Central–Mid-Levels Escalator using computer vision and ML clustering',
+      tags: ['Urban Analysis', 'Computer Vision', 'ML', 'Clustering'],
+      image: 'Hong Kong urban color analysis with street view segmentation and clustering',
       featured: true,
       details: {
         about: {
-          title: 'About The Project',
-          content: 'This project is an immersive art installation where participants\' movements are translated into music and visuals in real-time. An AI model analyzes motion data from sensors and generates corresponding audio-visual patterns, creating a unique and collaborative artistic experience.'
+          title: 'Historical Background',
+          content: 'This research focuses on the urban corridor along the Central–Mid-Levels Escalator in Hong Kong, a space rich in historical and cultural interweaving. The area encompasses heritage sites such as the Central Market, Graham Street Market, and Tai Kwun, as well as religious spaces like the Hong Kong Baptist Church and the Jamia Mosque. The urban fabric reflects a complex cultural collage, characterized by the juxtaposition of Christian and Muslim spaces, the typological contrast between Chinese and Western markets, and hybridized architectural styles.'
         },
         process: {
-          title: 'Design & Development Process',
-          content: 'The concept was developed through a series of creative workshops. We used Processing and Ableton Live, connected via custom software, to build the interactive system. The AI component, a custom-trained neural network, was the core of the generative engine. Physical installation involved setting up projectors, speakers, and motion sensors in a gallery space.',
-          image: 'Behind the scenes shot of the installation setup'
+          title: 'Image Crawling',
+          content: 'Using the Google Street Map API, the research collected street view images along the escalator corridor. These images were processed with the DeepLabV3 semantic segmentation model to extract elements such as buildings, trees, signboards, sidewalks, and the sky. This automated pipeline generated a continuous dataset of urban scenes, providing the basis for subsequent analyses of color composition and human-scale perception.',
+          image: 'Hong Kong street view image crawling and semantic segmentation process'
         },
         outcome: {
-          title: 'Outcome & Results',
-          content: 'The installation was exhibited at a major digital arts festival and received overwhelmingly positive feedback from visitors. It was praised for its innovative use of technology to foster creativity and human connection.'
+          title: 'Clustering Analysis',
+          content: 'Color features were extracted from the segmented street view images, with RGB values normalized in HSV space. Principal Component Analysis (PCA) was applied for dimensionality reduction, followed by k-means clustering to classify distinct color patterns across the corridor. These clusters were mapped against functional divisions of the city fabric, revealing correlations between chromatic characteristics and specific urban zones.'
         }
       }
     },
@@ -220,25 +220,25 @@ export const projectsData = {
     },
     {
       id: 4,
-      title: '交互音乐装置',
-      category: 'creative',
-      description: '结合AI与音乐的沉浸式交互装置艺术作品',
-      tags: ['装置艺术', '音乐技术', '交互设计'],
-      image: 'Interactive music installation with AI-powered sound visualization',
+      title: 'Colors of Hongkong',
+      category: 'visualization',
+      description: '基于计算机视觉与机器学习的香港中环扶梯沿线城市色彩分析',
+      tags: ['城市分析', '计算机视觉', '机器学习', '聚类分析'],
+      image: '香港城市色彩分析：街景分割与聚类研究',
       featured: true,
       details: {
         about: {
-          title: '关于项目',
-          content: '这个项目是一个沉浸式艺术装置，参与者的动作被实时翻译成音乐和视觉效果。一个AI模型分析来自传感器的运动数据，并生成相应的视听模式，创造出独特而协作的艺术体验。'
+          title: '历史背景',
+          content: '该研究以香港中环至半山区的中部扶梯沿线为研究对象。该片区是一个历史与文化交织的空间走廊，既包含如中环街市、嘉咸街市集、太古馆等历史文化遗址，也包含香港浸信会教堂、贾米亚清真寺等宗教空间。这里形成了多元的文化拼贴：中西合并的建筑风格、基督与伊斯兰宗教空间的并置、市场类型的中西对照，共同构成了复杂的城市社会节点。'
         },
         process: {
-          title: '设计与开发流程',
-          content: '概念是通过一系列创意工作坊发展起来的。我们使用Processing和Ableton Live，通过自定义软件连接，来构建交互系统。AI组件是一个定制训练的神经网络，是生成引擎的核心。物理安装涉及在画廊空间设置投影仪、扬声器和运动传感器。',
-          image: 'Behind the scenes shot of the installation setup'
+          title: '图片爬取',
+          content: '研究通过 Google Street Map API 抓取扶梯沿线的街景图像，并利用 DeepLabV3 模型进行语义分割，将建筑、树木、招牌、道路等要素从街景图中提取出来。通过自动化的图像获取与处理，形成了具有空间连续性的街景数据库，为后续的色彩与视觉感知分析提供了基础。',
+          image: '香港街景图像爬取与语义分割处理流程'
         },
         outcome: {
-          title: '成果与结果',
-          content: '该装置在一个大型数字艺术节上展出，并收到了参观者压倒性的积极反馈。它因其创新地使用技术来促进创造力和人际联系而受到赞扬。'
+          title: '聚类分析',
+          content: '研究对语义分割后的街景进行色彩识别与提取，并将 RGB 色彩数据转换到 HSV 空间进行特征归一化。随后通过 PCA 主成分降维及 k-means 聚类，对不同街段的色彩模式进行分类，得到具有代表性的视觉群组。进一步使用聚类结果与空间分区进行对比，揭示了街道色彩与功能区域之间的对应关系。'
         }
       }
     },

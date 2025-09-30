@@ -102,6 +102,7 @@ const Projects = ({ language }) => {
                         project.id === 1 ? "/images/roomify-main.png" : 
                         project.id === 2 ? "/images/boardgame-head.png" : 
                         project.id === 3 ? "/images/imagine-head.png" :
+                        project.id === 4 ? "/images/hongkong-head.png" :
                         "https://images.unsplash.com/photo-1572177812156-58036aae439c"
                       } />
                   </div>

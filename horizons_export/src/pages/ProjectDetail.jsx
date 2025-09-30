@@ -92,6 +92,8 @@ const ProjectDetail = ({ language }) => {
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/boardgame-head.png" />
           ) : project.id === 3 ? (
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/imagine-head.png" />
+          ) : project.id === 4 ? (
+            <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/hongkong-head.png" />
           ) : (
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
           )}
@@ -157,6 +159,12 @@ const ProjectDetail = ({ language }) => {
                     alt="EEG展览设计概念方案" 
                     src="/images/imagine-experiment.png" 
                   />
+                ) : project.id === 4 ? (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="香港城市色彩分析项目概述" 
+                    src="/images/hongkong-head.png" 
+                  />
                 ) : null}
                 <p>{details.about.content}</p>
               </section>
@@ -215,6 +223,19 @@ const ProjectDetail = ({ language }) => {
                       src="/images/imagine-ml.png" 
                     />
                   </>
+                ) : project.id === 4 ? (
+                  <>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="香港街景数据爬取" 
+                      src="/images/hongkong-data.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="香港街景要素提取" 
+                      src="/images/hongkong-extraction.png" 
+                    />
+                  </>
                 ) : null}
               </section>
               {project.id === 1 ? (
@@ -252,7 +273,7 @@ const ProjectDetail = ({ language }) => {
                       alt="EEG展览原型设计" 
                       src="/images/imagine-prototype.png" 
                     />
-              </section>
+                  </section>
                   <section>
                     <h2>{language === 'zh' ? '计算设计' : 'Computational Design'}</h2>
                     <p>{language === 'zh' ? 'The computational design workflow integrated EEG-informed emotion recognition with parametric architecture. Grasshopper scripts and custom algorithms encoded modular assembly rules, enabling scalable and adaptable exhibition layouts. Real-time personalization was proposed: as EEG data streams are analyzed, the system recommends navigation paths tailored to each visitor\'s affective state. This shifts the role of architecture from static form to a dynamic interface between space and embodied perception.' : 'The computational design workflow integrated EEG-informed emotion recognition with parametric architecture. Grasshopper scripts and custom algorithms encoded modular assembly rules, enabling scalable and adaptable exhibition layouts. Real-time personalization was proposed: as EEG data streams are analyzed, the system recommends navigation paths tailored to each visitor\'s affective state. This shifts the role of architecture from static form to a dynamic interface between space and embodied perception.'}</p>
@@ -280,6 +301,27 @@ const ProjectDetail = ({ language }) => {
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="EEG最终设计成果" 
                       src="/images/imagine-final.png" 
+                    />
+                  </section>
+                </>
+              ) : project.id === 4 ? (
+                <>
+                  <section>
+                    <h2>{language === 'zh' ? '聚类分析' : 'Clustering Analysis'}</h2>
+                    <p>{language === 'zh' ? '研究对语义分割后的街景进行色彩识别与提取，并将 RGB 色彩数据转换到 HSV 空间进行特征归一化。随后通过 PCA 主成分降维及 k-means 聚类，对不同街段的色彩模式进行分类，得到具有代表性的视觉群组。进一步使用聚类结果与空间分区进行对比，揭示了街道色彩与功能区域之间的对应关系。' : 'Color features were extracted from the segmented street view images, with RGB values normalized in HSV space. Principal Component Analysis (PCA) was applied for dimensionality reduction, followed by k-means clustering to classify distinct color patterns across the corridor. These clusters were mapped against functional divisions of the city fabric, revealing correlations between chromatic characteristics and specific urban zones.'}</p>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="香港城市色彩聚类分析" 
+                      src="/images/hongkong-clustering.png" 
+                    />
+              </section>
+                  <section>
+                    <h2>{language === 'zh' ? '结果讨论' : 'Results & Discussion'}</h2>
+                    <p>{language === 'zh' ? '分析结果显示，中环区高密度办公与商业空间对应的街段往往呈现低饱和度与冷色调，强化了其"效率与秩序"的视觉印象；而半山区住宅及混合功能区域则呈现较高饱和度与暖色调，营造出更为生活化与日常化的氛围。研究揭示了微观色彩差异如何折射出宏观的空间分异，为理解城市色彩感知和规划提供了新的视角。' : 'The results indicate that Central\'s dense office and commercial districts are characterized by low-saturation, cool-toned color palettes, reinforcing impressions of efficiency and order. In contrast, the Mid-Levels\' residential and mixed-use zones display higher saturation and warmer tones, reflecting a more domestic and everyday atmosphere. These findings highlight how micro-level color patterns reflect macro-level spatial differentiation, offering new perspectives for urban color perception and planning.'}</p>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="香港城市色彩分析结果" 
+                      src="/images/hongkong-result.png" 
                     />
                   </section>
                 </>
