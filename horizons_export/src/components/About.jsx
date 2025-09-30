@@ -118,9 +118,6 @@ const About = ({ language }) => {
                 </a>
               </Button>
             </div>
-            <div className="text-center mt-6 text-sm text-muted-foreground">
-              <p>{language === 'zh' ? '如何上传简历：请将您的简历文件命名为 "resume.pdf"，然后上传到项目的 "public" 文件夹中。' : 'To upload your resume: Name your file "resume.pdf" and place it in the "public" folder of your project.'}</p>
-            </div>
           </motion.div>
         </div>
       </div>

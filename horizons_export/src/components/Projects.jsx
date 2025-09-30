@@ -96,9 +96,9 @@ const Projects = ({ language }) => {
                 >
                   <div className="relative overflow-hidden">
                     <img
-                      class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       alt={project.title}
-                     src="https://images.unsplash.com/photo-1572177812156-58036aae439c" />
+                      src={project.id === 1 ? "/images/roomify-main.jpg" : "https://images.unsplash.com/photo-1572177812156-58036aae439c"} />
                   </div>
                   
                   <div className="p-6">

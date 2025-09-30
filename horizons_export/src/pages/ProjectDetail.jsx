@@ -74,7 +74,23 @@ const ProjectDetail = ({ language }) => {
           transition={{ delay: 0.4, duration: 0.5 }}
           className="mb-12"
         >
-          <img class="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+          {project.id === 1 ? (
+            <div>
+              <video 
+                className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" 
+                controls 
+                poster="/images/roomify-main.jpg"
+              >
+                <source src="/videos/roomify_demo.mp4" type="video/mp4" />
+                <p>{language === 'zh' ? '您的浏览器不支持视频播放。' : 'Your browser does not support video playback.'}</p>
+              </video>
+              <p className="text-center text-sm text-muted-foreground mt-4">
+                {language === 'zh' ? '演示视频 - 展示Roomify系统的完整功能' : 'Demo Video - Showcasing Roomify System Features'}
+              </p>
+            </div>
+          ) : (
+            <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+          )}
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-12">
@@ -119,28 +135,61 @@ const ProjectDetail = ({ language }) => {
             <div className="prose max-w-none text-foreground/80 prose-headings:font-display prose-headings:gradient-text prose-a:text-indigo-500 hover:prose-a:text-indigo-600">
               <section>
                 <h2>{details.about.title}</h2>
+                <img 
+                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                  alt="Roomify系统头图" 
+                  src="/images/roomify-head.jpg" 
+                />
                 <p>{details.about.content}</p>
               </section>
               
-              <section>
-                <h2 className="flex items-center">
-                  <Video className="w-6 h-6 mr-3" />
-                  {language === 'zh' ? '项目演示' : 'Project Demo'}
-                </h2>
-                <div className="aspect-video bg-secondary rounded-lg flex items-center justify-center text-muted-foreground my-8">
-                  <p>{language === 'zh' ? '视频演示区域' : 'Video Demo Area'}</p>
-                </div>
-                <p>{language === 'zh' ? '在这里，您可以嵌入项目的视频演示，例如使用 YouTube 或 Vimeo 的嵌入代码。' : 'Here you can embed a video demo of your project, for example, using an embed code from YouTube or Vimeo.'}</p>
-              </section>
 
               <section>
                 <h2>{details.process.title}</h2>
                 <p>{details.process.content}</p>
-                <img class="w-full h-auto object-cover rounded-lg shadow-lg my-8" alt="Project process visualization" src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+                <img 
+                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                  alt="Roomify系统管线流程图" 
+                  src="/images/roomify-pipeline.jpg" 
+                />
               </section>
+              <section>
+                <h2>{language === 'zh' ? '跨现实创作工具' : 'Cross-Reality Authoring'}</h2>
+                <p>{language === 'zh' ? 'Roomify 配套的跨现实创作界面让创作与体验无缝切换：在 MR 中看到覆盖于真实家的"线框脚手架"，用手柄/语音做精细编辑与再生成；在 VR 中即时预览沉浸效果。分层控制（全局风格—对象语义—细节属性）既保证效率，又保留创作者对关键元素的掌控。' : 'A cross-reality authoring tool lets creators iterate in MR and preview in VR. In MR, labeled wireframe scaffolds sit over the physical room for precise edits and selective regeneration; in VR, users evaluate the full immersive result. Hierarchical controls (global style → object semantics → fine attributes) balance automation with human agency.'}</p>
+                <img 
+                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                  alt="Roomify跨现实创作工具界面" 
+                  src="/images/roomify-mr.jpg" 
+                />
+              </section>
+
               <section>
                 <h2>{details.outcome.title}</h2>
                 <p>{details.outcome.content}</p>
+                
+                <h3>{language === 'zh' ? 'VR用户对比实验' : 'VR User Comparison Study'}</h3>
+                <img 
+                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                  alt="VR用户测试场景" 
+                  src="/images/roomify-usertest1.jpg" 
+                />
+                <img 
+                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                  alt="VR用户测试数据分析" 
+                  src="/images/roomify-analysis1.jpg" 
+                />
+                
+                <h3>{language === 'zh' ? '设计专业人士评估' : 'Design Professional Evaluation'}</h3>
+                <img 
+                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                  alt="设计专业人士测试场景" 
+                  src="/images/roomify-usertest2.jpg" 
+                />
+                <img 
+                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                  alt="设计专业人士评估数据分析" 
+                  src="/images/roomify-analysis2.jpg" 
+                />
               </section>
             </div>
           </motion.main>

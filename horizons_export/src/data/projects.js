@@ -2,25 +2,25 @@ export const projectsData = {
   en: [
     {
       id: 1,
-      title: 'AI Recommendation System',
+      title: 'Roomify',
       category: 'ai',
-      description: 'Deep learning-based personalized recommendation engine, improving user experience by 30%',
-      tags: ['Machine Learning', 'UX Design', 'Product Design'],
-      image: 'AI recommendation system interface with modern dashboard',
+      description: 'Spatially grounded generative pipeline for immersive VR/MR authoring and user-centered evaluation',
+      tags: ['Generative AI', 'Spatial Computing', 'UX Design', 'Product Design'],
+      image: 'Roomify VR/MR spatial computing interface with generative pipeline',
       featured: true,
       details: {
         about: {
           title: 'About The Project',
-          content: 'This project aimed to create a state-of-the-art recommendation system for an e-commerce platform. The goal was to increase user engagement and sales by providing highly personalized product suggestions. We utilized collaborative filtering and deep learning models to analyze user behavior and product attributes.'
+          content: 'Roomify is a spatially grounded generative system that treats your real room as a "spatial container." It preserves layout and furniture affordances while radically transforming the environment into a cohesive theme (e.g., wizard academy, pirate cabin), resolving the classic VR trade-off between immersion and spatial awareness without relying on immersion-breaking passthrough views.'
         },
         process: {
-          title: 'Design & Development Process',
-          content: 'The process started with extensive user research to understand pain points with the existing system. We then moved to data collection and preprocessing, followed by model training and evaluation. The UI/UX was designed in Figma, focusing on a clean and intuitive interface. The final product was built using Python for the backend and React for the frontend.',
-          image: 'Flowchart of the machine learning model pipeline'
+          title: 'How It Works',
+          content: 'The pipeline has four stages: Scene Understanding (video SLAM + semantic parsing to oriented 3D boxes and a global JSON scaffold) → Style Extraction & Mapping (derive keywords from text/reference images and produce mapping tables for walls/floors, objects, and environment) → Multimodal Generation (reference-guided stylized images and 3D assets, PBR materials, and skyboxes) → Spatial Registration & Assembly (place assets with pose- and geometry-aware alignment, maintaining predictable navigation and functional consistency).',
+          image: 'Roomify system architecture and pipeline flow diagram'
         },
         outcome: {
-          title: 'Outcome & Results',
-          content: 'The new recommendation system led to a 30% increase in user engagement, a 15% uplift in conversion rates, and significantly higher user satisfaction scores. The project was recognized as a key driver of growth for the company in that quarter.'
+          title: 'Studies & Outcomes',
+          content: 'Two evaluations demonstrate effectiveness: With 18 VR users, Roomify achieved significantly higher presence/immersion than passthrough (+~63%) and fully virtual (+~26%) conditions, while keeping spatial awareness at a strong, usable level. With 8 design professionals, Roomify proved valuable as a creative prototyping tool, supporting expressive, workflow-friendly iterations across diverse spaces and themes.'
         }
       }
     },
@@ -148,25 +148,25 @@ export const projectsData = {
   zh: [
     {
       id: 1,
-      title: 'AI智能推荐系统',
+      title: 'Roomify',
       category: 'ai',
-      description: '基于深度学习的个性化推荐引擎，提升用户体验30%',
-      tags: ['机器学习', '用户体验', '产品设计'],
-      image: 'AI recommendation system interface with modern dashboard',
+      description: '空间锚定的生成式系统，沉浸式VR/MR创作工具，用户中心化评估',
+      tags: ['生成式AI', '空间计算', '用户体验', '产品设计'],
+      image: 'Roomify VR/MR空间计算界面与生成式管线',
       featured: true,
       details: {
         about: {
-          title: '关于项目',
-          content: '该项目旨在为电商平台创建一个顶尖的推荐系统。目标是通过提供高度个性化的产品建议来增加用户参与度和销售额。我们利用协同过滤和深度学习模型来分析用户行为和产品属性。'
+          title: '项目概述',
+          content: 'Roomify 是一个"空间锚定"的生成式系统：它以用户的真实房间为"空间容器"，在保持空间结构与家具可用性的前提下，将场景一键变为特定主题（如魔法学院、海盗船舱等）并提供沉浸式体验。它弥合了传统 VR 在"沉浸感"与"空间感知"之间的取舍：不过度依赖透视画面（破坏临场），也不牺牲物理环境的功能逻辑。'
         },
         process: {
-          title: '设计与开发流程',
-          content: '流程始于广泛的用户研究，以了解现有系统的痛点。然后我们进行数据收集和预处理，接着是模型训练和评估。UI/UX在Figma中设计，专注于简洁直观的界面。最终产品后端使用Python，前端使用React构建。',
-          image: 'Flowchart of the machine learning model pipeline'
+          title: '工作原理',
+          content: '系统包含四个阶段：场景理解（视频 SLAM 与语义解析，输出带方向的 3D 边界盒与全局 JSON 脚手架）→ 风格提取与映射（从文字/参考图抽取风格关键词，生成墙地面、家具、环境三类映射表与约束）→ 多模态生成（参考引导的风格化图像与 3D 物体、PBR 纹理与天空盒）→ 空间组装注册（按几何与相机位姿将生成资产精准落位，保持导航可预期与功能可用）。',
+          image: 'Roomify系统架构与管线流程图'
         },
         outcome: {
-          title: '成果与结果',
-          content: '新的推荐系统使用户参与度提高了30%，转化率提升了15%，用户满意度得分也显著提高。该项目被公认为公司该季度的关键增长驱动力。'
+          title: '用户研究与成效',
+          content: '两项评测验证了方法有效性：18 名 VR 用户对比实验显示：相较"透视基线"和"全虚拟场景"，Roomify 显著提升临场感/沉浸（对透视提升约 63%，对全虚拟提升约 26%），同时保持中等偏上的空间认知与可导航性。8 名设计专业人士评估其作为创意原型工具的表达力与工作流价值，认可在多场景、多主题下快速出形且可控。'
         }
       }
     },
