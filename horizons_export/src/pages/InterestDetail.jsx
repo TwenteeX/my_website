@@ -47,19 +47,34 @@ const InterestDetail = ({ language }) => {
       image: '/images/music-experience.jpg',
       gallery: [
         {
-          image: '/images/music-1.jpg',
-          title: language === 'zh' ? '现场表演' : 'Live Performance',
-          description: language === 'zh' ? '在舞台上与观众分享音乐的激情与感动' : 'Sharing the passion and emotion of music with audiences on stage'
+          type: 'video',
+          videoId: 'VB_gh_D4taQ',
+          platform: 'youtube',
+          title: 'Lipstick on The Glass - Wolf Alice (Band Cover)',
+          year: '2024',
+          description: language === 'zh' 
+            ? '本次演出于 2024年清华大学经管学院学生节 举行，活动由 MINISO 名创优品 等企业赞助支持。感谢所有到场的朋友与合作伙伴，让音乐成为我们共同的记忆。'
+            : 'This performance took place at the 2024 Tsinghua SEM Student Festival, proudly sponsored by MINISO and other partners. Thank you to everyone who joined us and supported the event: music is what we share together.'
         },
         {
-          image: '/images/music-2.jpg',
-          title: language === 'zh' ? '音乐制作' : 'Music Production',
-          description: language === 'zh' ? '在录音室中精心雕琢每一个音符' : 'Carefully crafting every note in the recording studio'
+          type: 'video',
+          videoId: 'BV1Wv4y167nH',
+          platform: 'bilibili',
+          title: 'Original Music Production and AIGC MV',
+          year: '2022-2023',
+          description: language === 'zh'
+            ? '这是一个有关信仰与背离的故事，也是我们献给2022的纪念之歌。我们试图引入一些宗教意象，尝试构建被信仰抛弃后信徒眼中分崩离析的世界。我们每个人都曾在某一瞬成为这样的信徒，在这之前是我们的Prelife，在这之后我们在存在之间寻找喘息的Crevice。这是一个无厘头的故事，里面提到的问题答案也很开放，希望这首歌对2023是一个合格的新年礼物。'
+            : 'This is a story about faith and betrayal, a song of remembrance dedicated to 2022. We sought to weave in religious imagery, attempting to construct a world collapsing in the eyes of believers abandoned by their faith. Each of us, at some moment, has been such a believer. Before that moment lies our Prelife; after it, we search for a breath of air in the Crevice between states of existence. It is also a nonsensical tale, with questions left deliberately open-ended. We hope this song serves as a fitting New Year\'s gift for 2023.'
         },
         {
-          image: '/images/music-3.jpg',
-          title: language === 'zh' ? '沉浸式音频' : 'Immersive Audio',
-          description: language === 'zh' ? '创造三维音频体验，让听众身临其境' : 'Creating three-dimensional audio experiences that immerse listeners'
+          type: 'video',
+          videoId: 'BV1qCBPYCErE',
+          platform: 'bilibili',
+          title: 'Blue Weekend - Wolf Alice (Band Cover)',
+          year: '2024',
+          description: language === 'zh'
+            ? '褴褛飞旋乐队组建于2023年，成员大多来自零字班和一字班，本次在建筑学院学生节演出了Wolf Alice专辑Blue Weekend中的三首曲目串烧：The Beach, Lipstick on The Glass以及The Beach II'
+            : 'Formed in 2023, Whirling in Rags is a band composed mainly of students from the 00s and 10s cohorts. At the Architecture School Student Festival, we performed a medley of three tracks from Wolf Alice\'s Blue Weekend album: The Beach, Lipstick on the Glass, and The Beach II.'
         }
       ]
     },
@@ -217,7 +232,7 @@ const InterestDetail = ({ language }) => {
             </div>
           </motion.div>
 
-          {/* Image Gallery */}
+          {/* Media Gallery */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -233,34 +248,79 @@ const InterestDetail = ({ language }) => {
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="relative"
               >
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                  <img
-                    src={currentInterest.image}
-                    alt={currentInterest.title}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.src = 'https://images.unsplash.com/photo-1572177812156-58036aae439c';
-                    }}
-                  />
-                </div>
-                
-                {/* Gallery Items Overlay */}
-                <div className="absolute inset-0 bg-black/20 rounded-2xl flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                  <div className="text-center text-white">
-                    <p className="text-lg font-semibold mb-2">
-                      {language === 'zh' ? '点击查看作品集' : 'Click to view portfolio'}
-                    </p>
-                    <div className="flex justify-center space-x-4">
-                      {currentInterest.gallery.map((item, index) => (
-                        <div key={index} className="text-center">
-                          <div className="w-16 h-16 bg-white/20 rounded-lg mb-2 flex items-center justify-center">
-                            <span className="text-xs">{index + 1}</span>
-                          </div>
-                          <p className="text-xs">{item.title}</p>
+                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
+                  {currentInterest.id === 2 ? (
+                    // Music Experiences - Video Gallery
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className="text-center text-white p-8">
+                        <h3 className="text-2xl font-bold mb-4">
+                          {currentInterest.gallery[currentIndex]?.title}
+                        </h3>
+                        <p className="text-lg mb-4">
+                          {currentInterest.gallery[currentIndex]?.year}
+                        </p>
+                        <div className="mb-6">
+                          {currentInterest.gallery[currentIndex]?.platform === 'youtube' ? (
+                            <iframe
+                              width="100%"
+                              height="315"
+                              src={`https://www.youtube.com/embed/${currentInterest.gallery[currentIndex]?.videoId}`}
+                              title={currentInterest.gallery[currentIndex]?.title}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              className="rounded-lg"
+                            ></iframe>
+                          ) : (
+                            <iframe
+                              width="100%"
+                              height="315"
+                              src={`https://player.bilibili.com/player.html?bvid=${currentInterest.gallery[currentIndex]?.videoId}&autoplay=0`}
+                              title={currentInterest.gallery[currentIndex]?.title}
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                              className="rounded-lg"
+                            ></iframe>
+                          )}
                         </div>
-                      ))}
+                        <p className="text-sm leading-relaxed max-w-2xl mx-auto">
+                          {currentInterest.gallery[currentIndex]?.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    // Other interests - Image Gallery
+                    <>
+                      <img
+                        src={currentInterest.image}
+                        alt={currentInterest.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.src = 'https://images.unsplash.com/photo-1572177812156-58036aae439c';
+                        }}
+                      />
+                      
+                      {/* Gallery Items Overlay */}
+                      <div className="absolute inset-0 bg-black/20 rounded-2xl flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <div className="text-center text-white">
+                          <p className="text-lg font-semibold mb-2">
+                            {language === 'zh' ? '点击查看作品集' : 'Click to view portfolio'}
+                          </p>
+                          <div className="flex justify-center space-x-4">
+                            {currentInterest.gallery.map((item, index) => (
+                              <div key={index} className="text-center">
+                                <div className="w-16 h-16 bg-white/20 rounded-lg mb-2 flex items-center justify-center">
+                                  <span className="text-xs">{index + 1}</span>
+                                </div>
+                                <p className="text-xs">{item.title}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
               </motion.div>
             </AnimatePresence>
