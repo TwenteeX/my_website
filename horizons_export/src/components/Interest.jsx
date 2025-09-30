@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Camera, Music, Palette } from 'lucide-react';
 
 const Interest = ({ language }) => {
   const navigate = useNavigate();
@@ -13,8 +12,7 @@ const Interest = ({ language }) => {
       description: language === 'zh' 
         ? '探索数字媒体与视觉叙事，通过摄影、视频制作和多媒体设计传达创意理念'
         : 'Exploring digital media and visual storytelling through photography, video production, and multimedia design',
-      icon: Camera,
-      color: 'from-gray-800 to-gray-600'
+      image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d'
     },
     {
       id: 2,
@@ -22,8 +20,7 @@ const Interest = ({ language }) => {
       description: language === 'zh'
         ? '沉浸式音乐创作与体验设计，结合技术与艺术创造独特的听觉空间'
         : 'Immersive music creation and experience design, combining technology and art to create unique auditory spaces',
-      icon: Music,
-      color: 'from-gray-800 to-gray-600'
+      image: '/images/music-head.png'
     },
     {
       id: 3,
@@ -31,8 +28,7 @@ const Interest = ({ language }) => {
       description: language === 'zh'
         ? '策展与空间设计实践，通过展览探索艺术、科技与社会的交汇点'
         : 'Curatorial and spatial design practice, exploring intersections of art, technology, and society through exhibitions',
-      icon: Palette,
-      color: 'from-gray-800 to-gray-600'
+      image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262'
     }
   ];
 
@@ -62,24 +58,30 @@ const Interest = ({ language }) => {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {interests.map((interest, index) => {
-            const IconComponent = interest.icon;
-            return (
-              <motion.div
-                key={interest.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="group cursor-pointer"
-                onClick={() => handleInterestClick(interest.id)}
-              >
-                <div className="glass-effect rounded-2xl p-8 h-full hover:scale-105 transition-all duration-300 hover:shadow-2xl">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${interest.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <IconComponent className="w-8 h-8 text-white" strokeWidth={1.5} />
-                  </div>
-                  
-                  <h3 className="text-2xl font-semibold text-foreground mb-4 group-hover:gradient-text transition-all">
+          {interests.map((interest, index) => (
+            <motion.div
+              key={interest.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="group cursor-pointer"
+              onClick={() => handleInterestClick(interest.id)}
+            >
+              <div className="glass-effect rounded-2xl overflow-hidden h-full hover:scale-105 transition-all duration-300 hover:shadow-2xl">
+                <div className="relative overflow-hidden">
+                  <img
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    alt={interest.title}
+                    src={interest.image}
+                    onError={(e) => {
+                      e.target.src = 'https://images.unsplash.com/photo-1572177812156-58036aae439c';
+                    }}
+                  />
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:gradient-text transition-all">
                     {interest.title}
                   </h3>
                   
@@ -87,9 +89,9 @@ const Interest = ({ language }) => {
                     {interest.description}
                   </p>
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
