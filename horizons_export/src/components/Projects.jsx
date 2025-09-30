@@ -101,6 +101,7 @@ const Projects = ({ language }) => {
                       src={
                         project.id === 1 ? "/images/roomify-main.png" : 
                         project.id === 2 ? "/images/boardgame-head.png" : 
+                        project.id === 3 ? "/images/imagine-head.png" :
                         "https://images.unsplash.com/photo-1572177812156-58036aae439c"
                       } />
                   </div>

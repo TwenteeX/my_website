@@ -90,6 +90,8 @@ const ProjectDetail = ({ language }) => {
             </div>
           ) : project.id === 2 ? (
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/boardgame-head.png" />
+          ) : project.id === 3 ? (
+            <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/imagine-head.png" />
           ) : (
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
           )}
@@ -149,6 +151,12 @@ const ProjectDetail = ({ language }) => {
                     alt="Cognitive Tracks项目概述" 
                     src="/images/boardgame-flowchart.png" 
                   />
+                ) : project.id === 3 ? (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="EEG展览设计概念方案" 
+                    src="/images/imagine-experiment.png" 
+                  />
                 ) : null}
                 <p>{details.about.content}</p>
               </section>
@@ -169,6 +177,44 @@ const ProjectDetail = ({ language }) => {
                     alt="Cognitive Tracks实验设计" 
                     src="/images/boardgame-experiement.png" 
                   />
+                ) : project.id === 3 ? (
+                  <>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG实验设备设置" 
+                      src="/images/imagine-equipment.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG实验数据采集" 
+                      src="/images/imagine-data.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG实验变量分析" 
+                      src="/images/imagine-variables.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG数据框架结构" 
+                      src="/images/imagine-dataframe.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG实验装置" 
+                      src="/images/apparatus.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG基线校正" 
+                      src="/images/imagine-baseline.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG机器学习模型" 
+                      src="/images/imagine-ml.png" 
+                    />
+                  </>
                 ) : null}
               </section>
               {project.id === 1 ? (
@@ -191,6 +237,52 @@ const ProjectDetail = ({ language }) => {
                     src="/images/boardgame-design.png" 
                   />
                 </section>
+              ) : project.id === 3 ? (
+                <>
+                  <section>
+                    <h2>{language === 'zh' ? '原型设计' : 'Prototyping'}</h2>
+                    <p>{language === 'zh' ? 'EEG findings were translated into a 3×3×3 m modular spatial prototype. A shape grammar was developed to generate 16 spatial variants, differentiated by publicness, posture, and flow logic. These modules were then assembled with vertical and horizontal circulation units to create a flexible, future-oriented exhibition system. The prototype demonstrated how neuroscientific data could inform the grammar of space, making architectural experience directly responsive to human emotion.' : 'EEG findings were translated into a 3×3×3 m modular spatial prototype. A shape grammar was developed to generate 16 spatial variants, differentiated by publicness, posture, and flow logic. These modules were then assembled with vertical and horizontal circulation units to create a flexible, future-oriented exhibition system. The prototype demonstrated how neuroscientific data could inform the grammar of space, making architectural experience directly responsive to human emotion.'}</p>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG展览体验设计" 
+                      src="/images/imagine-experience.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG展览原型设计" 
+                      src="/images/imagine-prototype.png" 
+                    />
+              </section>
+                  <section>
+                    <h2>{language === 'zh' ? '计算设计' : 'Computational Design'}</h2>
+                    <p>{language === 'zh' ? 'The computational design workflow integrated EEG-informed emotion recognition with parametric architecture. Grasshopper scripts and custom algorithms encoded modular assembly rules, enabling scalable and adaptable exhibition layouts. Real-time personalization was proposed: as EEG data streams are analyzed, the system recommends navigation paths tailored to each visitor\'s affective state. This shifts the role of architecture from static form to a dynamic interface between space and embodied perception.' : 'The computational design workflow integrated EEG-informed emotion recognition with parametric architecture. Grasshopper scripts and custom algorithms encoded modular assembly rules, enabling scalable and adaptable exhibition layouts. Real-time personalization was proposed: as EEG data streams are analyzed, the system recommends navigation paths tailored to each visitor\'s affective state. This shifts the role of architecture from static form to a dynamic interface between space and embodied perception.'}</p>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG形态文法设计" 
+                      src="/images/imagine-shapegrammar.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG Grasshopper参数化设计" 
+                      src="/images/imagine-grasshopper.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG模块组合设计" 
+                      src="/images/imagine-combination.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG设计细节" 
+                      src="/images/imagine-details.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="EEG最终设计成果" 
+                      src="/images/imagine-final.png" 
+                    />
+                  </section>
+                </>
               ) : null}
 
               <section>

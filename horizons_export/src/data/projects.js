@@ -50,25 +50,25 @@ export const projectsData = {
     },
     {
       id: 3,
-      title: 'Computational Design Research',
+      title: 'EEG-informed Exhibition Design',
       category: 'research',
-      description: 'Computational design methodology research published in top-tier conferences',
-      tags: ['Academic Research', 'Algorithm Design', 'Publication'],
-      image: 'Academic research visualization with computational design patterns',
-      featured: false,
+      description: 'Multisensory & Embodied Exhibition Design with EEG-informed Personalization',
+      tags: ['EEG', 'Machine Learning', 'UX Design', 'Parametric Architecture'],
+      image: 'EEG-informed exhibition personalized by real-time emotion recognition',
+      featured: true,
       details: {
         about: {
-          title: 'About The Research',
-          content: 'This academic research explores new methodologies in computational design, focusing on generative algorithms for architectural and product design. The work proposes a novel framework that combines machine learning with traditional design principles to create unique and optimized forms.'
+          title: 'Conceptual Proposal',
+          content: 'The project Multisensory & Embodied Exhibition Design with EEG-informed Personalization explores how real-time brainwave data can shape immersive spatial experiences. Instead of architecture being inherently “active,” the visitor’s embodied perception drives the spatial narrative. By integrating electroencephalography (EEG)-based emotional recognition with modular exhibition design, the project proposes a system where personalized navigation routes are generated according to individual affective states. This concept was showcased at the 2025 Tsinghua School of Architecture Undergraduate Works Exhibition as a group project, emphasizing the fusion of neuroscience, computation, and spatial design.'
         },
         process: {
-          title: 'Research Process',
-          content: 'The research involved a literature review, development of a new algorithmic framework, and a series of experiments to validate the approach. The results were documented in a research paper, which included visualizations of the generated designs and a comparative analysis with existing methods.',
-          image: 'Generative art created by the algorithm'
+          title: 'Experiment Performance',
+          content: 'Three controlled EEG experiments were conducted, each involving eight participants. Using a 16-channel OpenBCI headset at 256 Hz, the sessions lasted 15–20 minutes with stimuli segmented into 15-second epochs. Three conditions were tested: visual-only, auditory-only, and audiovisual fusion. Complementary physiological data were collected through GSR and EMG sensors for verification. This experimental framework allowed a rigorous exploration of how different sensory modalities interact to shape emotional responses.',
+          image: 'EEG experiment setup and protocol'
         },
         outcome: {
-          title: 'Outcome & Results',
-          content: 'The research paper was accepted and published at the prestigious ACM CHI conference, where it received a Best Paper Honorable Mention. The proposed framework has since been adopted by other researchers in the field.'
+          title: 'Data Analysis',
+          content: 'Preprocessing followed the MNE pipeline: band-pass and 50 Hz notch filtering, ICA for artifact removal, and baseline correction. Features extracted included power spectral density (PSD) across alpha, beta, and gamma bands, as well as time-domain statistics. Data were standardized across participants, and emotional labels were defined using Russell’s Valence–Arousal model. Deep learning models such as SVM, KNN, and Random Forest were tested, with Random Forest achieving the best accuracy. Cross-validation revealed that combining positive or negative visual and auditory stimuli often shifted emotional responses toward neutrality, while maintaining their polarity.'
         }
       }
     },
@@ -196,25 +196,25 @@ export const projectsData = {
     },
     {
       id: 3,
-      title: '计算设计研究',
+      title: '基于EEG的多感官具身化展览设计',
       category: 'research',
-      description: '发表于顶级会议的计算设计方法论研究',
-      tags: ['学术研究', '算法设计', '论文发表'],
-      image: 'Academic research visualization with computational design patterns',
-      featured: false,
+      description: 'Multisensory & Embodied Exhibition Design with EEG-informed Personalization',
+      tags: ['EEG', '机器学习', '用户体验', '参数化建筑'],
+      image: '基于EEG的情绪识别驱动的个性化展览体验',
+      featured: true,
       details: {
         about: {
-          title: '关于研究',
-          content: '这项学术研究探索了计算设计的新方法，专注于建筑和产品设计的生成算法。该工作提出了一个新颖的框架，将机器学习与传统设计原则相结合，以创造独特且优化的形式。'
+          title: '概念性方案',
+          content: '本项目 基于EEG个性化的多感官与具身化展览设计 探索如何通过实时脑电波数据来塑造沉浸式空间体验。展览空间本身并非“主动”，而是由参观者的具身感知来驱动空间叙事。通过将基于脑电（EEG）的情绪识别与模块化展览设计相结合，本项目提出了一种体验驱动的系统：参观路径根据个体情绪状态实时生成。该项目以团队合作形式在 2025年清华大学建筑学院本科作品展 中展出，体现了神经科学、计算设计与空间建构的跨界融合。'
         },
         process: {
-          title: '研究流程',
-          content: '研究涉及文献综述、新算法框架的开发以及一系列验证该方法的实验。结果记录在一篇研究论文中，其中包括生成设计的可视化以及与现有方法的比较分析。',
-          image: 'Generative art created by the algorithm'
+          title: '实验实施',
+          content: '实验部分共设计并实施了三组对照实验，每组8位受试者。使用16通道的 OpenBCI 脑电设备，采样率为256 Hz，每次实验持续15–20分钟，刺激被划分为15秒的片段。实验条件包括：仅视觉、仅听觉、以及视听融合。同时收集了皮电（GSR）和肌电（EMG）等辅助生理数据以进行交叉验证。该实验框架为探讨多模态感官输入对情绪反应的交互作用提供了严谨依据。',
+          image: 'EEG实验设置与流程'
         },
         outcome: {
-          title: '成果与结果',
-          content: '该研究论文被著名的ACM CHI会议接受并发表，并获得了最佳论文荣誉提名。所提出的框架此后被该领域的其他研究人员采用。'
+          title: '数据分析',
+          content: '数据分析采用了 MNE 标准流程：带通滤波与50Hz陷波滤波、独立成分分析（ICA）去除伪迹，以及基线校正。提取特征包括 α、β、γ 三个主要频段的功率谱密度（PSD），以及时域统计特征。所有数据在参与者间标准化，情绪标签采用 Russell 的 效价-唤醒度模型。实验测试了多种机器学习方法（SVM、KNN、随机森林等），其中随机森林表现最佳。交叉验证表明，当积极或消极的视觉与听觉刺激叠加时，情绪反应往往趋向中性，但整体的正负极性仍保持。'
         }
       }
     },
