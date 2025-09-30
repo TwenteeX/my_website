@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HomePage from '@/pages/HomePage';
 import ProjectDetail from '@/pages/ProjectDetail';
+import InterestDetail from '@/pages/InterestDetail';
 import Contact from '@/components/Contact';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<HomePage language={language} />} />
           <Route path="/projects/:id" element={<ProjectDetail language={language} />} />
+          <Route path="/interests/:id" element={<InterestDetail language={language} />} />
         </Routes>
       </AnimatePresence>
       <Contact language={language} />
