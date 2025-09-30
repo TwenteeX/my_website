@@ -98,7 +98,7 @@ const Projects = ({ language }) => {
                     <img
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                       alt={project.title}
-                      src={project.id === 1 ? "/images/roomify-main.jpg" : "https://images.unsplash.com/photo-1572177812156-58036aae439c"} />
+                      src={project.id === 1 ? "/images/roomify-main.png" : "https://images.unsplash.com/photo-1572177812156-58036aae439c"} />
                   </div>
                   
                   <div className="p-6">

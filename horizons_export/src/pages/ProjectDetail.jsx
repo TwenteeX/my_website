@@ -79,7 +79,7 @@ const ProjectDetail = ({ language }) => {
               <video 
                 className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" 
                 controls 
-                poster="/images/roomify-main.jpg"
+                poster="/images/roomify-main.png"
               >
                 <source src="/videos/roomify_demo.mp4" type="video/mp4" />
                 <p>{language === 'zh' ? '您的浏览器不支持视频播放。' : 'Your browser does not support video playback.'}</p>
@@ -138,7 +138,7 @@ const ProjectDetail = ({ language }) => {
                 <img 
                   className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                   alt="Roomify系统头图" 
-                  src="/images/roomify-head.jpg" 
+                  src="/images/roomify-head.png" 
                 />
                 <p>{details.about.content}</p>
               </section>
@@ -150,7 +150,7 @@ const ProjectDetail = ({ language }) => {
                 <img 
                   className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                   alt="Roomify系统管线流程图" 
-                  src="/images/roomify-pipeline.jpg" 
+                  src="/images/roomify-pipeline.png" 
                 />
               </section>
               <section>
@@ -159,7 +159,7 @@ const ProjectDetail = ({ language }) => {
                 <img 
                   className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                   alt="Roomify跨现实创作工具界面" 
-                  src="/images/roomify-mr.jpg" 
+                  src="/images/roomify-mr.png" 
                 />
               </section>
 
@@ -171,24 +171,24 @@ const ProjectDetail = ({ language }) => {
                 <img 
                   className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                   alt="VR用户测试场景" 
-                  src="/images/roomify-usertest1.jpg" 
+                  src="/images/roomify-usertest1.png" 
                 />
                 <img 
                   className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                   alt="VR用户测试数据分析" 
-                  src="/images/roomify-analysis1.jpg" 
+                  src="/images/roomify-analysis1.png" 
                 />
                 
                 <h3>{language === 'zh' ? '设计专业人士评估' : 'Design Professional Evaluation'}</h3>
                 <img 
                   className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                   alt="设计专业人士测试场景" 
-                  src="/images/roomify-usertest2.jpg" 
+                  src="/images/roomify-usertest2.png" 
                 />
                 <img 
                   className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                   alt="设计专业人士评估数据分析" 
-                  src="/images/roomify-analysis2.jpg" 
+                  src="/images/roomify-analysis2.png" 
                 />
               </section>
             </div>
