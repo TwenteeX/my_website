@@ -88,6 +88,8 @@ const ProjectDetail = ({ language }) => {
                 {language === 'zh' ? '演示视频 - 展示Roomify系统的完整功能' : 'Demo Video - Showcasing Roomify System Features'}
               </p>
             </div>
+          ) : project.id === 2 ? (
+            <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/boardgame-head.png" />
           ) : (
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
           )}
@@ -135,11 +137,19 @@ const ProjectDetail = ({ language }) => {
             <div className="prose max-w-none text-foreground/80 prose-headings:font-display prose-headings:gradient-text prose-a:text-indigo-500 hover:prose-a:text-indigo-600">
               <section>
                 <h2>{details.about.title}</h2>
-                <img 
-                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
-                  alt="Roomify系统头图" 
-                  src="/images/roomify-head.png" 
-                />
+                {project.id === 1 ? (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="Roomify系统头图" 
+                    src="/images/roomify-head.png" 
+                  />
+                ) : project.id === 2 ? (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="Cognitive Tracks项目概述" 
+                    src="/images/boardgame-flowchart.png" 
+                  />
+                ) : null}
                 <p>{details.about.content}</p>
               </section>
               
@@ -147,49 +157,96 @@ const ProjectDetail = ({ language }) => {
               <section>
                 <h2>{details.process.title}</h2>
                 <p>{details.process.content}</p>
-                <img 
-                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
-                  alt="Roomify系统管线流程图" 
-                  src="/images/roomify-pipeline.png" 
-                />
+                {project.id === 1 ? (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="Roomify系统管线流程图" 
+                    src="/images/roomify-pipeline.png" 
+                  />
+                ) : project.id === 2 ? (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="Cognitive Tracks实验设计" 
+                    src="/images/boardgame-experiement.png" 
+                  />
+                ) : null}
               </section>
-              <section>
-                <h2>{language === 'zh' ? '跨现实创作工具' : 'Cross-Reality Authoring'}</h2>
-                <p>{language === 'zh' ? 'Roomify 配套的跨现实创作界面让创作与体验无缝切换：在 MR 中看到覆盖于真实家的"线框脚手架"，用手柄/语音做精细编辑与再生成；在 VR 中即时预览沉浸效果。分层控制（全局风格—对象语义—细节属性）既保证效率，又保留创作者对关键元素的掌控。' : 'A cross-reality authoring tool lets creators iterate in MR and preview in VR. In MR, labeled wireframe scaffolds sit over the physical room for precise edits and selective regeneration; in VR, users evaluate the full immersive result. Hierarchical controls (global style → object semantics → fine attributes) balance automation with human agency.'}</p>
-                <img 
-                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
-                  alt="Roomify跨现实创作工具界面" 
-                  src="/images/roomify-mr.png" 
-                />
-              </section>
+              {project.id === 1 ? (
+                <section>
+                  <h2>{language === 'zh' ? '跨现实创作工具' : 'Cross-Reality Authoring'}</h2>
+                  <p>{language === 'zh' ? 'Roomify 配套的跨现实创作界面让创作与体验无缝切换：在 MR 中看到覆盖于真实家的"线框脚手架"，用手柄/语音做精细编辑与再生成；在 VR 中即时预览沉浸效果。分层控制（全局风格—对象语义—细节属性）既保证效率，又保留创作者对关键元素的掌控。' : 'A cross-reality authoring tool lets creators iterate in MR and preview in VR. In MR, labeled wireframe scaffolds sit over the physical room for precise edits and selective regeneration; in VR, users evaluate the full immersive result. Hierarchical controls (global style → object semantics → fine attributes) balance automation with human agency.'}</p>
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="Roomify跨现实创作工具界面" 
+                    src="/images/roomify-mr.png" 
+                  />
+                </section>
+              ) : project.id === 2 ? (
+                <section>
+                  <h2>{language === 'zh' ? '桌游转译与组件' : 'Game Translation & Components'}</h2>
+                  <p>{language === 'zh' ? '将研究结果转化为三类实体组件：① 六边格/变形六边格拼图，以颜色编码访问密度；② 3D打印的11处站点模型；③ 底图棋盘。规则上，玩家先拼图成图并放置模型，随后从入口沿六边形边行进，依据密度/情绪线索选择路径，记录各自"认知轨迹"。' : 'Insights are embodied in three components: (1) hex and deformed-hex tiles color-coded by visiting density; (2) 3D-printed models of the 11 clustered sites; (3) a base map board. Players first assemble the map and place models, then start from an entry and move along hex edges, choosing routes using density/emotion cues to inscribe their personal "cognitive tracks."'}</p>
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="Cognitive Tracks桌游组件设计" 
+                    src="/images/boardgame-design.png" 
+                  />
+                </section>
+              ) : null}
 
               <section>
                 <h2>{details.outcome.title}</h2>
                 <p>{details.outcome.content}</p>
                 
-                <h3>{language === 'zh' ? 'VR用户对比实验' : 'VR User Comparison Study'}</h3>
-                <img 
-                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
-                  alt="VR用户测试场景" 
-                  src="/images/roomify-usertest1.png" 
-                />
-                <img 
-                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
-                  alt="VR用户测试数据分析" 
-                  src="/images/roomify-analysis1.png" 
-                />
-                
-                <h3>{language === 'zh' ? '设计专业人士评估' : 'Design Professional Evaluation'}</h3>
-                <img 
-                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
-                  alt="设计专业人士测试场景" 
-                  src="/images/roomify-usertest2.png" 
-                />
-                <img 
-                  className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
-                  alt="设计专业人士评估数据分析" 
-                  src="/images/roomify-analysis2.png" 
-                />
+                {project.id === 1 ? (
+                  <>
+                    <h3>{language === 'zh' ? 'VR用户对比实验' : 'VR User Comparison Study'}</h3>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="VR用户测试场景" 
+                      src="/images/roomify-usertest1.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="VR用户测试数据分析" 
+                      src="/images/roomify-analysis1.png" 
+                    />
+                    
+                    <h3>{language === 'zh' ? '设计专业人士评估' : 'Design Professional Evaluation'}</h3>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="设计专业人士测试场景" 
+                      src="/images/roomify-usertest2.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="设计专业人士评估数据分析" 
+                      src="/images/roomify-analysis2.png" 
+                    />
+                  </>
+                ) : project.id === 2 ? (
+                  <>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="Cognitive Tracks研究结果" 
+                      src="/images/boardgame-result.png" 
+                    />
+                    
+                    <h3>{language === 'zh' ? '数据聚类分析' : 'Data Clustering Analysis'}</h3>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="Cognitive Tracks数据聚类分析" 
+                      src="/images/boardgame-clustering.png" 
+                    />
+                    
+                    <h3>{language === 'zh' ? '交互流程与AR扩展' : 'Interaction Flow & AR'}</h3>
+                    <p>{language === 'zh' ? '流程分为四步：Step1 拼图成图 → Step2 替换/放置建筑 → Step3 开始旅程（按边移动并连线成路） → Step4 手机AR查看站点信息。最终可叠加展示不同玩家的路径差异（如"偏历史"与"偏自然"的认知轨迹）。' : 'The process is divided into four steps: Step1 Assemble the map → Step2 Replace/place buildings → Step3 Start journey (move along edges and connect paths) → Step4 Use mobile AR to view site information. Finally, different players\' path differences can be overlaid and displayed (such as "history-oriented" and "nature-oriented" cognitive tracks).'}</p>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="Cognitive Tracks AR交互效果" 
+                      src="/images/boardgame-effect.png" 
+                    />
+                  </>
+                ) : null}
               </section>
             </div>
           </motion.main>

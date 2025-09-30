@@ -26,25 +26,25 @@ export const projectsData = {
     },
     {
       id: 2,
-      title: 'Urban Data Visualization',
+      title: 'Cognitive Tracks',
       category: 'visualization',
-      description: 'Real-time urban data analysis and visualization platform with multi-dimensional exploration',
-      tags: ['D3.js', 'Data Analysis', 'Interaction Design'],
-      image: 'Urban data visualization dashboard with charts and maps',
+      description: 'Data-driven visitor paths: from behavior mining to a board game with AR',
+      tags: ['Data Mining', 'NLP', 'Boardgame Design'],
+      image: 'Cognitive Tracks board game with AR integration and data visualization',
       featured: true,
       details: {
         about: {
-          title: 'About The Project',
-          content: 'This platform was developed for urban planners and researchers to explore complex city data. It integrates various datasets like traffic, pollution, and demographics, presenting them in an interactive and easy-to-understand format. The core technology is D3.js, allowing for custom and high-performance visualizations.'
+          title: 'Overview',
+          content: 'Set on Tsinghua\'s campus, the project fuses real GPS traces + social media text to identify stopping points, typical routes, and affective patterns. These insights are translated into an interactive hex-grid board game coupled with a mobile AR layer that guides visitors and strengthens spatial cognition and engagement.'
         },
         process: {
-          title: 'Design & Development Process',
-          content: 'We collaborated closely with urban planners to define key metrics and visualization types. The design phase focused on creating a flexible dashboard that could handle diverse data sources. Development involved building a robust data pipeline and crafting custom interactive charts and maps using D3.js and React.',
-          image: 'Wireframe of the interactive map interface'
+          title: 'Study Setup & Methods',
+          content: 'Under Prof. Weixin Huang\'s mentorship (Aug–Sep 2023, Beijing; individual work), the study tracked 50 participants on random tours. Using Python (Jupyter), K-Means, NLP, and 3D printing, we cleaned paths via Haversine distance and 60-second average velocity. Points in the lowest 5% of speed (v < 0.674 m/s) were treated as stopping candidates; density filtering and K-Means produced 11 representative sites and their visiting sequences. In parallel, ~200 Xiaohongshu posts were mined for word frequencies and affective maps, which were fused with physical stopping distributions to build a combined "digital–physical" density layer.',
+          image: 'Cognitive Tracks research methodology and data processing flowchart'
         },
         outcome: {
-          title: 'Outcome & Results',
-          content: 'The platform is now used by several city planning departments, enabling data-driven decision-making. It has been praised for its intuitive design and powerful analytical capabilities, and was featured in a major design publication.'
+          title: 'Key Findings',
+          content: 'Visualizations show that velocity troughs align with salient sites; some slow-downs stem from congestion, not attraction; groups diverge in sequence and dwell intensity by preference (history/architecture/nature). These patterns inform the Visiting Density Map, Digital Emotion Map, and Physical Stopping Points Map as multi-layer bases.'
         }
       }
     },
@@ -172,25 +172,25 @@ export const projectsData = {
     },
     {
       id: 2,
-      title: '城市数据可视化平台',
+      title: 'Cognitive Tracks',
       category: 'visualization',
-      description: '实时城市数据分析与可视化，支持多维度数据探索',
-      tags: ['D3.js', '数据分析', '交互设计'],
-      image: 'Urban data visualization dashboard with charts and maps',
+      description: '数据驱动的参观路径—从行为挖掘到桌游与AR',
+      tags: ['数据挖掘', '自然语言处理', '桌游设计'],
+      image: 'Cognitive Tracks桌游与AR集成及数据可视化',
       featured: true,
       details: {
         about: {
-          title: '关于项目',
-          content: '该平台是为城市规划者和研究人员开发的，用于探索复杂的城市数据。它集成了交通、污染和人口统计等各种数据集，并以交互式且易于理解的格式呈现。核心技术是D3.js，可实现自定义和高性能的可视化。'
+          title: '项目概述',
+          content: '本项目以清华校园为场景，综合"真实轨迹 + 社交媒体文本"的双源数据，识别游客的停留点、典型路径与情绪分布，并将研究成果转译为一套可互动的六边格桌游与手机AR体验，用以引导游客、强化空间认知与参与感。'
         },
         process: {
-          title: '设计与开发流程',
-          content: '我们与城市规划者密切合作，定义关键指标和可视化类型。设计阶段的重点是创建一个可以处理不同数据源的灵活仪表板。开发涉及构建强大的数据管道，并使用D3.js和React制作自定义的交互式图表和地图。',
-          image: 'Wireframe of the interactive map interface'
+          title: '研究设定与方法',
+          content: '在导师黄巍昕指导下（2023.08–09，北京，独立完成），记录50名受试者的随机游览轨迹；采用 Python（Jupyter）、K-Means 聚类、NLP 文本分析与3D打印。轨迹以 Haversine 距离与60秒平均速度计算清洗平滑；将速度处于底部5%（v < 0.674 m/s）的点判定为候选停留点，并经密度筛选与K-Means 提取11处代表性站点及其典型访问序列。同时抓取小红书相关贴文（约200条）做词频与情感（Emotion）映射，与物理停留分布叠合形成"数字—物理"双重密度图。',
+          image: 'Cognitive Tracks研究方法与数据处理流程图'
         },
         outcome: {
-          title: '成果与结果',
-          content: '该平台现已被多个城市规划部门使用，实现了数据驱动的决策。它因其直观的设计和强大的分析能力而受到赞誉，并被一家主要的设计出版物报道。'
+          title: '关键发现',
+          content: '可视化结果显示：停留速度谷值与显著景点相吻合；部分速度下降源于拥堵而非兴趣；不同人群在"历史/建筑/自然"等偏好上呈现截然不同的访问顺序与停留强度。据此形成访问密度图（Visiting Density Map）、情绪热力图（Digital Emotion Map）与停留点图（Physical Stopping Points Map）等多层信息底板。'
         }
       }
     },
