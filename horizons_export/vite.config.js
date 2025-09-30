@@ -1,11 +1,29 @@
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { createLogger, defineConfig } from 'vite';
-import inlineEditPlugin from './plugins/visual-editor/vite-plugin-react-inline-editor.js';
-import editModeDevPlugin from './plugins/visual-editor/vite-plugin-edit-mode.js';
-import iframeRouteRestorationPlugin from './plugins/vite-plugin-iframe-route-restoration.js';
 
 const isDev = process.env.NODE_ENV !== 'production';
+const isVercel = process.env.VERCEL === '1';
+
+// 只在开发环境且非Vercel环境加载自定义插件
+const shouldLoadCustomPlugins = isDev && !isVercel;
+
+let customPlugins = [];
+if (shouldLoadCustomPlugins) {
+  try {
+    const inlineEditPlugin = (await import('./plugins/visual-editor/vite-plugin-react-inline-editor.js')).default;
+    const editModeDevPlugin = (await import('./plugins/visual-editor/vite-plugin-edit-mode.js')).default;
+    const iframeRouteRestorationPlugin = (await import('./plugins/vite-plugin-iframe-route-restoration.js')).default;
+    
+    customPlugins = [
+      inlineEditPlugin(),
+      editModeDevPlugin(),
+      iframeRouteRestorationPlugin()
+    ];
+  } catch (error) {
+    console.warn('Failed to load custom plugins:', error);
+  }
+}
 
 const configHorizonsViteErrorHandler = `
 const observer = new MutationObserver((mutations) => {
@@ -138,53 +156,55 @@ window.fetch = function(...args) {
 };
 `;
 
+// 简化生产环境的transformIndexHtml
 const addTransformIndexHtml = {
 	name: 'add-transform-index-html',
 	transformIndexHtml(html) {
-		const tags = [
-			{
-				tag: 'script',
-				attrs: { type: 'module' },
-				children: configHorizonsRuntimeErrorHandler,
-				injectTo: 'head',
-			},
-			{
-				tag: 'script',
-				attrs: { type: 'module' },
-				children: configHorizonsViteErrorHandler,
-				injectTo: 'head',
-			},
-			{
-				tag: 'script',
-				attrs: {type: 'module'},
-				children: configHorizonsConsoleErrroHandler,
-				injectTo: 'head',
-			},
-			{
-				tag: 'script',
-				attrs: { type: 'module' },
-				children: configWindowFetchMonkeyPatch,
-				injectTo: 'head',
-			},
-		];
-
-		if (!isDev && process.env.TEMPLATE_BANNER_SCRIPT_URL && process.env.TEMPLATE_REDIRECT_URL) {
-			tags.push(
+		if (isDev) {
+			// 开发环境的完整配置
+			const tags = [
 				{
 					tag: 'script',
-					attrs: {
-						src: process.env.TEMPLATE_BANNER_SCRIPT_URL,
-						'template-redirect-url': process.env.TEMPLATE_REDIRECT_URL,
-					},
+					attrs: { type: 'module' },
+					children: configHorizonsRuntimeErrorHandler,
 					injectTo: 'head',
-				}
-			);
+				},
+				{
+					tag: 'script',
+					attrs: { type: 'module' },
+					children: configHorizonsViteErrorHandler,
+					injectTo: 'head',
+				},
+				{
+					tag: 'script',
+					attrs: {type: 'module'},
+					children: configHorizonsConsoleErrroHandler,
+					injectTo: 'head',
+				},
+				{
+					tag: 'script',
+					attrs: { type: 'module' },
+					children: configWindowFetchMonkeyPatch,
+					injectTo: 'head',
+				},
+			];
+			return { html, tags };
 		}
-
-		return {
-			html,
-			tags,
-		};
+		
+		// 生产环境只添加必要的脚本
+		const tags = [];
+		if (process.env.TEMPLATE_BANNER_SCRIPT_URL && process.env.TEMPLATE_REDIRECT_URL) {
+			tags.push({
+				tag: 'script',
+				attrs: {
+					src: process.env.TEMPLATE_BANNER_SCRIPT_URL,
+					'template-redirect-url': process.env.TEMPLATE_REDIRECT_URL,
+				},
+				injectTo: 'head',
+			});
+		}
+		
+		return { html, tags };
 	},
 };
 
@@ -204,7 +224,7 @@ logger.error = (msg, options) => {
 export default defineConfig({
 	customLogger: logger,
 	plugins: [
-		...(isDev ? [inlineEditPlugin(), editModeDevPlugin(), iframeRouteRestorationPlugin()] : []),
+		...customPlugins,
 		react(),
 		addTransformIndexHtml
 	],
@@ -216,19 +236,22 @@ export default defineConfig({
 		allowedHosts: true,
 	},
 	resolve: {
-		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json', ],
+		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json'],
 		alias: {
 			'@': path.resolve(__dirname, './src'),
 		},
 	},
 	build: {
+		// 只在开发环境使用external
 		rollupOptions: {
-			external: [
-				'@babel/parser',
-				'@babel/traverse',
-				'@babel/generator',
-				'@babel/types'
-			]
+			...(isDev ? {
+				external: [
+					'@babel/parser',
+					'@babel/traverse',
+					'@babel/generator',
+					'@babel/types'
+				]
+			} : {})
 		}
 	}
 });
