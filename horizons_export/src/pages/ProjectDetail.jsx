@@ -94,6 +94,10 @@ const ProjectDetail = ({ language }) => {
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/imagine-head.png" />
           ) : project.id === 4 ? (
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/hongkong-head.png" />
+          ) : project.id === 5 ? (
+            <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/pet-head.png" />
+          ) : project.id === 6 ? (
+            <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/vr-head.png" />
           ) : (
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
           )}
@@ -116,6 +120,8 @@ const ProjectDetail = ({ language }) => {
                     {project.id === 2 && '2023'}
                     {project.id === 3 && '2024'}
                     {project.id === 4 && '2024'}
+                    {project.id === 5 && '2023'}
+                    {project.id === 6 && '2024'}
                   </p>
                 </div>
                 <div>
@@ -125,6 +131,8 @@ const ProjectDetail = ({ language }) => {
                     {project.id === 2 && (language === 'zh' ? '独立完成' : 'Individual Work')}
                     {project.id === 3 && 'Yunxiang Ma, Yutong Wu'}
                     {project.id === 4 && 'Yunxiang Ma, Jing Zhuang, Tino Zhu'}
+                    {project.id === 5 && 'Yunxiang Ma, Yuying Zhang, Xinning He, Rhone Ryan Huang Ern'}
+                    {project.id === 6 && (language === 'zh' ? '独立完成' : 'Individual Work')}
                   </p>
                 </div>
                 <div>
@@ -156,7 +164,7 @@ const ProjectDetail = ({ language }) => {
             transition={{ delay: 0.6 }}
             className="lg:col-span-2"
           >
-            <div className="prose max-w-none text-foreground/80 prose-headings:font-display prose-headings:gradient-text prose-a:text-indigo-500 hover:prose-a:text-indigo-600">
+            <div className="prose max-w-none text-foreground/80 prose-headings:font-display prose-headings:gradient-text prose-a:text-indigo-500 hover:prose-a:text-indigo-600 prose-h2:text-2xl prose-h2:font-bold prose-h3:text-xl prose-h3:font-bold">
               <section>
                 <h2>{details.about.title}</h2>
                 {project.id === 1 ? (
@@ -182,6 +190,18 @@ const ProjectDetail = ({ language }) => {
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                     alt="香港城市色彩分析项目概述" 
                     src="/images/hongkong-head.png" 
+                  />
+                ) : project.id === 5 ? (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="Pet's Tribe项目概述" 
+                    src="/images/pet-head.png" 
+                  />
+                ) : project.id === 6 ? (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="Feeling Home in Memory项目概念图" 
+                    src="/images/vr-head.png" 
                   />
                 ) : null}
                 <p>{details.about.content}</p>
@@ -254,6 +274,18 @@ const ProjectDetail = ({ language }) => {
                       src="/images/hongkong-extraction.png" 
                     />
                   </>
+                ) : project.id === 5 ? (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="Pet's Tribe产品概念框架" 
+                    src="/images/pet-structure.png" 
+                  />
+                ) : project.id === 6 ? (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="VR工作流程图" 
+                    src="/images/vr-workflow.png" 
+                  />
                 ) : null}
               </section>
               {project.id === 1 ? (
@@ -340,6 +372,53 @@ const ProjectDetail = ({ language }) => {
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="香港城市色彩分析结果" 
                       src="/images/hongkong-result.png" 
+                    />
+                  </section>
+                </>
+              ) : project.id === 5 ? (
+                <>
+                  <section>
+                    <h2>{language === 'zh' ? 'Storyboard | 场景故事板' : 'Storyboard'}</h2>
+                    <p>{language === 'zh' ? 'Storyboard 展示了用户在不同场景下的使用体验：浏览宠物动态、参加领养活动、在社区分享经验或寻求帮助。通过具体场景化的叙述，验证了功能组的合理性与交互流程的完整性。' : 'The storyboard illustrates user interactions across different contexts: browsing pet updates, attending adoption events, sharing experiences in the community, or seeking assistance. These scenarios validate the relevance of functional groups and ensure a seamless interaction flow.'}</p>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="Pet's Tribe场景故事板" 
+                      src="/images/pet-storyboard.png" 
+                    />
+                  </section>
+                  <section>
+                    <h2>{language === 'zh' ? 'Prototype设计' : 'Prototype Design'}</h2>
+                    <p>{language === 'zh' ? '设计流程从低保真原型出发，逐步演进到高保真界面。最终的 Hi-Fi Prototype 采用 Figma 搭建，涵盖登录与用户分流、社区界面、协助界面和个人日记模块。设计目标包括学习成本低、功能匹配度高、操作效率快、容错率强以及具有吸引力的视觉体验。用户测试计划涵盖任务完成率、错误恢复率、SUS 可用性量表等指标，为后续迭代优化提供数据支撑。' : 'The design process progressed from low-fidelity sketches to high-fidelity prototypes. The final Hi-Fi Prototype, built in Figma, included modules for login and user diversion, community interface, assistance interface, and diary functions. Design goals emphasized ease of learning, functional effectiveness, efficiency, error tolerance, and engaging aesthetics. Planned user testing employed metrics such as task success rate, error recovery, and the SUS usability scale, providing data-driven guidance for further iterations.'}</p>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="Pet's Tribe原型设计1" 
+                      src="/images/pet-prototype1.png" 
+                    />
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="Pet's Tribe原型设计2" 
+                      src="/images/pet-prototype2.png" 
+                    />
+                  </section>
+                </>
+              ) : project.id === 6 ? (
+                <>
+                  <section>
+                    <h2>{language === 'zh' ? '用户采访' : 'User Research'}</h2>
+                    <p>{language === 'zh' ? '在访谈中，夫妻分别绘制了"前住所"和"现住所"的平面图，并用折线图记录了他们在一年和一天中不同时间段的情绪变化。这些主观表达帮助我识别了关键的场景与氛围：前住所的家庭晚餐象征着温暖与团聚，而现住所的夜晚阅读体现了安静与陪伴。这些情绪线索直接影响了后续的空间选择与虚拟环境的氛围营造。' : 'During interviews, the couple sketched floor plans of both their previous and present residences, alongside line charts mapping their moods across months and daily cycles. These subjective visualizations highlighted emotionally resonant moments: family dinners at dusk in their former home represented warmth and togetherness, while nightly reading in the present living room embodied quiet companionship. These insights shaped the selection of scenes and atmosphere in the VR reconstruction.'}</p>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="VR用户采访与草图绘制" 
+                      src="/images/vr-sketch.png" 
+                    />
+              </section>
+                  <section>
+                    <h2>{language === 'zh' ? '用户体验' : 'User Experience'}</h2>
+                    <p>{language === 'zh' ? '最终的 VR 场景融合了 3D 扫描的家具与环境元素、AI 生成的天空盒、以及真实录制的音景（如鸟鸣、城市噪声、宠物声）。用户在佩戴头显后，可以自由地在记忆化的居所中移动和感受，重新体会那些与时间、空间和亲密关系交织的细微瞬间。' : 'The final VR environment combined 3D-scanned furniture and objects, AI-generated skyboxes, and authentic soundscapes (such as birdsong, city noise, and pet sounds). With a headset, users could navigate freely within the reconstructed memory-space, reliving intimate moments where time, place, and companionship intertwined.'}</p>
+                    <img 
+                      className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                      alt="VR用户体验场景" 
+                      src="/images/vr-experience.png" 
                     />
                   </section>
                 </>

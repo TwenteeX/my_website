@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
+import Interest from '@/components/Interest';
 
 const HomePage = ({ language }) => {
   return (
@@ -18,6 +19,7 @@ const HomePage = ({ language }) => {
       <main>
         <Hero language={language} />
         <Projects language={language} />
+        <Interest language={language} />
         <About language={language} />
       </main>
     </>

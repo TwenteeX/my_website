@@ -98,49 +98,49 @@ export const projectsData = {
     },
     {
       id: 5,
-      title: 'User Behavior Analytics',
-      category: 'ai',
-      description: 'AI-powered user behavior prediction and analysis platform',
-      tags: ['User Research', 'Behavior Analysis', 'AI Algorithms'],
-      image: 'User behavior analytics dashboard with AI insights',
+      title: 'Pet\'s Tribe',
+      category: 'mobile',
+      description: 'Multifunctional mobile platform for pet lovers, owners, and animal organizations',
+      tags: ['UX Design', 'Mobile App', 'Product Design'],
+      image: 'Pet\'s Tribe mobile app interface with community and adoption features',
       featured: false,
       details: {
         about: {
-          title: 'About The Project',
-          content: 'This platform provides businesses with deep insights into their users\' behavior. It uses machine learning to identify patterns, predict churn, and segment users based on their actions. The goal is to empower product teams to make data-informed decisions.'
+          title: 'Market Research & Competitor Analysis',
+          content: 'With China\'s pet industry rapidly expanding—reaching nearly 200 million pets and a 52% online platform penetration rate in 2022—the market still lacks a unified solution. Existing apps are fragmented: some focus on daily recording ("YouChong"), others on commerce ("Pet Market"), and some on adoption services ("Pet Adoption Center"). However, none provide a comprehensive ecosystem combining social interaction, pet adoption, and offline activities.'
         },
         process: {
-          title: 'Design & Development Process',
-          content: 'The project involved building a scalable data ingestion and processing pipeline. We developed several predictive models for churn and user lifetime value. The dashboard was designed to present complex data in a clear and actionable way, with a focus on storytelling through data.',
-          image: 'Diagram of the user segmentation model'
+          title: 'Product Concept Framework',
+          content: 'We proposed "Pets\' Tribe", a multifunctional mobile platform designed for pet lovers, owners, and animal organizations. Its concept framework consists of three major functional groups: Assistance: adoption processes, veterinary support, and information sharing. Community: browsing updates, sharing experiences, and organizing offline events. Diary: recording pet routines with adjustable privacy settings. This framework fosters a reciprocal ecosystem where individual and organizational users meet mutual needs and sustain a thriving pet community.',
+          image: 'Pet\'s Tribe product concept framework diagram'
         },
         outcome: {
-          title: 'Outcome & Results',
-          content: 'The platform helped a pilot group of SaaS companies reduce their churn rate by an average of 10% within the first three months. It provided valuable insights that led to significant product improvements.'
+          title: 'Prototype Design',
+          content: 'The design process progressed from low-fidelity sketches to high-fidelity prototypes. The final Hi-Fi Prototype, built in Figma, included modules for login and user diversion, community interface, assistance interface, and diary functions. Design goals emphasized ease of learning, functional effectiveness, efficiency, error tolerance, and engaging aesthetics. Planned user testing employed metrics such as task success rate, error recovery, and the SUS usability scale, providing data-driven guidance for further iterations.'
         }
       }
     },
     {
       id: 6,
-      title: 'Scientific Data Visualization',
-      category: 'visualization',
-      description: 'Innovative visualization solutions for complex scientific data',
-      tags: ['Scientific Viz', 'Data Design', 'Research Tools'],
-      image: 'Scientific data visualization with complex molecular structures',
+      title: 'Feeling Home in Memory',
+      category: 'vr',
+      description: 'VR reconstruction of domestic memories through 3D scanning and immersive storytelling',
+      tags: ['UX Design', 'VR', '3D Scanning', 'Unity'],
+      image: 'VR home memory reconstruction with 3D scanning and immersive experience',
       featured: false,
       details: {
         about: {
-          title: 'About The Project',
-          content: 'This project focused on creating novel visualization tools for molecular biologists. The goal was to represent complex protein structures and interactions in a way that was both accurate and intuitive, facilitating new scientific discoveries.'
+          title: 'Concept',
+          content: 'The outlines of a home in memory are shaped by the warmth of details. This project recreates, through Virtual Reality (VR), the domestic scenes of a couple passionate about gardening and interior design. They have adopted one bunny and two cats, Xuehuan and Kele, whose playful presence in the garden reflected a sense of harmony during the interview. Guided by two threads—PLACE and TIME—I captured their two most significant memories: a family dinner at dusk in their previous residence, and nightly reading in the living room at their present home.'
         },
         process: {
-          title: 'Design & Development Process',
-          content: 'We worked in close collaboration with scientists to understand their needs and the challenges of existing tools. Using WebGL and Three.js, we developed a high-performance 3D viewer that could render large molecular datasets in the browser. The design process was iterative, with constant feedback from the scientific community.',
-          image: '3D model of a protein structure rendered in the application'
+          title: 'Workflow',
+          content: 'The project followed a complete digital reconstruction workflow: 3D Scanning: Capturing the home environment with a mobile device to generate high-fidelity spatial models. User Research: Conducting in-depth interviews and sketch mapping to document their emotional experiences tied to space and time. Unity Construction: Integrating scanned rooms, objects, and ambient soundscapes in Unity to create an immersive interactive environment. User Testing: Participants revisited their reconstructed memories through VR headsets, embodying the lived warmth of their home.',
+          image: 'VR workflow diagram showing 3D scanning to Unity integration process'
         },
         outcome: {
-          title: 'Outcome & Results',
-          content: 'The tool is now used by several research labs and has contributed to new findings in protein research. It was presented at a scientific conference and is available as an open-source project.'
+          title: 'User Experience',
+          content: 'The final VR environment combined 3D-scanned furniture and objects, AI-generated skyboxes, and authentic soundscapes (such as birdsong, city noise, and pet sounds). With a headset, users could navigate freely within the reconstructed memory-space, reliving intimate moments where time, place, and companionship intertwined.'
         }
       }
     }
@@ -244,49 +244,49 @@ export const projectsData = {
     },
     {
       id: 5,
-      title: '用户行为分析工具',
-      category: 'ai',
-      description: '基于AI的用户行为预测与分析平台',
-      tags: ['用户研究', '行为分析', 'AI算法'],
-      image: 'User behavior analytics dashboard with AI insights',
+      title: 'Pet\'s Tribe',
+      category: 'mobile',
+      description: '为宠物爱好者、宠物主人及动物组织打造的多功能移动平台',
+      tags: ['用户体验', '移动应用', '产品设计'],
+      image: 'Pet\'s Tribe移动应用界面：社区与领养功能',
       featured: false,
       details: {
         about: {
-          title: '关于项目',
-          content: '该平台为企业提供对其用户行为的深入洞察。它使用机器学习来识别模式、预测流失，并根据用户的行为对用户进行细分。目标是使产品团队能够做出数据驱动的决策。'
+          title: '市场调研与竞品分析',
+          content: '随着中国宠物行业的快速发展，宠物数量已接近两亿，线上平台渗透率在2022年达到52%。然而，目前市面上的应用大多功能分散：有的仅限于记录宠物日常（如"有宠"），有的偏重商业化购物（如"宠物市场"），也有面向公益领养的平台（如"宠物帮领养中心"），但整体缺乏一个能够同时整合社交互动、宠物领养与线下活动的集中平台。'
         },
         process: {
-          title: '设计与开发流程',
-          content: '该项目涉及构建一个可扩展的数据提取和处理管道。我们为流失和用户生命周期价值开发了几个预测模型。仪表板旨在以清晰和可操作的方式呈现复杂数据，重点是通过数据讲故事。',
-          image: 'Diagram of the user segmentation model'
+          title: '产品概念框架',
+          content: '本项目提出 "Pets\' Tribe" —— 一个为宠物爱好者、宠物主人及动物组织打造的多功能移动平台。产品框架分为三大功能组：Assistance 协助：领养流程、宠物医疗、信息互助；Community 社区：动态浏览、经验分享、线下活动组织；Diary 日记：宠物日常记录与云端展示，用户可自由选择隐私等级。通过这一框架，用户群体（个体用户与组织用户）可以互补需求，形成良性社区生态。',
+          image: 'Pet\'s Tribe产品概念框架图'
         },
         outcome: {
-          title: '成果与结果',
-          content: '该平台帮助一组试点SaaS公司在头三个月内平均将流失率降低了10%。它提供了宝贵的见解，导致了重大的产品改进。'
+          title: 'Prototype设计',
+          content: '设计流程从低保真原型出发，逐步演进到高保真界面。最终的 Hi-Fi Prototype 采用 Figma 搭建，涵盖登录与用户分流、社区界面、协助界面和个人日记模块。设计目标包括学习成本低、功能匹配度高、操作效率快、容错率强以及具有吸引力的视觉体验。用户测试计划涵盖任务完成率、错误恢复率、SUS 可用性量表等指标，为后续迭代优化提供数据支撑。'
         }
       }
     },
     {
       id: 6,
-      title: '科学数据可视化',
-      category: 'visualization',
-      description: '复杂科学数据的创新可视化解决方案',
-      tags: ['科学可视化', '数据设计', '研究工具'],
-      image: 'Scientific data visualization with complex molecular structures',
+      title: 'Feeling Home in Memory',
+      category: 'vr',
+      description: '通过3D扫描与沉浸式叙事重建家庭记忆的VR体验',
+      tags: ['用户体验', 'VR', '3D扫描', 'Unity'],
+      image: 'VR家庭记忆重建：3D扫描与沉浸式体验',
       featured: false,
       details: {
         about: {
-          title: '关于项目',
-          content: '该项目专注于为分子生物学家创建新颖的可视化工具。目标是以既准确又直观的方式表示复杂的蛋白质结构和相互作用，从而促进新的科学发现。'
+          title: '概念',
+          content: '记忆中的家由细节的温度勾勒而成。本项目通过虚拟现实（VR）重现了一对热爱园艺和室内设计的夫妻的家庭场景。他们收养了一只兔子和两只猫——雪环和可乐。在采访时，猫穿梭于花园与屋内，呈现出人与动物和谐共处的氛围。我以"空间（PLACE）"与"时间（TIME）"为双重线索，引导他们回忆并叙述了两个最具意义的场景：黄昏时分的家庭晚餐（前住所），以及夜晚在客厅中静静阅读（现住所）。'
         },
         process: {
-          title: '设计与开发流程',
-          content: '我们与科学家密切合作，了解他们的需求和现有工具的挑战。使用WebGL和Three.js，我们开发了一个高性能的3D查看器，可以在浏览器中渲染大型分子数据集。设计过程是迭代的，不断收到科学界的反馈。',
-          image: '3D model of a protein structure rendered in the application'
+          title: '工作流程',
+          content: '项目采用了完整的数字化重建流程：3D 扫描：通过移动设备扫描居住空间，获取高保真度的空间模型。用户研究：通过深度访谈和草图绘制，记录他们对不同时间段与空间细节的情绪体验。Unity 场景搭建：将空间、家具与环境音效导入 Unity，实现互动性与沉浸感的虚拟空间构建。用户测试：参与者佩戴 VR 设备进入场景，体验被记忆重新唤起的"家"。',
+          image: 'VR工作流程图：从3D扫描到Unity集成的完整流程'
         },
         outcome: {
-          title: '成果与结果',
-          content: '该工具现已被多个研究实验室使用，并为蛋白质研究的新发现做出了贡献。它在一个科学会议上作了介绍，并作为一个开源项目提供。'
+          title: '用户体验',
+          content: '最终的 VR 场景融合了 3D 扫描的家具与环境元素、AI 生成的天空盒、以及真实录制的音景（如鸟鸣、城市噪声、宠物声）。用户在佩戴头显后，可以自由地在记忆化的居所中移动和感受，重新体会那些与时间、空间和亲密关系交织的细微瞬间。'
         }
       }
     }

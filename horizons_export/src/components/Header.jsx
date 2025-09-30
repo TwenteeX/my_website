@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -12,15 +13,17 @@ import {
 const Header = ({ language, setLanguage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const content = {
     en: {
-      nav: ['Home', 'About', 'Projects', 'Contact'],
-      navLinks: ['#hero', '#about', '#projects', '#contact']
+      nav: ['Home', 'Projects', 'Interest', 'About', 'Contact'],
+      navLinks: ['#hero', '#projects', '#interest', '#about', '#contact']
     },
     zh: {
-      nav: ['首页', '关于', '项目', '联系'],
-      navLinks: ['#hero', '#about', '#projects', '#contact']
+      nav: ['首页', '项目', '兴趣', '关于', '联系'],
+      navLinks: ['#hero', '#projects', '#interest', '#about', '#contact']
     }
   };
 
@@ -31,6 +34,27 @@ const Header = ({ language, setLanguage }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (link) => {
+    if (location.pathname !== '/') {
+      // If not on homepage, navigate to homepage first
+      navigate('/');
+      // Wait for navigation to complete, then scroll to section
+      setTimeout(() => {
+        const element = document.querySelector(link);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If on homepage, just scroll to section
+      const element = document.querySelector(link);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsMenuOpen(false);
+  };
 
   const LanguageSwitcher = ({ isMobile = false }) => (
     <DropdownMenu>
@@ -68,14 +92,14 @@ const Header = ({ language, setLanguage }) => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {content[language].nav.map((item, index) => (
-              <motion.a
+              <motion.button
                 key={item}
-                href={content[language].navLinks[index]}
+                onClick={() => handleNavClick(content[language].navLinks[index])}
                 whileHover={{ scale: 1.1 }}
                 className="text-foreground/70 hover:text-foreground transition-colors text-sm font-medium"
               >
                 {item}
-              </motion.a>
+              </motion.button>
             ))}
             <LanguageSwitcher />
           </div>
@@ -101,14 +125,13 @@ const Header = ({ language, setLanguage }) => {
           >
             <div className="glass-effect rounded-lg p-4 flex flex-col gap-2">
               {content[language].nav.map((item, index) => (
-                <a
+                <button
                   key={item}
-                  href={content[language].navLinks[index]}
-                  className="block py-2 text-foreground/80 hover:text-foreground transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavClick(content[language].navLinks[index])}
+                  className="block py-2 text-foreground/80 hover:text-foreground transition-colors text-left"
                 >
                   {item}
-                </a>
+                </button>
               ))}
               <LanguageSwitcher isMobile={true} />
             </div>
