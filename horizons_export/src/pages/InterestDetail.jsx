@@ -14,7 +14,7 @@ const InterestDetail = ({ language }) => {
   const interestsData = [
     {
       id: 1,
-      title: language === 'zh' ? '媒体制作' : 'Media Production',
+      title: language === 'zh' ? '媒体制作与实践' : 'Media Production and Practice',
       subtitle: language === 'zh' ? '数字媒体与视觉叙事' : 'Digital Media & Visual Storytelling',
       description: language === 'zh' 
         ? '通过摄影、视频制作和多媒体设计，探索数字媒体在传达创意理念和情感表达方面的无限可能。从概念构思到最终呈现，每一个项目都是技术与艺术的完美融合。'
@@ -22,19 +22,29 @@ const InterestDetail = ({ language }) => {
       image: '/images/media-production.jpg',
       gallery: [
         {
-          image: '/images/media-1.jpg',
-          title: language === 'zh' ? '摄影作品集' : 'Photography Portfolio',
-          description: language === 'zh' ? '探索光影与构图的艺术，捕捉生活中的美好瞬间' : 'Exploring the art of light and composition, capturing beautiful moments in life'
+          type: 'video',
+          videoId: 'BV1uc411y7WF',
+          platform: 'bilibili',
+          title: 'Assisting in Interview with AURORA (2023)',
+          description: language === 'zh' 
+            ? 'Aurora 中国巡演采访助理（2023）\n协助完成挪威艺术家 Aurora 中国巡演期间的采访工作\n与 环球音乐中国 合作，参与媒体对接与报道协调\n支持独立自媒体 Jeoli Music 的内容制作、调研与翻译工作'
+            : 'Assistant, Aurora China Tour Interview (2023)\nAssisted in interviews during Norwegian artist Aurora\'s China Tour\nCollaborated with Universal Music China on media coordination and coverage\nSupported independent media Jeoli Music with content production, research, and translation'
         },
         {
-          image: '/images/media-2.jpg',
-          title: language === 'zh' ? '视频制作' : 'Video Production',
-          description: language === 'zh' ? '通过动态影像讲述故事，传达情感和理念' : 'Telling stories through moving images, conveying emotions and concepts'
+          type: 'video',
+          videoId: 'BV1rqMwz5E5J',
+          platform: 'bilibili',
+          title: 'Assisting in Interview with Shi Xinwenyue (2025)',
+          description: language === 'zh'
+            ? '施鑫文月采访助理（成都，2025）\n协助完成中国独立音乐人 施鑫文月 的深度采访\n参与采访内容的整理、研究与编辑，确保报道的专业性与完整性\n支持采访相关的多媒体内容制作'
+            : 'Assistant, Interview with Musician Shi Xinwenyue (Chengdu, 2025)\nAssisted in conducting an in-depth interview with Chinese independent musician Shi Xinwenyue\nContributed to research, transcription, and editing to ensure professional and comprehensive coverage\nSupported multimedia content production related to the interview'
         },
         {
-          image: '/images/media-3.jpg',
-          title: language === 'zh' ? '多媒体设计' : 'Multimedia Design',
-          description: language === 'zh' ? '结合多种媒体形式，创造沉浸式体验' : 'Combining multiple media forms to create immersive experiences'
+          type: 'video',
+          videoId: '',
+          platform: 'bilibili',
+          title: language === 'zh' ? '更多内容即将推出' : 'More Content Coming Soon',
+          description: language === 'zh' ? '敬请期待更多媒体制作与实践项目' : 'Stay tuned for more media production and practice projects'
         }
       ]
     },
@@ -89,19 +99,14 @@ const InterestDetail = ({ language }) => {
       image: '/images/exhibition-practice.jpg',
       gallery: [
         {
-          image: '/images/exhibition-1.jpg',
+          image: '/images/exhibition-1.png',
           title: language === 'zh' ? '策展设计' : 'Curatorial Design',
           description: language === 'zh' ? '构思展览主题，策划展品布局和参观路线' : 'Conceptualizing exhibition themes, planning artwork layout and visitor routes'
         },
         {
-          image: '/images/exhibition-2.jpg',
+          image: '/images/exhibition-2.png',
           title: language === 'zh' ? '空间设计' : 'Spatial Design',
           description: language === 'zh' ? '设计展览空间，营造沉浸式观展体验' : 'Designing exhibition spaces to create immersive viewing experiences'
-        },
-        {
-          image: '/images/exhibition-3.jpg',
-          title: language === 'zh' ? '互动装置' : 'Interactive Installation',
-          description: language === 'zh' ? '创造观众与艺术作品之间的互动体验' : 'Creating interactive experiences between audiences and artworks'
         }
       ]
     }
@@ -114,8 +119,8 @@ const InterestDetail = ({ language }) => {
   }, [id]);
 
   const handlePrevious = () => {
-    if (currentInterest.id === 2) {
-      // For Music Experiences, navigate through videos
+    if (currentInterest.id === 1 || currentInterest.id === 2) {
+      // For Media Production and Music Experiences, navigate through videos
       const newVideoIndex = currentVideoIndex > 0 ? currentVideoIndex - 1 : currentInterest.gallery.length - 1;
       setCurrentVideoIndex(newVideoIndex);
     } else {
@@ -127,8 +132,8 @@ const InterestDetail = ({ language }) => {
   };
 
   const handleNext = () => {
-    if (currentInterest.id === 2) {
-      // For Music Experiences, navigate through videos
+    if (currentInterest.id === 1 || currentInterest.id === 2) {
+      // For Media Production and Music Experiences, navigate through videos
       const newVideoIndex = currentVideoIndex < currentInterest.gallery.length - 1 ? currentVideoIndex + 1 : 0;
       setCurrentVideoIndex(newVideoIndex);
     } else {
@@ -223,8 +228,8 @@ const InterestDetail = ({ language }) => {
             </p>
           </motion.div>
 
-          {/* Video Gallery for Music Experiences */}
-          {currentInterest.id === 2 ? (
+          {/* Video Gallery for Media Production and Music Experiences */}
+          {(currentInterest.id === 1 || currentInterest.id === 2) ? (
             <div className="space-y-8">
               {/* Video Player */}
               <motion.div
@@ -243,28 +248,34 @@ const InterestDetail = ({ language }) => {
                     className="relative"
                   >
                     <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
-                      {currentInterest.gallery[currentVideoIndex]?.platform === 'youtube' ? (
-                        <iframe
-                          width="100%"
-                          height="100%"
-                          src={`https://www.youtube.com/embed/${currentInterest.gallery[currentVideoIndex]?.videoId}`}
-                          title={currentInterest.gallery[currentVideoIndex]?.title}
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                          className="w-full h-full"
-                        ></iframe>
+                      {currentInterest.gallery[currentVideoIndex]?.videoId ? (
+                        currentInterest.gallery[currentVideoIndex]?.platform === 'youtube' ? (
+                          <iframe
+                            width="100%"
+                            height="100%"
+                            src={`https://www.youtube.com/embed/${currentInterest.gallery[currentVideoIndex]?.videoId}`}
+                            title={currentInterest.gallery[currentVideoIndex]?.title}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-full h-full"
+                          ></iframe>
+                        ) : (
+                          <iframe
+                            width="100%"
+                            height="100%"
+                            src={`https://player.bilibili.com/player.html?bvid=${currentInterest.gallery[currentVideoIndex]?.videoId}&autoplay=0`}
+                            title={currentInterest.gallery[currentVideoIndex]?.title}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-full h-full"
+                          ></iframe>
+                        )
                       ) : (
-                        <iframe
-                          width="100%"
-                          height="100%"
-                          src={`https://player.bilibili.com/player.html?bvid=${currentInterest.gallery[currentVideoIndex]?.videoId}&autoplay=0`}
-                          title={currentInterest.gallery[currentVideoIndex]?.title}
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                          className="w-full h-full"
-                        ></iframe>
+                        <div className="w-full h-full flex items-center justify-center text-white text-xl">
+                          {language === 'zh' ? '视频即将推出' : 'Video Coming Soon'}
+                        </div>
                       )}
                     </div>
                   </motion.div>

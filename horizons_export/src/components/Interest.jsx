@@ -8,7 +8,7 @@ const Interest = ({ language }) => {
   const interests = [
     {
       id: 1,
-      title: language === 'zh' ? '媒体制作' : 'Media Production',
+      title: language === 'zh' ? '媒体制作与实践' : 'Media Production and Practice',
       description: language === 'zh' 
         ? '探索数字媒体与视觉叙事，通过摄影、视频制作和多媒体设计传达创意理念'
         : 'Exploring digital media and visual storytelling through photography, video production, and multimedia design',
@@ -28,7 +28,7 @@ const Interest = ({ language }) => {
       description: language === 'zh'
         ? '策展与空间设计实践，通过展览探索艺术、科技与社会的交汇点'
         : 'Curatorial and spatial design practice, exploring intersections of art, technology, and society through exhibitions',
-      image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262'
+      image: '/images/exhibition-head.png'
     }
   ];
 
