@@ -2,9 +2,8 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
-import { ArrowLeft, ExternalLink, Github, Video } from 'lucide-react';
+import { ArrowLeft, Video } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { toast } from '@/components/ui/use-toast';
 import { projectsData } from '@/data/projects';
 
 const ProjectDetail = ({ language }) => {
@@ -15,13 +14,6 @@ const ProjectDetail = ({ language }) => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleLinkClick = (e, url) => {
-    e.preventDefault();
-    toast({
-      title: "🚧 Feature in development",
-      description: "🚧 This feature isn't implemented yet—but don't worry! You can request it in your next prompt! 🚀"
-    });
-  };
 
   if (!project) {
     return (
@@ -141,17 +133,6 @@ const ProjectDetail = ({ language }) => {
                     {tags.map((tag, index) => (
                       <span key={index} className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-full">{tag}</span>
                     ))}
-                  </div>
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground/80">{language === 'zh' ? '链接' : 'Links'}</p>
-                  <div className="flex gap-2 mt-2">
-                    <Button size="sm" variant="outline" onClick={(e) => handleLinkClick(e, '#')}>
-                      <Github className="w-4 h-4 mr-2" /> GitHub
-                    </Button>
-                    <Button size="sm" variant="outline" onClick={(e) => handleLinkClick(e, '#')}>
-                      <ExternalLink className="w-4 h-4 mr-2" /> {language === 'zh' ? '访问' : 'Live Demo'}
-                    </Button>
                   </div>
                 </div>
               </div>
