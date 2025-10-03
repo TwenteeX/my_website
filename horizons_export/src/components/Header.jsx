@@ -56,6 +56,16 @@ const Header = ({ language, setLanguage }) => {
     setIsMenuOpen(false);
   };
 
+  const handleLogoClick = () => {
+    if (location.pathname !== '/') {
+      // If not on homepage, navigate to homepage
+      navigate('/');
+    }
+    // Scroll to top of page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
   const LanguageSwitcher = ({ isMobile = false }) => (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -82,12 +92,21 @@ const Header = ({ language, setLanguage }) => {
     >
       <nav className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
-          <motion.div
+          <motion.button
+            onClick={handleLogoClick}
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-display font-bold gradient-text"
+            className="flex items-center gap-3 text-2xl font-display font-bold gradient-text cursor-pointer"
           >
+            <img 
+              src="/logo.png" 
+              alt="Logo" 
+              className="w-8 h-8 rounded-full object-cover"
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
             Yunxiang Ma
-          </motion.div>
+          </motion.button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
