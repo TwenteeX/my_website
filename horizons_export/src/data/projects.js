@@ -3,7 +3,7 @@ export const projectsData = {
     {
       id: 1,
       title: 'Roomify',
-      category: 'ai',
+      category: 'products',
       description: 'Spatially grounded generative pipeline for immersive VR/MR authoring and user-centered evaluation',
       tags: ['Generative AI', 'Spatial Computing', 'UX Design', 'Product Design'],
       image: 'Roomify VR/MR spatial computing interface with generative pipeline',
@@ -27,7 +27,7 @@ export const projectsData = {
     {
       id: 2,
       title: 'Cognitive Tracks',
-      category: 'visualization',
+      category: 'compdesign',
       description: 'Data-driven visitor paths: from behavior mining to a board game with AR',
       tags: ['Data Mining', 'NLP', 'Boardgame Design'],
       image: 'Cognitive Tracks board game with AR integration and data visualization',
@@ -51,7 +51,7 @@ export const projectsData = {
     {
       id: 3,
       title: 'EEG-informed Exhibition Design',
-      category: 'research',
+      category: 'compdesign',
       description: 'Multisensory & Embodied Exhibition Design with EEG-informed Personalization',
       tags: ['EEG', 'Machine Learning', 'UX Design', 'Parametric Architecture'],
       image: 'EEG-informed exhibition personalized by real-time emotion recognition',
@@ -75,7 +75,7 @@ export const projectsData = {
     {
       id: 4,
       title: 'Colors of Hongkong',
-      category: 'visualization',
+      category: 'dataviz',
       description: 'Urban color analysis along Central–Mid-Levels Escalator using computer vision and ML clustering',
       tags: ['Urban Analysis', 'Computer Vision', 'ML', 'Clustering'],
       image: 'Hong Kong urban color analysis with street view segmentation and clustering',
@@ -99,7 +99,7 @@ export const projectsData = {
     {
       id: 5,
       title: 'Pet\'s Tribe',
-      category: 'mobile',
+      category: 'products',
       description: 'Multifunctional mobile platform for pet lovers, owners, and animal organizations',
       tags: ['UX Design', 'Mobile App', 'Product Design'],
       image: 'Pet\'s Tribe mobile app interface with community and adoption features',
@@ -123,7 +123,7 @@ export const projectsData = {
     {
       id: 6,
       title: 'Feeling Home in Memory',
-      category: 'vr',
+      category: 'xr',
       description: 'VR reconstruction of domestic memories through 3D scanning and immersive storytelling',
       tags: ['UX Design', 'VR', '3D Scanning', 'Unity'],
       image: 'VR home memory reconstruction with 3D scanning and immersive experience',
@@ -149,7 +149,7 @@ export const projectsData = {
     {
       id: 1,
       title: 'Roomify',
-      category: 'ai',
+      category: 'products',
       description: '空间锚定的生成式系统，沉浸式VR/MR创作工具，用户中心化评估',
       tags: ['生成式AI', '空间计算', '用户体验', '产品设计'],
       image: 'Roomify VR/MR空间计算界面与生成式管线',
@@ -173,7 +173,7 @@ export const projectsData = {
     {
       id: 2,
       title: 'Cognitive Tracks',
-      category: 'visualization',
+      category: 'compdesign',
       description: '数据驱动的参观路径—从行为挖掘到桌游与AR',
       tags: ['数据挖掘', '自然语言处理', '桌游设计'],
       image: 'Cognitive Tracks桌游与AR集成及数据可视化',
@@ -197,7 +197,7 @@ export const projectsData = {
     {
       id: 3,
       title: '基于EEG的多感官具身化展览设计',
-      category: 'research',
+      category: 'compdesign',
       description: 'Multisensory & Embodied Exhibition Design with EEG-informed Personalization',
       tags: ['EEG', '机器学习', '用户体验', '参数化建筑'],
       image: '基于EEG的情绪识别驱动的个性化展览体验',
@@ -221,7 +221,7 @@ export const projectsData = {
     {
       id: 4,
       title: 'Colors of Hongkong',
-      category: 'visualization',
+      category: 'compdesign',
       description: '基于计算机视觉与机器学习的香港中环扶梯沿线城市色彩分析',
       tags: ['城市分析', '计算机视觉', '机器学习', '聚类分析'],
       image: '香港城市色彩分析：街景分割与聚类研究',
@@ -245,7 +245,7 @@ export const projectsData = {
     {
       id: 5,
       title: 'Pet\'s Tribe',
-      category: 'mobile',
+      category: 'products',
       description: '为宠物爱好者、宠物主人及动物组织打造的多功能移动平台',
       tags: ['用户体验', '移动应用', '产品设计'],
       image: 'Pet\'s Tribe移动应用界面：社区与领养功能',
@@ -269,7 +269,7 @@ export const projectsData = {
     {
       id: 6,
       title: 'Feeling Home in Memory',
-      category: 'vr',
+      category: 'xr',
       description: '通过3D扫描与沉浸式叙事重建家庭记忆的VR体验',
       tags: ['用户体验', 'VR', '3D扫描', 'Unity'],
       image: 'VR家庭记忆重建：3D扫描与沉浸式体验',

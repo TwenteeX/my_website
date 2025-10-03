@@ -14,10 +14,10 @@ const Projects = ({ language }) => {
       subtitle: '技术与创意的完美融合',
       categories: [
         { id: 'all', name: '全部' },
-        { id: 'ai', name: 'AI产品' },
-        { id: 'visualization', name: '数据可视化' },
-        { id: 'research', name: '学术研究' },
-        { id: 'creative', name: '创意项目' }
+        { id: 'products', name: '产品设计' },
+        { id: 'compdesign', name: '计算设计' },
+        { id: 'dataviz', name: '数据可视化' },
+        { id: 'xr', name: 'XR体验' }
       ],
     },
     en: {
@@ -25,18 +25,27 @@ const Projects = ({ language }) => {
       subtitle: 'Perfect Fusion of Technology and Creativity',
       categories: [
         { id: 'all', name: 'All' },
-        { id: 'ai', name: 'AI Products' },
-        { id: 'visualization', name: 'Data Viz' },
-        { id: 'research', name: 'Research' },
-        { id: 'creative', name: 'Creative' }
+        { id: 'products', name: 'Products' },
+        { id: 'compdesign', name: 'Comp Design' },
+        { id: 'dataviz', name: 'Data Viz' },
+        { id: 'xr', name: 'XR' }
       ],
     }
   };
 
   const currentProjects = projectsData[language];
+  
+  // Define project categories mapping
+  const projectCategories = {
+    'products': [1, 5], // Roomify, Pet's Tribe
+    'compdesign': [2, 3], // Cognitive Tracks, EEG-informed Exhibition Design
+    'dataviz': [4], // Colors of Hongkong
+    'xr': [1, 6] // Roomify, Feeling Home in Memory
+  };
+  
   const filteredProjects = activeCategory === 'all' 
     ? currentProjects
-    : currentProjects.filter(project => project.category === activeCategory);
+    : currentProjects.filter(project => projectCategories[activeCategory]?.includes(project.id));
 
   return (
     <section id="projects" className="py-24 bg-secondary/50">
