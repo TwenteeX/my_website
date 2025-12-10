@@ -82,6 +82,21 @@ const ProjectDetail = ({ language }) => {
                 {language === 'zh' ? '演示视频 - 展示Roomify系统的完整功能' : 'Demo Video - Showcasing Roomify System Features'}
               </p>
             </div>
+          ) : project.id === 7 ? (
+            <div>
+              <div className="relative w-full rounded-2xl shadow-2xl overflow-hidden" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/qbZ14Et57BM"
+                  title="SyneSound Demo Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <p className="text-center text-sm text-muted-foreground mt-4">
+                {language === 'zh' ? '演示视频 - SyneSound 视觉转音乐创作系统' : 'Demo Video - SyneSound Visual-to-Musical Creation System'}
+              </p>
+            </div>
           ) : project.id === 2 ? (
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/boardgame-head.png" />
           ) : project.id === 3 ? (
@@ -116,6 +131,7 @@ const ProjectDetail = ({ language }) => {
                     {project.id === 4 && '2024'}
                     {project.id === 5 && '2023'}
                     {project.id === 6 && '2024'}
+                    {project.id === 7 && '2025'}
                   </p>
                 </div>
                 <div>
@@ -127,6 +143,7 @@ const ProjectDetail = ({ language }) => {
                     {project.id === 4 && 'Yunxiang Ma, Jing Zhuang, Tino Zhu'}
                     {project.id === 5 && 'Yunxiang Ma, Yuying Zhang, Xinning He, Rhone Ryan Huang Ern'}
                     {project.id === 6 && (language === 'zh' ? '独立完成' : 'Individual Work')}
+                    {project.id === 7 && 'Yongyi Xiong, Yunxiang Ma'}
                   </p>
                 </div>
                 <div>
@@ -186,14 +203,41 @@ const ProjectDetail = ({ language }) => {
                     alt="Feeling Home in Memory项目概念图" 
                     src="/images/vr-head.png" 
                   />
+                ) : project.id === 7 ? (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="SyneSound项目概述" 
+                    src="/images/SyneSound 1.png" 
+                  />
                 ) : null}
                 <p>{details.about.content}</p>
+                {project.id === 7 && (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="SyneSound系统界面" 
+                    src="/images/SyneSound 2.png" 
+                  />
+                )}
               </section>
               
 
               <section>
                 <h2>{details.process.title}</h2>
+                {project.id === 7 && (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="SyneSound核心功能映射" 
+                    src="/images/SyneSound 3.png" 
+                  />
+                )}
                 <p>{details.process.content}</p>
+                {project.id === 7 && (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="SyneSound视觉语法系统" 
+                    src="/images/SyneSound 4.png" 
+                  />
+                )}
                 {project.id === 1 ? (
                   <img 
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
@@ -409,7 +453,21 @@ const ProjectDetail = ({ language }) => {
 
               <section>
                 <h2>{details.outcome.title}</h2>
+                {project.id === 7 && (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="SyneSound产品价值" 
+                    src="/images/SyneSound 5.png" 
+                  />
+                )}
                 <p>{details.outcome.content}</p>
+                {project.id === 7 && (
+                  <img 
+                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
+                    alt="SyneSound用户研究计划" 
+                    src="/images/SyneSound 6.png" 
+                  />
+                )}
                 
                 {project.id === 1 ? (
                   <>

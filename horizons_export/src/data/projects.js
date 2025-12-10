@@ -143,6 +143,29 @@ export const projectsData = {
           content: 'The final VR environment combined 3D-scanned furniture and objects, AI-generated skyboxes, and authentic soundscapes (such as birdsong, city noise, and pet sounds). With a headset, users could navigate freely within the reconstructed memory-space, reliving intimate moments where time, place, and companionship intertwined.'
         }
       }
+    },
+    {
+      id: 7,
+      title: 'SyneSound',
+      category: 'products',
+      description: 'An inclusive music creation system that transforms visual elements into music, designed for non-musicians and the deaf and hard-of-hearing community. Winner of Best Idea at 2025 CMU NOVA Hackathon.',
+      tags: ['AI', 'Music Generation', 'Accessibility', 'Synesthesia', 'Web App'],
+      image: 'SyneSound visual-to-musical creation system with color mapping interface',
+      featured: true,
+      details: {
+        about: {
+          title: 'Project Overview',
+          content: 'SyneSound is an inclusive music creation system developed by X-MA Group (team members: Yongyi Xiong, Yunxiang Ma) that enables music composition through visual-to-musical transformation. The project aims to provide a new creative pathway for non-musicians and the deaf and hard-of-hearing (DHH) community. The core concept is "composing through vision, not hearing." It uses synesthesia (the phenomenon where one sensory experience triggers another) as a design metaphor, creating a shared canvas where visual elements can be directly transformed into musical structures. Instead of complex music theory notation, SyneSound establishes an intuitive "visual grammar" that controls musical parameters through color, shape, and motion.'
+        },
+        process: {
+          title: 'Core Semantics & Mappings',
+          content: 'The system maps visual properties to musical elements: Mode & Palette: Hue maps to musical modes (warm hues → Ionian/major, yellow-green → Lydian/Dorian, cyan-blue → Aeolian/minor, magenta-violet → Phrygian), ensuring harmonious compositions through "safe choices" for non-professionals. Notes & Chords: Balls represent musical events—single-color balls produce single notes, while mixed colors generate chords. Rotation controls chord inversion, size controls note duration, opacity controls dynamics/velocity, and position maps to timeline (X-axis) and register/octave (Y-axis). Rhythm: Visual "wobble" or vibration represents rhythm—frequency maps to tempo and beat density, amplitude to accent strength, and phase to swing/humanization. Style: Semi-transparent background panels set musical styles (Ambient, Classical, Electronic, Jazz, etc.), determining BPM ranges, groove templates, and instrumentation. The frontend uses React + Canvas (Konva) + Tone.js for interactive creation, while the backend leverages Agentuity as a cloud gateway and orchestrator, OpenAI for intent inference and prompt generation, and Meta MusicGen (via Replicate) for audio generation.'
+        },
+        outcome: {
+          title: 'Product Value & Vision',
+          content: 'SyneSound addresses key challenges: Lowering barriers by enabling non-musicians and DHH creators to compose through visual means, without relying on hearing or music theory knowledge. Transparent creation through an explainable canvas where visual elements correspond to clear musical structures, rather than a "black box" AI generator. Emotional visualization where colors and motion directly convey harmony and rhythm, making the creator\'s emotional intent clear and readable to others, including hearing individuals. The team plans to conduct user studies on "emotional consistency" where DHH creators compose using only the visual canvas, and hearing listeners evaluate the generated audio, testing whether visual expressions accurately convey emotions through music.'
+        }
+      }
     }
   ],
   zh: [
@@ -287,6 +310,29 @@ export const projectsData = {
         outcome: {
           title: '用户体验',
           content: '最终的 VR 场景融合了 3D 扫描的家具与环境元素、AI 生成的天空盒、以及真实录制的音景（如鸟鸣、城市噪声、宠物声）。用户在佩戴头显后，可以自由地在记忆化的居所中移动和感受，重新体会那些与时间、空间和亲密关系交织的细微瞬间。'
+        }
+      }
+    },
+    {
+      id: 7,
+      title: 'SyneSound',
+      category: 'products',
+      description: '一个包容性的音乐创作系统，将视觉元素转化为音乐，为非音乐专业人士和听障群体设计。荣获2025 CMU NOVA Hackathon最佳创意奖。',
+      tags: ['AI', '音乐生成', '无障碍设计', '联觉', 'Web应用'],
+      image: 'SyneSound视觉转音乐创作系统与色彩映射界面',
+      featured: true,
+      details: {
+        about: {
+          title: '项目概述',
+          content: 'SyneSound 是由 X-MA Group（团队成员：Yongyi Xiong, Yunxiang Ma）开发的一个具有包容性的音乐创作系统。该项目旨在通过"视觉转化为音乐"（Visual-to-Musical）的方式，为非音乐专业人士以及听障（DHH - Deaf and Hard-of-Hearing）群体提供一种全新的创作途径。项目的核心理念是"通过视觉而非听觉来作曲"。它将联觉（Synesthesia，即一种感官刺激引发另一种感官体验的现象）作为设计隐喻和切入点，构建了一个让视觉元素可以直接转化为音乐结构的共享画布。SyneSound 并没有使用复杂的乐理符号，而是建立了一套直观的"视觉语法"，通过颜色、形状和运动来控制音乐参数。'
+        },
+        process: {
+          title: '核心功能与语义映射',
+          content: '系统建立了视觉属性到音乐元素的映射关系：调式与色彩：系统利用色调来映射音乐的调式（Mode），暖色调对应 Ionian（自然大调），黄绿色对应 Lydian/Dorian，青蓝色对应 Aeolian（自然小调），洋红-紫色对应 Phrygian，以此限制可用音符，确保非专业人士也能创作出和谐的音乐（"安全选择"）。音符与和弦：球体（Ball）代表一个音乐事件，拖入单色球体产生单音，混合颜色则自动生成和弦。旋转控制和弦转位，大小控制音符时值/持续时间，透明度控制力度/音量，位置映射到时间线（X轴）和音区/八度（Y轴）。节奏与动态：节奏通过视觉上的"颤动"（Wobble）来表现，频率对应速度和打击密度，振幅对应重音强度，相位对应摇摆节奏或人性化处理。风格：用户可以通过选择半透明的背景板来设定音乐风格（如 Ambient, Classical, Electronic, Jazz 等），这决定了生成的 BPM 范围、律动模板和配器。前端使用 React + Canvas (Konva) + Tone.js 提供自由画布、调式调色板、速度滑块和风格选择器等交互功能，用户通过拖拽球体、混合颜色和设置振动频率来完成创作。后端使用 Agentuity 作为云端网关和编排器处理数据流，系统将前端的视觉场景整合并推断用户的音乐意图，转换为 JSON 格式，利用 OpenAI 生成详细的音乐描述提示词，最后使用 Meta MusicGen（通过 Replicate 调用）将提示词渲染为最终音频。'
+        },
+        outcome: {
+          title: '产品价值与愿景',
+          content: 'SyneSound 试图解决以下痛点：降低门槛：让非音乐人和听障创作者可以通过"看"来作曲，无需依靠听力或乐理知识。透明化创作：并非简单的"黑盒"AI 生成，而是建立一个可解释的画布，让视觉元素对应明确的音乐结构。情感可视化：颜色和运动能够直接传达和谐与律动，使得创作者的情感意图对他（她）人（包括听力正常者）是清晰可读的。团队计划进行一项关于"情感一致性"（Emotional Consistency）的用户研究：听障创作者仅使用视觉画布作曲，听力正常的听众仅听生成的音频，两人背对背无交流，双方分别选择情感标签（如快乐、悲伤、神秘等）并在效价-唤醒度（Valence-Arousal）量表上打分，以验证视觉表达的情感是否通过音乐准确传达给了听众。'
         }
       }
     }

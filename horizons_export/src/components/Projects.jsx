@@ -37,7 +37,7 @@ const Projects = ({ language }) => {
   
   // Define project categories mapping
   const projectCategories = {
-    'products': [1, 5], // Roomify (hidden), Pet's Tribe
+    'products': [1, 5, 7], // Roomify (hidden), Pet's Tribe, SyneSound
     'compdesign': [2, 3], // Cognitive Tracks, EEG-informed Exhibition Design
     'dataviz': [4], // Colors of Hongkong
     'xr': [1, 6] // Roomify (hidden), Feeling Home in Memory
@@ -118,6 +118,7 @@ const Projects = ({ language }) => {
                         project.id === 4 ? "/images/hongkong-head.png" :
                         project.id === 5 ? "/images/pet-head.png" :
                         project.id === 6 ? "/images/vr-head.png" :
+                        project.id === 7 ? "/images/SyneSound 1.png" :
                         "https://images.unsplash.com/photo-1572177812156-58036aae439c"
                       } />
                   </div>
