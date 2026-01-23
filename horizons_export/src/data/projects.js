@@ -5,7 +5,7 @@ export const projectsData = {
       title: 'Roomify',
       category: 'products',
       description: 'Spatially grounded generative pipeline for immersive VR/MR authoring and user-centered evaluation',
-      tags: ['Generative AI', 'Spatial Computing', 'UX Design', 'Product Design'],
+      tags: ['CHI 2026 Accepted', 'Generative AI', 'Spatial Computing', 'UX Design', 'Product Design'],
       image: 'Roomify VR/MR spatial computing interface with generative pipeline',
       featured: true,
       details: {
@@ -197,7 +197,7 @@ export const projectsData = {
       title: 'Roomify',
       category: 'products',
       description: '空间锚定的生成式系统，沉浸式VR/MR创作工具，用户中心化评估',
-      tags: ['生成式AI', '空间计算', '用户体验', '产品设计'],
+      tags: ['CHI 2026 Accepted', '生成式AI', '空间计算', '用户体验', '产品设计'],
       image: 'Roomify VR/MR空间计算界面与生成式管线',
       featured: true,
       details: {

@@ -37,19 +37,16 @@ const Projects = ({ language }) => {
   
   // Define project categories mapping
   const projectCategories = {
-    'products': [1, 5, 7], // Roomify (hidden), Pet's Tribe, SyneSound
+    'products': [1, 5, 7], // Roomify, Pet's Tribe, SyneSound
     'compdesign': [2, 3, 8], // Cognitive Tracks, EEG-informed Exhibition Design, Cyber Mirrorhall
     'dataviz': [4], // Colors of Hongkong
-    'xr': [1, 6] // Roomify (hidden), Feeling Home in Memory
+    'xr': [1, 6] // Roomify, Feeling Home in Memory
   };
-  
-  // Filter out hidden projects (id: 1 = Roomify)
-  const HIDDEN_PROJECT_IDS = [1]; // Roomify is temporarily hidden
-  
+
   const filteredProjects = (activeCategory === 'all' 
     ? currentProjects
     : currentProjects.filter(project => projectCategories[activeCategory]?.includes(project.id))
-  ).filter(project => !HIDDEN_PROJECT_IDS.includes(project.id));
+  );
 
   return (
     <section id="projects" className="py-24 bg-secondary/50">

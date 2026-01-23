@@ -14,10 +14,7 @@ const ProjectDetail = ({ language }) => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Hide Roomify project (id: 1) - temporarily hidden
-  const HIDDEN_PROJECT_IDS = [1];
-  
-  if (!project || HIDDEN_PROJECT_IDS.includes(parseInt(id))) {
+  if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p>{language === 'zh' ? '项目未找到' : 'Project not found'}</p>
