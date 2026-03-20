@@ -166,29 +166,6 @@ export const projectsData = {
           content: 'SyneSound addresses key challenges: Lowering barriers by enabling non-musicians and DHH creators to compose through visual means, without relying on hearing or music theory knowledge. Transparent creation through an explainable canvas where visual elements correspond to clear musical structures, rather than a "black box" AI generator. Emotional visualization where colors and motion directly convey harmony and rhythm, making the creator\'s emotional intent clear and readable to others, including hearing individuals. The team plans to conduct user studies on "emotional consistency" where DHH creators compose using only the visual canvas, and hearing listeners evaluate the generated audio, testing whether visual expressions accurately convey emotions through music.'
         }
       }
-    },
-    {
-      id: 8,
-      title: 'Cyber Mirrorhall',
-      category: 'compdesign',
-      description: 'An interactive design practice based on Cybernetics theory, exploring dynamic relationships between humans and machines through multiple feedback loops.',
-      tags: ['Cybernetics', 'Interactive Design', 'Emotion Recognition', 'Python', 'HSEmotion'],
-      image: 'Cyber Mirrorhall cybernetics-based interactive system with emotion recognition',
-      featured: true,
-      details: {
-        about: {
-          title: 'Project Overview',
-          content: 'Cyber Mirrorhall is an interactive design practice based on Cybernetics theory, developed by Serena Sun and Yunxiang Ma as part of the "Inquiry to CD" course on Cybernetics Practice. The project aims to explore dynamic relationships between humans and machines through multiple feedback loops. Deeply inspired by W. Ross Ashby\'s concept of the Homeostat (homeostatic device), the system treats itself as a dynamic structure seeking balance. The core theoretical pillars include: Dynamic Control Through Feedback—the system is not static but maintains or changes state through continuous input-output cycles; Emergent Intelligence from Interaction—intelligence exists not just in code but in the process of user-system "action"; Second Feedback Loop—beyond basic interaction, the system contains deeper regulatory mechanisms where users become part of the feedback loop while reacting to the system; Matching Variety & Multi-Agency—following the Law of Requisite Variety, the system designs multiple personas to handle the complexity of user emotional input.'
-        },
-        process: {
-          title: 'System Workflow & Architecture',
-          content: 'Cyber Mirrorhall constructs a closed-loop interactive system with three layers: Input, Recognition & Classification, and Generation & Feedback. Input Layer: Digital input captures user facial information through a camera, while physical input (planned) uses ultrasonic sensors to capture distance information. Recognition & Classification Layer: The system uses the HSEmotion model (specifically `enet_b0_8_best_vgaf`) to analyze emotions. Based on Russell\'s Valence-Arousal Model, emotions are quantified into "Valence" (pleasure level) and "Arousal" (activation level) dimensions. The system calculates these values in real-time and locates user emotions in four quadrants (Q1-Q4). Generation & Feedback Layer: According to V/A type, the system triggers specific feedback mechanisms from 9 different "Personas".'
-        },
-        outcome: {
-          title: 'Multiple Persona Agents & Reflections',
-          content: 'To embody the Cybernetics concept of "Multi-Agency", the system designs 9 different personas that act like a choir or jury, producing complex negotiated responses to user input. These personas are not just filters but feedback nodes with specific behavioral logic: Persona_00 - Mirror (direct reflection), Persona_01 - Oppose (valence reversal), Persona_02 - Amplify (maximize emotion intensity), Persona_03 - Performer (extreme dramatization), Persona_04 - Cheer (positive guidance), Persona_05 - Downer (negative drag), Persona_06 - Jitter (inject micro-instability), Persona_07 - Smooth (elegant transitions), Persona_08 - Echo (delayed temporal response). The creators emphasize that the core of Cyber Mirrorhall lies not in code or images themselves, but in the performance of the entire loop. Interaction is not pre-scripted but a continuously responsive process. The "Essential Variable" maintaining homeostasis in this cybernetic system may not be numerical but intangible emotional experience. The project is open-sourced on GitHub (TwenteeX/cyber_mirrorhall), written in Python, with future plans to integrate hardware (HC-SR04 ultrasonic sensors) to introduce social distance as a new input dimension.'
-        }
-      }
     }
   ],
   zh: [
@@ -356,29 +333,6 @@ export const projectsData = {
         outcome: {
           title: '产品价值与愿景',
           content: 'SyneSound 试图解决以下痛点：降低门槛：让非音乐人和听障创作者可以通过"看"来作曲，无需依靠听力或乐理知识。透明化创作：并非简单的"黑盒"AI 生成，而是建立一个可解释的画布，让视觉元素对应明确的音乐结构。情感可视化：颜色和运动能够直接传达和谐与律动，使得创作者的情感意图对他（她）人（包括听力正常者）是清晰可读的。团队计划进行一项关于"情感一致性"（Emotional Consistency）的用户研究：听障创作者仅使用视觉画布作曲，听力正常的听众仅听生成的音频，两人背对背无交流，双方分别选择情感标签（如快乐、悲伤、神秘等）并在效价-唤醒度（Valence-Arousal）量表上打分，以验证视觉表达的情感是否通过音乐准确传达给了听众。'
-        }
-      }
-    },
-    {
-      id: 8,
-      title: 'Cyber Mirrorhall',
-      category: 'compdesign',
-      description: '基于控制论（Cybernetics）理论的交互设计实践，通过多重反馈回路探索人与机器之间的动态关系。',
-      tags: ['控制论', '交互设计', '情绪识别', 'Python', 'HSEmotion'],
-      image: 'Cyber Mirrorhall基于控制论的交互系统与情绪识别',
-      featured: true,
-      details: {
-        about: {
-          title: '项目概述',
-          content: 'Cyber Mirrorhall 是一个基于控制论（Cybernetics）理论的交互设计实践，由 Serena Sun 和 Yunxiang Ma 创作，是"Inquiry to CD"课程中关于控制论实践（Cybernetics Practice）的作业成果。该项目旨在通过多重反馈回路探索人与机器之间的动态关系。项目深受 W. Ross Ashby 的内稳态器（Homeostat）概念启发，将系统视为一个动态的、寻求平衡的结构。其核心理论支柱包括：通过反馈实现动态控制——系统不是静态的，而是通过不断的输入输出循环来维持或改变状态；交互中的涌现智能——智能不仅仅存在于代码中，而是存在于用户与系统"行动"的过程中；第二反馈回路——除了基础的交互，系统还包含更深层的调节机制，用户在对系统做出反应的同时，也成为了系统反馈回路的一部分；匹配多样性与多代理系统——遵循控制论中的"必要多样性定律"（Law of Requisite Variety），系统设计了多个代理（Personas）来应对用户情感输入的复杂性。'
-        },
-        process: {
-          title: '系统工作流与架构',
-          content: 'Cyber Mirrorhall 构建了一个闭环的交互系统，分为输入、识别分类、生成反馈三个层级。输入层：数字输入通过摄像头捕捉用户的面部信息；物理输入（计划中）通过超声波传感器（Ultrasonic Ranger）捕捉用户的距离信息。识别与分类层：系统使用 HSEmotion 模型（具体为 `enet_b0_8_best_vgaf`）来分析情绪。基于 Russell 的效价-唤醒度模型（Valence-Arousal Model），将情绪量化为"效价"（愉悦程度）和"唤醒度"（激活程度）两个维度。系统实时计算这两个数值，并将用户情绪定位在四个象限（Q1-Q4）中。生成与反馈层：根据 V/A 类型，系统从 9 个不同的"人格"（Personas）中触发特定的反馈机制。'
-        },
-        outcome: {
-          title: '多重人格代理与哲学反思',
-          content: '为了体现"多代理"（Multi-Agency）的控制论概念，系统设计了 9 种不同的人格，它们像一个合唱团或陪审团一样，对用户的输入产生复杂的协商反应。这些人格不仅仅是滤镜，而是具有特定行为逻辑的反馈节点：Persona_00 - Mirror（直接反射），Persona_01 - Oppose（效价反转），Persona_02 - Amplify（情绪强度的最大化放大），Persona_03 - Performer（极端的戏剧化表现），Persona_04 - Cheer（正向引导），Persona_05 - Downer（负向拖拽），Persona_06 - Jitter（注入微小的不稳定性），Persona_07 - Smooth（优雅流畅的过渡），Persona_08 - Echo（延迟的时间响应）。创作者强调，Cyber Mirrorhall 的核心不在于代码或图像本身，而在于整个循环的表演性（Performance of the entire loop）。交互不是预设好的，而是不断响应的过程。在这个控制论系统中，维持稳态的"必要变量"（Essential Variable）不一定是数字，也可以是无形的情感体验。该项目已在 GitHub 上开源（TwenteeX/cyber_mirrorhall），使用 Python 编写，未来计划包括整合硬件（如 HC-SR04 超声波传感器）以引入社交距离作为新的输入维度，并可能用抽象艺术面板替代具象的人脸显示。'
         }
       }
     }

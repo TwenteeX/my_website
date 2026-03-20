@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
-import { ArrowLeft, Video } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 import { projectsData } from '@/data/projects';
 
 const ProjectDetail = ({ language }) => {
@@ -94,20 +93,6 @@ const ProjectDetail = ({ language }) => {
                 {language === 'zh' ? '演示视频 - SyneSound 视觉转音乐创作系统' : 'Demo Video - SyneSound Visual-to-Musical Creation System'}
               </p>
             </div>
-          ) : project.id === 8 ? (
-            <div>
-              <video 
-                className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" 
-                controls 
-                poster="/images/music-head.png"
-              >
-                <source src="/videos/cybernecticsDemo.mp4" type="video/mp4" />
-                <p>{language === 'zh' ? '您的浏览器不支持视频播放。' : 'Your browser does not support video playback.'}</p>
-              </video>
-              <p className="text-center text-sm text-muted-foreground mt-4">
-                {language === 'zh' ? '演示视频 - Cyber Mirrorhall 控制论交互系统' : 'Demo Video - Cyber Mirrorhall Cybernetics Interactive System'}
-              </p>
-            </div>
           ) : project.id === 2 ? (
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/boardgame-head.png" />
           ) : project.id === 3 ? (
@@ -143,7 +128,6 @@ const ProjectDetail = ({ language }) => {
                     {project.id === 5 && '2023'}
                     {project.id === 6 && '2024'}
                     {project.id === 7 && '2025'}
-                    {project.id === 8 && '2024'}
                   </p>
                 </div>
                 <div>
@@ -156,7 +140,6 @@ const ProjectDetail = ({ language }) => {
                     {project.id === 5 && 'Yunxiang Ma, Yuying Zhang, Xinning He, Rhone Ryan Huang Ern'}
                     {project.id === 6 && (language === 'zh' ? '独立完成' : 'Individual Work')}
                     {project.id === 7 && 'Yongyi Xiong, Yunxiang Ma'}
-                    {project.id === 8 && 'Serena Sun, Yunxiang Ma'}
                   </p>
                 </div>
                 <div>
@@ -221,12 +204,6 @@ const ProjectDetail = ({ language }) => {
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                     alt="SyneSound项目概述" 
                     src="/images/SyneSound 1.png" 
-                  />
-                ) : project.id === 8 ? (
-                  <img 
-                    className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
-                    alt="Cyber Mirrorhall项目概述" 
-                    src="/images/music-head.png" 
                   />
                 ) : null}
                 <p>{details.about.content}</p>
