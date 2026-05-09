@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import { ArrowLeft } from 'lucide-react';
 import { projectsData } from '@/data/projects';
+import { FormattedBody } from '@/components/ProjectFormattedContent';
 
 const ProjectDetail = ({ language }) => {
   const { id } = useParams();
@@ -55,7 +56,7 @@ const ProjectDetail = ({ language }) => {
           className="text-center mb-12"
         >
           <h1 className="text-4xl md:text-6xl font-display font-bold gradient-text mb-4">{title}</h1>
-          <p className="text-xl text-foreground/70 max-w-3xl mx-auto">{description}</p>
+          <p className="text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">{description}</p>
         </motion.header>
 
         <motion.div
@@ -103,6 +104,10 @@ const ProjectDetail = ({ language }) => {
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/pet-head.png" />
           ) : project.id === 6 ? (
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/vr-head.png" />
+          ) : project.id === 8 ? (
+            <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/domesticade-heroimage.png" />
+          ) : project.id === 9 ? (
+            <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="/images/VLMFT-method.png" />
           ) : (
             <img className="w-full h-auto max-h-[500px] object-cover rounded-2xl shadow-2xl" alt={title} src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
           )}
@@ -128,6 +133,8 @@ const ProjectDetail = ({ language }) => {
                     {project.id === 5 && '2023'}
                     {project.id === 6 && '2024'}
                     {project.id === 7 && '2025'}
+                    {project.id === 8 && '2026'}
+                    {project.id === 9 && '2026'}
                   </p>
                 </div>
                 <div>
@@ -140,6 +147,8 @@ const ProjectDetail = ({ language }) => {
                     {project.id === 5 && 'Yunxiang Ma, Yuying Zhang, Xinning He, Rhone Ryan Huang Ern'}
                     {project.id === 6 && (language === 'zh' ? '独立完成' : 'Individual Work')}
                     {project.id === 7 && 'Yongyi Xiong, Yunxiang Ma'}
+                    {project.id === 8 && 'Yunxiang Ma'}
+                    {project.id === 9 && 'Yunxiang Ma'}
                   </p>
                 </div>
                 <div>
@@ -160,9 +169,9 @@ const ProjectDetail = ({ language }) => {
             transition={{ delay: 0.6 }}
             className="lg:col-span-2"
           >
-            <div className="prose max-w-none text-foreground/80 prose-headings:font-display prose-headings:gradient-text prose-a:text-indigo-500 hover:prose-a:text-indigo-600 prose-h2:text-2xl prose-h2:font-bold prose-h3:text-xl prose-h3:font-bold">
+            <div className="max-w-none text-foreground/80 [&_a]:text-indigo-500 [&_a:hover]:text-indigo-600">
               <section>
-                <h2>{details.about.title}</h2>
+                <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight first:mt-0">{details.about.title}</h2>
                 {project.id === 1 ? (
                   <img 
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
@@ -206,7 +215,7 @@ const ProjectDetail = ({ language }) => {
                     src="/images/SyneSound 1.png" 
                   />
                 ) : null}
-                <p>{details.about.content}</p>
+                <FormattedBody content={details.about.content} />
                 {project.id === 7 && (
                   <img 
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
@@ -218,7 +227,7 @@ const ProjectDetail = ({ language }) => {
               
 
               <section>
-                <h2>{details.process.title}</h2>
+                <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{details.process.title}</h2>
                 {project.id === 7 && (
                   <img 
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
@@ -226,7 +235,7 @@ const ProjectDetail = ({ language }) => {
                     src="/images/SyneSound 3.png" 
                   />
                 )}
-                <p>{details.process.content}</p>
+                <FormattedBody content={details.process.content} />
                 {project.id === 7 && (
                   <img 
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
@@ -313,8 +322,14 @@ const ProjectDetail = ({ language }) => {
               </section>
               {project.id === 1 ? (
                 <section>
-                  <h2>{language === 'zh' ? '跨现实创作工具' : 'Cross-Reality Authoring'}</h2>
-                  <p>{language === 'zh' ? 'Roomify 配套的跨现实创作界面让创作与体验无缝切换：在 MR 中看到覆盖于真实家的"线框脚手架"，用手柄/语音做精细编辑与再生成；在 VR 中即时预览沉浸效果。分层控制（全局风格—对象语义—细节属性）既保证效率，又保留创作者对关键元素的掌控。' : 'A cross-reality authoring tool lets creators iterate in MR and preview in VR. In MR, labeled wireframe scaffolds sit over the physical room for precise edits and selective regeneration; in VR, users evaluate the full immersive result. Hierarchical controls (global style → object semantics → fine attributes) balance automation with human agency.'}</p>
+                  <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{language === 'zh' ? '跨现实创作工具' : 'Cross-Reality Authoring'}</h2>
+                  <FormattedBody
+                    content={
+                      language === 'zh'
+                        ? '### MR 与 VR 一体化创作\n\nRoomify 配套的跨现实创作界面让创作与体验无缝切换：在 MR 中看到覆盖于真实家的「线框脚手架」，用手柄或语音做精细编辑与再生成；在 VR 中即时预览沉浸效果。\n\n### 分层控制\n\n分层控制（全局风格—对象语义—细节属性）既保证效率，又保留创作者对关键元素的掌控。'
+                        : '### MR and VR in one loop\n\nA cross-reality authoring tool lets creators iterate in MR and preview in VR. In MR, labeled wireframe scaffolds sit over the physical room for precise edits and selective regeneration; in VR, users evaluate the full immersive result.\n\n### Layered control\n\nHierarchical controls (global style → object semantics → fine attributes) balance automation with human agency.'
+                    }
+                  />
                   <img 
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                     alt="Roomify跨现实创作工具界面" 
@@ -323,8 +338,14 @@ const ProjectDetail = ({ language }) => {
                 </section>
               ) : project.id === 2 ? (
                 <section>
-                  <h2>{language === 'zh' ? '桌游转译与组件' : 'Game Translation & Components'}</h2>
-                  <p>{language === 'zh' ? '将研究结果转化为三类实体组件：① 六边格/变形六边格拼图，以颜色编码访问密度；② 3D打印的11处站点模型；③ 底图棋盘。规则上，玩家先拼图成图并放置模型，随后从入口沿六边形边行进，依据密度/情绪线索选择路径，记录各自"认知轨迹"。' : 'Insights are embodied in three components: (1) hex and deformed-hex tiles color-coded by visiting density; (2) 3D-printed models of the 11 clustered sites; (3) a base map board. Players first assemble the map and place models, then start from an entry and move along hex edges, choosing routes using density/emotion cues to inscribe their personal "cognitive tracks."'}</p>
+                  <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{language === 'zh' ? '桌游转译与组件' : 'Game Translation & Components'}</h2>
+                  <FormattedBody
+                    content={
+                      language === 'zh'
+                        ? '### 三类实体组件\n\n将研究结果转化为三类实体组件：① 六边格 / 变形六边格拼图，以颜色编码访问密度；② 3D 打印的 11 处站点模型；③ 底图棋盘。\n\n### 游戏规则\n\n玩家先拼图成图并放置模型，随后从入口沿六边形边行进，依据密度与情绪线索选择路径，记录各自的「认知轨迹」。'
+                        : '### Three physical layers\n\nInsights are embodied in three components: (1) hex and deformed-hex tiles color-coded by visiting density; (2) 3D-printed models of the 11 clustered sites; (3) a base map board.\n\n### How play works\n\nPlayers assemble the map and place models, start from an entry, move along hex edges, and choose routes using density and emotion cues to inscribe their personal “cognitive tracks.”'
+                    }
+                  />
                   <img 
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                     alt="Cognitive Tracks桌游组件设计" 
@@ -334,8 +355,14 @@ const ProjectDetail = ({ language }) => {
               ) : project.id === 3 ? (
                 <>
                   <section>
-                    <h2>{language === 'zh' ? '原型设计' : 'Prototyping'}</h2>
-                    <p>{language === 'zh' ? 'EEG findings were translated into a 3×3×3 m modular spatial prototype. A shape grammar was developed to generate 16 spatial variants, differentiated by publicness, posture, and flow logic. These modules were then assembled with vertical and horizontal circulation units to create a flexible, future-oriented exhibition system. The prototype demonstrated how neuroscientific data could inform the grammar of space, making architectural experience directly responsive to human emotion.' : 'EEG findings were translated into a 3×3×3 m modular spatial prototype. A shape grammar was developed to generate 16 spatial variants, differentiated by publicness, posture, and flow logic. These modules were then assembled with vertical and horizontal circulation units to create a flexible, future-oriented exhibition system. The prototype demonstrated how neuroscientific data could inform the grammar of space, making architectural experience directly responsive to human emotion.'}</p>
+                    <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{language === 'zh' ? '原型设计' : 'Prototyping'}</h2>
+                    <FormattedBody
+                      content={
+                        language === 'zh'
+                          ? '### 模块化空间原型\n\n脑电研究成果被转译为一座 3×3×3 m 的模块化空间原型。团队建立了形态文法（shape grammar），用于生成 16 种在空间公共性、身体姿态与流线逻辑上各不相同的空间变体。\n\n### 展览系统\n\n这些模块再与垂直、水平交通单元拼装，形成面向未来的柔性展览系统，示范了神经科学数据如何参与空间的「文法」，使建筑体验能够回应人的情绪状态。'
+                          : '### Modular spatial prototype\n\nEEG findings were translated into a 3×3×3 m modular spatial prototype. A shape grammar generates 16 spatial variants differentiated by publicness, posture, and flow logic.\n\n### Exhibition system\n\nModules assemble with vertical and horizontal circulation into a flexible, future-oriented exhibition system—demonstrating how neuroscientific data can inform the grammar of space so architectural experience responds to human emotion.'
+                      }
+                    />
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="EEG展览体验设计" 
@@ -348,8 +375,14 @@ const ProjectDetail = ({ language }) => {
                     />
                   </section>
                   <section>
-                    <h2>{language === 'zh' ? '计算设计' : 'Computational Design'}</h2>
-                    <p>{language === 'zh' ? 'The computational design workflow integrated EEG-informed emotion recognition with parametric architecture. Grasshopper scripts and custom algorithms encoded modular assembly rules, enabling scalable and adaptable exhibition layouts. Real-time personalization was proposed: as EEG data streams are analyzed, the system recommends navigation paths tailored to each visitor\'s affective state. This shifts the role of architecture from static form to a dynamic interface between space and embodied perception.' : 'The computational design workflow integrated EEG-informed emotion recognition with parametric architecture. Grasshopper scripts and custom algorithms encoded modular assembly rules, enabling scalable and adaptable exhibition layouts. Real-time personalization was proposed: as EEG data streams are analyzed, the system recommends navigation paths tailored to each visitor\'s affective state. This shifts the role of architecture from static form to a dynamic interface between space and embodied perception.'}</p>
+                    <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{language === 'zh' ? '计算设计' : 'Computational Design'}</h2>
+                    <FormattedBody
+                      content={
+                        language === 'zh'
+                          ? '### 参数化与工作流\n\n计算设计流程将基于脑电的情绪识别与参数化建筑结合：Grasshopper 脚本与自定义算法编码模块拼装规则，使展览布局可扩展、可适配。\n\n### 实时个性化\n\n方案提出实时个性化：当脑电流数据被分析后，系统可为每位参观者推荐与其情感状态相匹配的参观路径，从而让建筑从静态形体转变为连接空间与具身感知的动态界面。'
+                          : '### Parametric workflow\n\nThe computational design workflow integrates EEG-informed emotion recognition with parametric architecture. Grasshopper scripts and custom algorithms encode modular assembly rules for scalable, adaptable layouts.\n\n### Real-time personalization\n\nAs EEG streams are analyzed, the system can recommend navigation paths tailored to each visitor’s affective state—shifting architecture from static form to a dynamic interface between space and embodied perception.'
+                      }
+                    />
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="EEG形态文法设计" 
@@ -380,8 +413,14 @@ const ProjectDetail = ({ language }) => {
               ) : project.id === 4 ? (
                 <>
                   <section>
-                    <h2>{language === 'zh' ? '聚类分析' : 'Clustering Analysis'}</h2>
-                    <p>{language === 'zh' ? '研究对语义分割后的街景进行色彩识别与提取，并将 RGB 色彩数据转换到 HSV 空间进行特征归一化。随后通过 PCA 主成分降维及 k-means 聚类，对不同街段的色彩模式进行分类，得到具有代表性的视觉群组。进一步使用聚类结果与空间分区进行对比，揭示了街道色彩与功能区域之间的对应关系。' : 'Color features were extracted from the segmented street view images, with RGB values normalized in HSV space. Principal Component Analysis (PCA) was applied for dimensionality reduction, followed by k-means clustering to classify distinct color patterns across the corridor. These clusters were mapped against functional divisions of the city fabric, revealing correlations between chromatic characteristics and specific urban zones.'}</p>
+                    <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{language === 'zh' ? '聚类分析' : 'Clustering Analysis'}</h2>
+                    <FormattedBody
+                      content={
+                        language === 'zh'
+                          ? '### 特征与降维\n\n研究对语义分割后的街景进行色彩识别与提取，并将 RGB 转换到 HSV 空间做归一化。随后通过 PCA 降维与 k-means 聚类，对不同街段的色彩模式分类，得到具有代表性的视觉群组。\n\n### 与城市结构对照\n\n进一步将聚类结果与空间分区对照，揭示街道色彩特征与功能片区之间的对应关系。'
+                          : '### Features and dimensionality reduction\n\nColor features are extracted from segmented street views, with RGB normalized in HSV space. PCA reduces dimensionality before k-means classifies distinct color patterns along the corridor.\n\n### Urban structure\n\nClusters are mapped against functional divisions of the fabric, linking chromatic characteristics to specific urban zones.'
+                      }
+                    />
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="香港城市色彩聚类分析" 
@@ -389,8 +428,14 @@ const ProjectDetail = ({ language }) => {
                     />
               </section>
                   <section>
-                    <h2>{language === 'zh' ? '结果讨论' : 'Results & Discussion'}</h2>
-                    <p>{language === 'zh' ? '分析结果显示，中环区高密度办公与商业空间对应的街段往往呈现低饱和度与冷色调，强化了其"效率与秩序"的视觉印象；而半山区住宅及混合功能区域则呈现较高饱和度与暖色调，营造出更为生活化与日常化的氛围。研究揭示了微观色彩差异如何折射出宏观的空间分异，为理解城市色彩感知和规划提供了新的视角。' : 'The results indicate that Central\'s dense office and commercial districts are characterized by low-saturation, cool-toned color palettes, reinforcing impressions of efficiency and order. In contrast, the Mid-Levels\' residential and mixed-use zones display higher saturation and warmer tones, reflecting a more domestic and everyday atmosphere. These findings highlight how micro-level color patterns reflect macro-level spatial differentiation, offering new perspectives for urban color perception and planning.'}</p>
+                    <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{language === 'zh' ? '结果讨论' : 'Results & Discussion'}</h2>
+                    <FormattedBody
+                      content={
+                        language === 'zh'
+                          ? '### 中环与半山\n\n分析显示：中环高密度办公与商业片区对应的路段往往低饱和度、偏冷色，强化「效率与秩序」的视觉印象；半山区住宅与混合功能区则饱和度更高、色调更暖，更具生活感与日常氛围。\n\n### 启示\n\n微观色彩差异折射出宏观空间分异，为城市色彩感知与规划提供了新的阅读角度。'
+                          : '### Central versus Mid-Levels\n\nCentral’s dense office and commercial districts skew toward low-saturation, cool palettes—reinforcing impressions of efficiency and order. Mid-Levels residential and mixed-use zones show higher saturation and warmer tones—more domestic and everyday.\n\n### Takeaways\n\nMicro-level color patterns reflect macro-level spatial differentiation, offering fresh perspectives on urban color perception and planning.'
+                      }
+                    />
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="香港城市色彩分析结果" 
@@ -401,8 +446,14 @@ const ProjectDetail = ({ language }) => {
               ) : project.id === 5 ? (
                 <>
                   <section>
-                    <h2>{language === 'zh' ? 'Storyboard | 场景故事板' : 'Storyboard'}</h2>
-                    <p>{language === 'zh' ? 'Storyboard 展示了用户在不同场景下的使用体验：浏览宠物动态、参加领养活动、在社区分享经验或寻求帮助。通过具体场景化的叙述，验证了功能组的合理性与交互流程的完整性。' : 'The storyboard illustrates user interactions across different contexts: browsing pet updates, attending adoption events, sharing experiences in the community, or seeking assistance. These scenarios validate the relevance of functional groups and ensure a seamless interaction flow.'}</p>
+                    <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{language === 'zh' ? 'Storyboard | 场景故事板' : 'Storyboard'}</h2>
+                    <FormattedBody
+                      content={
+                        language === 'zh'
+                          ? '### 场景叙事\n\n故事板呈现用户在不同情境下的体验：浏览宠物动态、参与领养活动、在社区分享经验或寻求帮助。\n\n### 设计验证\n\n借助具体场景化叙述，检验各功能组的合理性以及端到端交互流程的完整性。'
+                          : '### Scenario narratives\n\nStoryboards follow users browsing pet updates, joining adoption events, sharing in the community, or seeking help.\n\n### Design validation\n\nThese concrete scenarios stress-test functional groups and end-to-end flows.'
+                      }
+                    />
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="Pet's Tribe场景故事板" 
@@ -410,8 +461,14 @@ const ProjectDetail = ({ language }) => {
                     />
                   </section>
                   <section>
-                    <h2>{language === 'zh' ? 'Prototype设计' : 'Prototype Design'}</h2>
-                    <p>{language === 'zh' ? '设计流程从低保真原型出发，逐步演进到高保真界面。最终的 Hi-Fi Prototype 采用 Figma 搭建，涵盖登录与用户分流、社区界面、协助界面和个人日记模块。设计目标包括学习成本低、功能匹配度高、操作效率快、容错率强以及具有吸引力的视觉体验。用户测试计划涵盖任务完成率、错误恢复率、SUS 可用性量表等指标，为后续迭代优化提供数据支撑。' : 'The design process progressed from low-fidelity sketches to high-fidelity prototypes. The final Hi-Fi Prototype, built in Figma, included modules for login and user diversion, community interface, assistance interface, and diary functions. Design goals emphasized ease of learning, functional effectiveness, efficiency, error tolerance, and engaging aesthetics. Planned user testing employed metrics such as task success rate, error recovery, and the SUS usability scale, providing data-driven guidance for further iterations.'}</p>
+                    <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{language === 'zh' ? 'Prototype设计' : 'Prototype Design'}</h2>
+                    <FormattedBody
+                      content={
+                        language === 'zh'
+                          ? '### 从低保真到高保真\n\n流程由低保真草图演进至高保真界面；最终 Hi-Fi 原型在 Figma 中搭建，覆盖登录与用户分流、社区、协助与个人日记等模块。\n\n### 目标与度量\n\n设计强调易学性、功能契合、效率、容错与视觉吸引力；计划中的可用性测试关注任务成功率、错误恢复与 SUS 量表，为迭代提供数据依据。'
+                          : '### From Lo-Fi to Hi-Fi\n\nThe flow moves from sketches to high-fidelity screens. The final Figma prototype spans login and diversion, community, assistance, and diary modules.\n\n### Goals and metrics\n\nDesign goals emphasize learnability, fit, efficiency, resilience, and aesthetics; planned testing tracks task success, error recovery, and SUS scores.'
+                      }
+                    />
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="Pet's Tribe原型设计1" 
@@ -427,8 +484,14 @@ const ProjectDetail = ({ language }) => {
               ) : project.id === 6 ? (
                 <>
                   <section>
-                    <h2>{language === 'zh' ? '用户采访' : 'User Research'}</h2>
-                    <p>{language === 'zh' ? '在访谈中，夫妻分别绘制了"前住所"和"现住所"的平面图，并用折线图记录了他们在一年和一天中不同时间段的情绪变化。这些主观表达帮助我识别了关键的场景与氛围：前住所的家庭晚餐象征着温暖与团聚，而现住所的夜晚阅读体现了安静与陪伴。这些情绪线索直接影响了后续的空间选择与虚拟环境的氛围营造。' : 'During interviews, the couple sketched floor plans of both their previous and present residences, alongside line charts mapping their moods across months and daily cycles. These subjective visualizations highlighted emotionally resonant moments: family dinners at dusk in their former home represented warmth and togetherness, while nightly reading in the present living room embodied quiet companionship. These insights shaped the selection of scenes and atmosphere in the VR reconstruction.'}</p>
+                    <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{language === 'zh' ? '用户采访' : 'User Research'}</h2>
+                    <FormattedBody
+                      content={
+                        language === 'zh'
+                          ? '### 绘图与情绪曲线\n\n访谈中，夫妻二人分别绘制「前住所」与「现住所」平面图，并用折线记录一年中、一天里不同时段的情绪起伏。\n\n### 关键氛围\n\n这些主观材料帮我锚定场景与氛围：前住所黄昏的家庭晚餐承载温暖与团聚；现住所夜间客厅阅读则是安静与陪伴。线索直接影响后续空间选择与虚拟环境的氛围设计。'
+                          : '### Maps and mood traces\n\nThe couple sketched floor plans of their former and current homes and plotted moods across months and days.\n\n### Emotional anchors\n\nFamily dinners at dusk in the old home read as warmth and togetherness; nightly reading in the new living room reads as quiet companionship—guiding scene selection and atmosphere in VR.'
+                      }
+                    />
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="VR用户采访与草图绘制" 
@@ -436,8 +499,14 @@ const ProjectDetail = ({ language }) => {
                     />
               </section>
                   <section>
-                    <h2>{language === 'zh' ? '用户体验' : 'User Experience'}</h2>
-                    <p>{language === 'zh' ? '最终的 VR 场景融合了 3D 扫描的家具与环境元素、AI 生成的天空盒、以及真实录制的音景（如鸟鸣、城市噪声、宠物声）。用户在佩戴头显后，可以自由地在记忆化的居所中移动和感受，重新体会那些与时间、空间和亲密关系交织的细微瞬间。' : 'The final VR environment combined 3D-scanned furniture and objects, AI-generated skyboxes, and authentic soundscapes (such as birdsong, city noise, and pet sounds). With a headset, users could navigate freely within the reconstructed memory-space, reliving intimate moments where time, place, and companionship intertwined.'}</p>
+                    <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{language === 'zh' ? '用户体验' : 'User Experience'}</h2>
+                    <FormattedBody
+                      content={
+                        language === 'zh'
+                          ? '### 沉浸要素\n\n最终 VR 场景揉合 3D 扫描的家具与环境、AI 天空盒，以及实录音景（鸟鸣、城市噪声、宠物声等）。\n\n### 在场感受\n\n佩戴头显后，用户可在「记忆化的家」中自由走动，重新触及与时间、空间和亲密关系交织的瞬间。'
+                          : '### Immersion layers\n\nThe VR scene blends scanned furniture and props, AI skyboxes, and recorded soundscapes—birdsong, city noise, pets, and more.\n\n### Presence\n\nHeadset users move through a memory-infused home, revisiting moments where time, place, and companionship intertwine.'
+                      }
+                    />
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="VR用户体验场景" 
@@ -448,7 +517,7 @@ const ProjectDetail = ({ language }) => {
               ) : null}
 
               <section>
-                <h2>{details.outcome.title}</h2>
+                <h2 className="mt-12 mb-6 text-2xl md:text-[1.85rem] font-bold font-display gradient-text tracking-tight">{details.outcome.title}</h2>
                 {project.id === 7 && (
                   <img 
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
@@ -456,7 +525,7 @@ const ProjectDetail = ({ language }) => {
                     src="/images/SyneSound 5.png" 
                   />
                 )}
-                <p>{details.outcome.content}</p>
+                <FormattedBody content={details.outcome.content} />
                 {project.id === 7 && (
                   <img 
                     className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
@@ -467,7 +536,7 @@ const ProjectDetail = ({ language }) => {
                 
                 {project.id === 1 ? (
                   <>
-                    <h3>{language === 'zh' ? 'VR用户对比实验' : 'VR User Comparison Study'}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold font-display text-foreground mt-10 mb-4">{language === 'zh' ? 'VR用户对比实验' : 'VR User Comparison Study'}</h3>
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="VR用户测试场景" 
@@ -479,7 +548,7 @@ const ProjectDetail = ({ language }) => {
                       src="/images/roomify-analysis1.png" 
                     />
                     
-                    <h3>{language === 'zh' ? '设计专业人士评估' : 'Design Professional Evaluation'}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold font-display text-foreground mt-10 mb-4">{language === 'zh' ? '设计专业人士评估' : 'Design Professional Evaluation'}</h3>
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="设计专业人士测试场景" 
@@ -499,15 +568,21 @@ const ProjectDetail = ({ language }) => {
                       src="/images/boardgame-result.png" 
                     />
                     
-                    <h3>{language === 'zh' ? '数据聚类分析' : 'Data Clustering Analysis'}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold font-display text-foreground mt-10 mb-4">{language === 'zh' ? '数据聚类分析' : 'Data Clustering Analysis'}</h3>
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="Cognitive Tracks数据聚类分析" 
                       src="/images/boardgame-clustering.png" 
                     />
                     
-                    <h3>{language === 'zh' ? '交互流程与AR扩展' : 'Interaction Flow & AR'}</h3>
-                    <p>{language === 'zh' ? '流程分为四步：Step1 拼图成图 → Step2 替换/放置建筑 → Step3 开始旅程（按边移动并连线成路） → Step4 手机AR查看站点信息。最终可叠加展示不同玩家的路径差异（如"偏历史"与"偏自然"的认知轨迹）。' : 'The process is divided into four steps: Step1 Assemble the map → Step2 Replace/place buildings → Step3 Start journey (move along edges and connect paths) → Step4 Use mobile AR to view site information. Finally, different players\' path differences can be overlaid and displayed (such as "history-oriented" and "nature-oriented" cognitive tracks).'}</p>
+                    <h3 className="text-xl md:text-2xl font-bold font-display text-foreground mt-10 mb-4">{language === 'zh' ? '交互流程与AR扩展' : 'Interaction Flow & AR'}</h3>
+                    <FormattedBody
+                      content={
+                        language === 'zh'
+                          ? '### 四步玩法\n\n流程分为四步：① 拼图成图 → ② 替换 / 放置建筑 → ③ 沿六边形边移动并连线成路 → ④ 用手机 AR 查看站点信息。\n\n### 差异化路径\n\n最终可叠加展示不同玩家的路径差异（例如「偏历史」与「偏自然」的认知轨迹）。'
+                          : '### Four-step flow\n\nStep 1: assemble the map. Step 2: replace or place buildings. Step 3: move along hex edges and connect paths. Step 4: open mobile AR for site details.\n\n### Divergent tracks\n\nOverlay different players’ routes—e.g., history- versus nature-oriented cognitive tracks.'
+                      }
+                    />
                     <img 
                       className="w-full h-auto object-cover rounded-lg shadow-lg my-8" 
                       alt="Cognitive Tracks AR交互效果" 

@@ -11,16 +11,16 @@ export const projectsData = {
       details: {
         about: {
           title: 'About The Project',
-          content: 'Roomify is a spatially grounded generative system that treats your real room as a "spatial container." It preserves layout and furniture affordances while radically transforming the environment into a cohesive theme (e.g., wizard academy, pirate cabin), resolving the classic VR trade-off between immersion and spatial awareness without relying on immersion-breaking passthrough views.'
+          content: '### Spatial container\n\nRoomify is a spatially grounded generative system that treats your real room as a “spatial container.” It preserves layout and furniture affordances while radically transforming the environment into a cohesive theme—wizard academy, pirate cabin, and beyond.\n\n### Immersion without losing the room\n\nIt resolves the classic VR tension between immersion and spatial awareness without leaning on immersion-breaking passthrough views.'
         },
         process: {
           title: 'How It Works',
-          content: 'The pipeline has four stages: Scene Understanding (video SLAM + semantic parsing to oriented 3D boxes and a global JSON scaffold) → Style Extraction & Mapping (derive keywords from text/reference images and produce mapping tables for walls/floors, objects, and environment) → Multimodal Generation (reference-guided stylized images and 3D assets, PBR materials, and skyboxes) → Spatial Registration & Assembly (place assets with pose- and geometry-aware alignment, maintaining predictable navigation and functional consistency).',
+          content: '### Four pipeline stages\n\n**Scene understanding** — Video SLAM plus semantic parsing produce oriented 3D boxes and a global JSON scaffold.\n\n**Style extraction & mapping** — Keywords from text or reference images drive mapping tables for walls, floors, objects, and environment.\n\n**Multimodal generation** — Reference-guided stylized imagery, 3D assets, PBR materials, and skyboxes.\n\n**Spatial registration & assembly** — Assets are placed with pose- and geometry-aware alignment so navigation stays predictable and functionally consistent.',
           image: 'Roomify system architecture and pipeline flow diagram'
         },
         outcome: {
           title: 'Studies & Outcomes',
-          content: 'Two evaluations demonstrate effectiveness: With 18 VR users, Roomify achieved significantly higher presence/immersion than passthrough (+~63%) and fully virtual (+~26%) conditions, while keeping spatial awareness at a strong, usable level. With 8 design professionals, Roomify proved valuable as a creative prototyping tool, supporting expressive, workflow-friendly iterations across diverse spaces and themes.'
+          content: '### VR user study (n = 18)\n\nRoomify significantly improved presence and immersion versus passthrough (~+63%) and fully virtual scenes (~+26%), while keeping spatial awareness at a strong, usable level.\n\n### Professional creators (n = 8)\n\nDesign professionals valued Roomify as a creative prototyping tool—supporting expressive, workflow-friendly iteration across diverse spaces and themes.'
         }
       }
     },
@@ -35,16 +35,16 @@ export const projectsData = {
       details: {
         about: {
           title: 'Overview',
-          content: 'Set on Tsinghua\'s campus, the project fuses real GPS traces + social media text to identify stopping points, typical routes, and affective patterns. These insights are translated into an interactive hex-grid board game coupled with a mobile AR layer that guides visitors and strengthens spatial cognition and engagement.'
+          content: '### Data fusion on campus\n\nSet on Tsinghua’s campus, the project blends real GPS traces with social-media text to locate stopping points, typical routes, and affective patterns.\n\n### From analysis to play\n\nThose insights become an interactive hex-grid board game plus a mobile AR layer that orients visitors and deepens spatial cognition.'
         },
         process: {
           title: 'Study Setup & Methods',
-          content: 'Under Prof. Weixin Huang\'s mentorship (Aug–Sep 2023, Beijing; individual work), the study tracked 50 participants on random tours. Using Python (Jupyter), K-Means, NLP, and 3D printing, we cleaned paths via Haversine distance and 60-second average velocity. Points in the lowest 5% of speed (v < 0.674 m/s) were treated as stopping candidates; density filtering and K-Means produced 11 representative sites and their visiting sequences. In parallel, ~200 Xiaohongshu posts were mined for word frequencies and affective maps, which were fused with physical stopping distributions to build a combined "digital–physical" density layer.',
+          content: '### Fieldwork & tooling\n\nUnder Prof. Weixin Huang (Aug–Sep 2023, Beijing; individual work), 50 participants took random tours. Paths were cleaned with Haversine distance and 60-second mean velocity in Python (Jupyter); K-Means, NLP, and 3D printing supported analysis and fabrication.\n\n### Stopping points & clusters\n\nPoints in the lowest 5% of speed (v < 0.674 m/s) seeded stopping candidates; density filtering plus K-Means yielded 11 representative sites and visit sequences.\n\n### Social layer\n\nRoughly 200 Xiaohongshu posts supplied word frequencies and affective maps, fused with physical stops into a combined digital–physical density layer.',
           image: 'Cognitive Tracks research methodology and data processing flowchart'
         },
         outcome: {
           title: 'Key Findings',
-          content: 'Visualizations show that velocity troughs align with salient sites; some slow-downs stem from congestion, not attraction; groups diverge in sequence and dwell intensity by preference (history/architecture/nature). These patterns inform the Visiting Density Map, Digital Emotion Map, and Physical Stopping Points Map as multi-layer bases.'
+          content: '### What velocity reveals\n\nVelocity troughs line up with salient places—but some slowdowns are congestion, not attraction.\n\n### Divergent preferences\n\nGroups split by interest (history, architecture, nature) show different sequences and dwell intensity.\n\n### Layered maps\n\nThose signals feed the Visiting Density Map, Digital Emotion Map, and Physical Stopping Points Map as stacked bases for design.'
         }
       }
     },
@@ -59,16 +59,16 @@ export const projectsData = {
       details: {
         about: {
           title: 'Conceptual Proposal',
-          content: 'The project Multisensory & Embodied Exhibition Design with EEG-informed Personalization explores how real-time brainwave data can shape immersive spatial experiences. Instead of architecture being inherently “active,” the visitor’s embodied perception drives the spatial narrative. By integrating electroencephalography (EEG)-based emotional recognition with modular exhibition design, the project proposes a system where personalized navigation routes are generated according to individual affective states. This concept was showcased at the 2025 Tsinghua School of Architecture Undergraduate Works Exhibition as a group project, emphasizing the fusion of neuroscience, computation, and spatial design.'
+          content: '### EEG-informed space\n\nMultisensory & Embodied Exhibition Design with EEG-informed Personalization asks how live brainwave data can steer immersive spatial experience.\n\n### Visitor-driven narrative\n\nRather than “active” architecture by default, embodied perception drives the story.\n\n### Modular personalization\n\nEEG-based affect recognition meets modular exhibition design so navigation routes can adapt to individual emotional states—shown at the 2025 Tsinghua Architecture undergraduate exhibition as a group project bridging neuroscience, computation, and space.'
         },
         process: {
           title: 'Experiment Performance',
-          content: 'Three controlled EEG experiments were conducted, each involving eight participants. Using a 16-channel OpenBCI headset at 256 Hz, the sessions lasted 15–20 minutes with stimuli segmented into 15-second epochs. Three conditions were tested: visual-only, auditory-only, and audiovisual fusion. Complementary physiological data were collected through GSR and EMG sensors for verification. This experimental framework allowed a rigorous exploration of how different sensory modalities interact to shape emotional responses.',
+          content: '### Protocol\n\nThree controlled EEG studies, eight participants each. Hardware: 16-channel OpenBCI at 256 Hz; sessions 15–20 minutes with 15-second stimulus epochs.\n\n### Conditions & physiology\n\nVisual-only, auditory-only, and audiovisual fusion were compared; GSR and EMG added cross-checks.\n\n### Goal\n\nThe setup isolates how sensory modalities jointly shape emotional response.',
           image: 'EEG experiment setup and protocol'
         },
         outcome: {
           title: 'Data Analysis',
-          content: 'Preprocessing followed the MNE pipeline: band-pass and 50 Hz notch filtering, ICA for artifact removal, and baseline correction. Features extracted included power spectral density (PSD) across alpha, beta, and gamma bands, as well as time-domain statistics. Data were standardized across participants, and emotional labels were defined using Russell’s Valence–Arousal model. Deep learning models such as SVM, KNN, and Random Forest were tested, with Random Forest achieving the best accuracy. Cross-validation revealed that combining positive or negative visual and auditory stimuli often shifted emotional responses toward neutrality, while maintaining their polarity.'
+          content: '### Signal pipeline\n\nMNE-style preprocessing: band-pass and 50 Hz notch, ICA artifact rejection, baseline correction. Features span PSD (alpha/beta/gamma) and time-domain stats, standardized across subjects.\n\n### Labels & models\n\nEmotions sit on Russell’s Valence–Arousal plane; classifiers include SVM, KNN, and Random Forest—with Random Forest performing best.\n\n### Modal interactions\n\nCross-validation suggests pairing congruent positive or negative audio-visual stimuli often pulls responses toward neutrality while preserving polarity.'
         }
       }
     },
@@ -83,16 +83,16 @@ export const projectsData = {
       details: {
         about: {
           title: 'Historical Background',
-          content: 'This research focuses on the urban corridor along the Central–Mid-Levels Escalator in Hong Kong, a space rich in historical and cultural interweaving. The area encompasses heritage sites such as the Central Market, Graham Street Market, and Tai Kwun, as well as religious spaces like the Hong Kong Baptist Church and the Jamia Mosque. The urban fabric reflects a complex cultural collage, characterized by the juxtaposition of Christian and Muslim spaces, the typological contrast between Chinese and Western markets, and hybridized architectural styles.'
+          content: '### Corridor context\n\nThe study follows the Central–Mid-Levels Escalator—a corridor dense with layered history and culture.\n\n### Landmarks & coexistence\n\nHeritage anchors include Central Market, Graham Street Market, and Tai Kwun; sacred spaces range from Hong Kong Baptist Church to Jamia Mosque.\n\n### Urban collage\n\nChristian and Muslim places, Chinese and Western market types, and hybrid architecture sit side by side, forming a complex urban mosaic.'
         },
         process: {
           title: 'Image Crawling',
-          content: 'Using the Google Street Map API, the research collected street view images along the escalator corridor. These images were processed with the DeepLabV3 semantic segmentation model to extract elements such as buildings, trees, signboards, sidewalks, and the sky. This automated pipeline generated a continuous dataset of urban scenes, providing the basis for subsequent analyses of color composition and human-scale perception.',
+          content: '### Data capture\n\nGoogle Street imagery along the escalator route feeds an automated crawl.\n\n### Segmentation\n\nDeepLabV3 parses buildings, trees, signage, sidewalks, sky, and more—yielding a continuous, analyzable street-level dataset for color and perception studies.',
           image: 'Hong Kong street view image crawling and semantic segmentation process'
         },
         outcome: {
           title: 'Clustering Analysis',
-          content: 'Color features were extracted from the segmented street view images, with RGB values normalized in HSV space. Principal Component Analysis (PCA) was applied for dimensionality reduction, followed by k-means clustering to classify distinct color patterns across the corridor. These clusters were mapped against functional divisions of the city fabric, revealing correlations between chromatic characteristics and specific urban zones.'
+          content: '### From pixels to clusters\n\nColors come from segmented views; RGB moves through HSV normalization. PCA reduces dimensionality before k-means separates chromatic regimes along the corridor.\n\n### Reading the city\n\nClusters align with functional districts—linking palette to urban role.'
         }
       }
     },
@@ -107,16 +107,16 @@ export const projectsData = {
       details: {
         about: {
           title: 'Market Research & Competitor Analysis',
-          content: 'With China\'s pet industry rapidly expanding—reaching nearly 200 million pets and a 52% online platform penetration rate in 2022—the market still lacks a unified solution. Existing apps are fragmented: some focus on daily recording ("YouChong"), others on commerce ("Pet Market"), and some on adoption services ("Pet Adoption Center"). However, none provide a comprehensive ecosystem combining social interaction, pet adoption, and offline activities.'
+          content: '### Market scale\n\nChina’s pet economy is massive—nearly 200 million pets and ~52% online penetration in 2022—yet experiences remain siloed.\n\n### Fragmented apps\n\nSome tools journal daily life (e.g., YouChong), others push commerce (Pet Market), others handle adoption (Pet Adoption Center).\n\n### The gap\n\nFew products unite social life, adoption journeys, and real-world activities in one trustworthy ecosystem.'
         },
         process: {
           title: 'Product Concept Framework',
-          content: 'We proposed "Pets\' Tribe", a multifunctional mobile platform designed for pet lovers, owners, and animal organizations. Its concept framework consists of three major functional groups: Assistance: adoption processes, veterinary support, and information sharing. Community: browsing updates, sharing experiences, and organizing offline events. Diary: recording pet routines with adjustable privacy settings. This framework fosters a reciprocal ecosystem where individual and organizational users meet mutual needs and sustain a thriving pet community.',
+          content: '### Pets’ Tribe pillars\n\n**Assistance** — Adoption flows, vet guidance, and shared knowledge.\n\n**Community** — Updates, storytelling, and offline meetups.\n\n**Diary** — Rituals captured with flexible privacy.\n\n### Ecosystem logic\n\nIndividuals and organizations reinforce each other—supplying care, content, and continuity for a lively pet network.',
           image: 'Pet\'s Tribe product concept framework diagram'
         },
         outcome: {
           title: 'Prototype Design',
-          content: 'The design process progressed from low-fidelity sketches to high-fidelity prototypes. The final Hi-Fi Prototype, built in Figma, included modules for login and user diversion, community interface, assistance interface, and diary functions. Design goals emphasized ease of learning, functional effectiveness, efficiency, error tolerance, and engaging aesthetics. Planned user testing employed metrics such as task success rate, error recovery, and the SUS usability scale, providing data-driven guidance for further iterations.'
+          content: '### Iteration arc\n\nExplorations move from sketches to polished Figma Hi-Fi flows covering onboarding, diversion, community, assistance, and diary.\n\n### Experience goals\n\nLearnability, functional fit, speed, resilience, and delight anchor every screen.\n\n### Evaluation plan\n\nTask success, recovery paths, and SUS scores will steer the next build cycles.'
         }
       }
     },
@@ -131,16 +131,16 @@ export const projectsData = {
       details: {
         about: {
           title: 'Concept',
-          content: 'The outlines of a home in memory are shaped by the warmth of details. This project recreates, through Virtual Reality (VR), the domestic scenes of a couple passionate about gardening and interior design. They have adopted one bunny and two cats, Xuehuan and Kele, whose playful presence in the garden reflected a sense of harmony during the interview. Guided by two threads—PLACE and TIME—I captured their two most significant memories: a family dinner at dusk in their previous residence, and nightly reading in the living room at their present home.'
+          content: '### Memory-made space\n\nThe remembered home is drawn in warm, ordinary detail.\n\n### Couple & companions\n\nVR reconstructs two gardeners and designers—and their bunny plus cats Xuehuan and Kele—whose energy threaded interview conversations.\n\n### Place & time\n\nGuided by PLACE and TIME, the piece foregrounds dusk dinner in their former flat and quiet nightly reading in today’s living room.'
         },
         process: {
           title: 'Workflow',
-          content: 'The project followed a complete digital reconstruction workflow: 3D Scanning: Capturing the home environment with a mobile device to generate high-fidelity spatial models. User Research: Conducting in-depth interviews and sketch mapping to document their emotional experiences tied to space and time. Unity Construction: Integrating scanned rooms, objects, and ambient soundscapes in Unity to create an immersive interactive environment. User Testing: Participants revisited their reconstructed memories through VR headsets, embodying the lived warmth of their home.',
+          content: '### Capture\n\nMobile 3D scans anchor faithful room meshes.\n\n### Listening & drawing\n\nInterviews and sketches map emotion across hours and seasons.\n\n### Build & test\n\nUnity reunites geometry, props, and spatial audio; headset sessions let participants inhabit the rebuilt warmth of home.',
           image: 'VR workflow diagram showing 3D scanning to Unity integration process'
         },
         outcome: {
           title: 'User Experience',
-          content: 'The final VR environment combined 3D-scanned furniture and objects, AI-generated skyboxes, and authentic soundscapes (such as birdsong, city noise, and pet sounds). With a headset, users could navigate freely within the reconstructed memory-space, reliving intimate moments where time, place, and companionship intertwined.'
+          content: '### Layered atmosphere\n\nScanned furnishings meet AI skies and field-recorded ambiences—birds, traffic hum, playful pets.\n\n### Embodied return\n\nVisitors roam a memory-space where time, location, and intimacy fold together.'
         }
       }
     },
@@ -155,15 +155,61 @@ export const projectsData = {
       details: {
         about: {
           title: 'Project Overview',
-          content: 'SyneSound is an inclusive music creation system developed by X-MA Group (team members: Yongyi Xiong, Yunxiang Ma) that enables music composition through visual-to-musical transformation. The project aims to provide a new creative pathway for non-musicians and the deaf and hard-of-hearing (DHH) community. The core concept is "composing through vision, not hearing." It uses synesthesia (the phenomenon where one sensory experience triggers another) as a design metaphor, creating a shared canvas where visual elements can be directly transformed into musical structures. Instead of complex music theory notation, SyneSound establishes an intuitive "visual grammar" that controls musical parameters through color, shape, and motion.'
+          content: '### Who it’s for\n\nSyneSound—by X-MA Group (Yongyi Xiong, Yunxiang Ma)—opens music-making through visual transformation for non-musicians and the Deaf and hard-of-hearing community.\n\n### Compose with vision\n\nThe mantra is simple: compose through vision, not necessarily hearing.\n\n### Synesthetic canvas\n\nSynesthesia frames the UI: color, shape, and motion replace dense notation with an approachable visual grammar.'
         },
         process: {
           title: 'Core Semantics & Mappings',
-          content: 'The system maps visual properties to musical elements: Mode & Palette: Hue maps to musical modes (warm hues → Ionian/major, yellow-green → Lydian/Dorian, cyan-blue → Aeolian/minor, magenta-violet → Phrygian), ensuring harmonious compositions through "safe choices" for non-professionals. Notes & Chords: Balls represent musical events—single-color balls produce single notes, while mixed colors generate chords. Rotation controls chord inversion, size controls note duration, opacity controls dynamics/velocity, and position maps to timeline (X-axis) and register/octave (Y-axis). Rhythm: Visual "wobble" or vibration represents rhythm—frequency maps to tempo and beat density, amplitude to accent strength, and phase to swing/humanization. Style: Semi-transparent background panels set musical styles (Ambient, Classical, Electronic, Jazz, etc.), determining BPM ranges, groove templates, and instrumentation. The frontend uses React + Canvas (Konva) + Tone.js for interactive creation, while the backend leverages Agentuity as a cloud gateway and orchestrator, OpenAI for intent inference and prompt generation, and Meta MusicGen (via Replicate) for audio generation.'
+          content: '### Mode & palette\n\nHue locks to modes—warm major palettes, yellow-green Lydian/Dorian blends, cyan-blue minor moods, magenta-violet Phrygian edges—giving beginners “safe” harmonic lanes.\n\n### Notes & chords\n\nSpheres trigger musical events: solid hues yield single notes; blends spawn chords. Rotation tweaks inversion, scale sets duration, opacity drives dynamics, XY placement maps time and register.\n\n### Rhythm & style\n\nWobble encodes tempo density, accent, and swing; translucent boards choose genre presets that steer BPM, groove, and instrumentation.\n\n### Stack\n\nReact + Konva + Tone.js handle the canvas locally; Agentuity orchestrates cloud hops; OpenAI shapes prompts; Meta MusicGen on Replicate renders audio.'
         },
         outcome: {
           title: 'Product Value & Vision',
-          content: 'SyneSound addresses key challenges: Lowering barriers by enabling non-musicians and DHH creators to compose through visual means, without relying on hearing or music theory knowledge. Transparent creation through an explainable canvas where visual elements correspond to clear musical structures, rather than a "black box" AI generator. Emotional visualization where colors and motion directly convey harmony and rhythm, making the creator\'s emotional intent clear and readable to others, including hearing individuals. The team plans to conduct user studies on "emotional consistency" where DHH creators compose using only the visual canvas, and hearing listeners evaluate the generated audio, testing whether visual expressions accurately convey emotions through music.'
+          content: '### Accessibility\n\nVisual pathways bypass traditional ear-training barriers.\n\n### Explainable AI\n\nThe canvas stays legible—every shape reads back to musical structure instead of hiding inside a black box.\n\n### Emotional legibility\n\nMotion and palette broadcast intent to collaborators—including hearing listeners.\n\n### Research horizon\n\nUpcoming “emotional consistency” studies pair DHH composers with hearing audiences to see whether visual intent survives translation into sound.'
+        }
+      }
+    },
+    {
+      id: 8,
+      title: 'DomestiCade',
+      category: 'xr',
+      description: 'From Domestic Chaos to Algorithmic Order',
+      tags: ['WebXR', 'Browser AR', 'Three.js', 'Procedural Generation', 'Computer Vision', 'Serious Play'],
+      image: 'DomestiCade browser AR platform game hero scene',
+      featured: true,
+      details: {
+        about: {
+          title: 'Overview',
+          content: '### Photo to playable level\n\nDomestiCade is a browser-based AR platform game that turns everyday domestic environments into obstacle courses. Users photograph their surroundings; the stack reads objects and surfaces, translates them into game primitives, and rebuilds them as a stylized AR platformer level.\n\n### Hybrid authorship\n\nThe project explores co-authorship between human perception and machine interpretation—you choose and traverse the scene while algorithms surface latent level geometry. A procedural layer turns those readings into paths, hazards, collectibles, and goals.'
+        },
+        process: {
+          title: 'Interpretation & Stack',
+          content: '### ML as semantic interpreter\n\nRather than a fully generative world-builder, DomestiCade treats machine learning as a semantic interpreter: a table lip becomes a ledge, a mug reads as a pipe-like obstacle, a cluttered nook becomes a hazard zone.\n\n### AR closure\n\nThrough WebXR, those translations snap back into the user’s physical room as something you can move through and play.\n\n[[IMAGE:/images/domesticade-pipeline.png|DomestiCade technical pipeline diagram]]\n\n### Prototype architecture\n\nThe prototype stitches WebXR, Three.js, Cannon.js physics, serverless vision inference, procedural layout rules, and local 3D props—balancing fidelity to the captured scene with stable, legible gameplay.'
+        },
+        outcome: {
+          title: 'Reflections',
+          content: '### Designing with suggestion\n\nWe learned ML feels strongest in interactive systems when it contributes interpretation, suggestion, and transformation—not wholesale replacement of human intent.\n\n### Hidden affordances\n\nDomestiCade reframes the home as a field of latent affordances: familiar clutter becomes part of a fresh spatial logic for play.\n\n[[IMAGE:/images/domesticade-scene.png|DomestiCade AR gameplay scene]]'
+        }
+      }
+    },
+    {
+      id: 9,
+      title: 'Improving Front/Back Depth Reasoning in Vision Language Models',
+      category: 'compdesign',
+      description: 'Lightweight spatial cues for stable front/behind judgments in VLMs on occluded scenes.',
+      tags: ['Vision-Language Models', 'Spatial Reasoning', 'QLoRA', 'Qwen2.5-VL', 'InstaOrder', 'COCO'],
+      image: 'VLM front/back depth reasoning task and method overview',
+      featured: true,
+      details: {
+        about: {
+          title: 'Motivation, Task & Method',
+          content: '### Problem setting\n\nThis project investigates whether lightweight spatial cues can improve front/behind reasoning in vision-language models. Given an image and two marked objects, the model must decide whether Object A is in front of or behind Object B. We focus on occluded scenes, where current VLMs often rely on unstable visual shortcuts.\n\n[[IMAGE:/images/VLMFT-img.png|Task example: original image and marked Objects A and B]]\n\n### Research question\n\nCan a smaller 7B vision-language model learn more stable front/behind judgments when given explicit spatial metadata, such as bounding box coordinates and 2D overlap flags?\n\n### Dataset and task\n\nWe use InstaOrder annotations paired with COCO 2017 images. Each sample contains two localized objects, A and B, and the model answers whether A is in front of or behind B. To avoid label shortcuts, we construct a directionally balanced and image-disjoint split: each object pair appears in both directions, with flipped labels.\n\nThe final dataset contains 26,046 training samples, 2,746 validation samples, and 2,952 test samples, balanced at 50% front and 50% behind.\n\n[[IMAGE:/images/VLMFT-sourcedata.png|InstaOrder paired with COCO 2017 — dataset overview]]\n\n### Method\n\nWe compare zero-shot and fine-tuned versions of Qwen2.5-VL. All settings use marked images with red and blue boxes for Object A and Object B. We then test whether two types of structured text cues improve reasoning:\n\nBBox cue: explicit bounding box coordinates for A and B.\n\nOverlap cue: a binary flag indicating whether the two boxes overlap in 2D.\n\nThe main method fine-tunes Qwen2.5-VL 7B with QLoRA, using 4-bit quantization and low-rank adapters. This allows the model to learn the front/behind task efficiently without full model fine-tuning.'
+        },
+        process: {
+          title: 'Findings',
+          content: '### Key finding 1: reducing label bias\n\nThe 7B zero-shot model performs close to chance overall, but its errors are not random. It strongly prefers one direction: 74.53% accuracy on front queries but only 26.49% on behind queries. This reveals a severe directional guessing bias.\n\nAfter QLoRA tuning with spatial cues, this imbalance is largely corrected. The best model, 7B + bbox + overlap, reaches 93.56% accuracy on front and 91.73% on behind.\n\n[[IMAGE:/images/VLMFT-result1.png|Accuracy by target label — correction of front/behind bias (Figure 4)]]\n\n### Key finding 2: spatial cues make the 7B model competitive\n\nPrompt-only spatial cues improve the 7B model moderately, raising raw accuracy to around 65–66%. However, the largest improvement comes from fine-tuning. All QLoRA-tuned 7B variants exceed 91% raw accuracy, outperforming the 72B zero-shot reference, which reaches 70.16%.\n\nThe strongest configuration, 7B + bbox + overlap, achieves:\n\n92.65% raw accuracy\n\n96.82% consistency score\n\n91.06% pair accuracy\n\n### Key finding 3: occlusion remains difficult\n\nAlthough spatial cue tuning greatly improves front/behind prediction, occlusion remains challenging. The best model reaches 96.08% accuracy when the two boxes do not overlap, but drops to 75.80% when they overlap.\n\nThis suggests that bbox coordinates and binary overlap flags help the model use spatial structure, but they do not fully solve visually ambiguous occlusion.\n\n[[IMAGE:/images/VLMFT-result2.png|Accuracy under overlap split — success and remaining limitation (Figure 3)]]\n\n### Remaining challenge\n\nPerformance also decreases as bbox IoU increases. The strongest model reaches 93.08% accuracy when IoU is zero, but drops to 77.78% when IoU is greater than 0.3. This shows that stronger object overlap still makes front/behind reasoning harder, even after fine-tuning.\n\n[[IMAGE:/images/VLMFT-result3.png|Accuracy across bbox IoU buckets (Figure 5)]]'
+        },
+        outcome: {
+          title: 'Reflection',
+          content: '### Takeaways\n\nThis project shows that a smaller VLM can outperform a much larger zero-shot model on a specific spatial reasoning task when given targeted supervision and explicit spatial cues. At the same time, the results reveal a clear boundary: improving a model on a controlled front/behind benchmark does not necessarily mean that it has solved general spatial reasoning.\n\n### Future work\n\nFuture work should test transfer to broader VLM benchmarks and explore richer visibility-aware cues, such as segmentation masks, visible area ratios, relative scale, and depth priors.'
         }
       }
     }
@@ -180,16 +226,16 @@ export const projectsData = {
       details: {
         about: {
           title: '项目概述',
-          content: 'Roomify 是一个"空间锚定"的生成式系统：它以用户的真实房间为"空间容器"，在保持空间结构与家具可用性的前提下，将场景一键变为特定主题（如魔法学院、海盗船舱等）并提供沉浸式体验。它弥合了传统 VR 在"沉浸感"与"空间感知"之间的取舍：不过度依赖透视画面（破坏临场），也不牺牲物理环境的功能逻辑。'
+          content: '### 空间容器\n\nRoomify 是「空间锚定」的生成式系统：以用户的真实房间为容器，在保留结构与家具可供性的前提下，将环境一键转换为魔法学院、海盗船舱等连贯主题。\n\n### 沉浸与认知的平衡\n\n它在「沉浸感」与「空间感知」之间寻找支点：减少破坏临场的透视依赖，同时不牺牲物理空间的功能逻辑。'
         },
         process: {
           title: '工作原理',
-          content: '系统包含四个阶段：场景理解（视频 SLAM 与语义解析，输出带方向的 3D 边界盒与全局 JSON 脚手架）→ 风格提取与映射（从文字/参考图抽取风格关键词，生成墙地面、家具、环境三类映射表与约束）→ 多模态生成（参考引导的风格化图像与 3D 物体、PBR 纹理与天空盒）→ 空间组装注册（按几何与相机位姿将生成资产精准落位，保持导航可预期与功能可用）。',
+          content: '### 四阶段管线\n\n**场景理解** — 视频 SLAM 与语义解析输出带朝向的 3D 边界框与全局 JSON 脚手架。\n\n**风格提取与映射** — 从文本或参考图抽取关键词，生成墙地面、物体与环境的映射表与约束。\n\n**多模态生成** — 参考引导的风格化图像、3D 资产、PBR 与天空盒。\n\n**空间组装注册** — 结合位姿与几何将资产精准落位，保证导航可预期、交互可用。',
           image: 'Roomify系统架构与管线流程图'
         },
         outcome: {
           title: '用户研究与成效',
-          content: '两项评测验证了方法有效性：18 名 VR 用户对比实验显示：相较"透视基线"和"全虚拟场景"，Roomify 显著提升临场感/沉浸（对透视提升约 63%，对全虚拟提升约 26%），同时保持中等偏上的空间认知与可导航性。8 名设计专业人士评估其作为创意原型工具的表达力与工作流价值，认可在多场景、多主题下快速出形且可控。'
+          content: '### VR 用户对比（n = 18）\n\n相较「透视基线」与「全虚拟场景」，Roomify 显著提升临场感 / 沉浸（约 +63% / +26%），同时维持可用的空间认知与导航表现。\n\n### 设计专业人士（n = 8）\n\n团队认可其作为创意原型工具的表达力与工作流价值：在多空间、多主题下能快速迭代且保持可控。'
         }
       }
     },
@@ -204,16 +250,16 @@ export const projectsData = {
       details: {
         about: {
           title: '项目概述',
-          content: '本项目以清华校园为场景，综合"真实轨迹 + 社交媒体文本"的双源数据，识别游客的停留点、典型路径与情绪分布，并将研究成果转译为一套可互动的六边格桌游与手机AR体验，用以引导游客、强化空间认知与参与感。'
+          content: '### 双源数据\n\n项目以清华校园为试验场，融合 GPS 轨迹与社交媒体文本，识别停留热点、典型路径与情绪分布。\n\n### 从分析到游玩\n\n研究结果转译为六边格桌游与手机 AR：引导访客行走，强化空间认知与参与感。'
         },
         process: {
           title: '研究设定与方法',
-          content: '在导师黄巍昕指导下（2023.08–09，北京，独立完成），记录50名受试者的随机游览轨迹；采用 Python（Jupyter）、K-Means 聚类、NLP 文本分析与3D打印。轨迹以 Haversine 距离与60秒平均速度计算清洗平滑；将速度处于底部5%（v < 0.674 m/s）的点判定为候选停留点，并经密度筛选与K-Means 提取11处代表性站点及其典型访问序列。同时抓取小红书相关贴文（约200条）做词频与情感（Emotion）映射，与物理停留分布叠合形成"数字—物理"双重密度图。',
+          content: '### 田野与工具链\n\n在导师黄巍昕指导下（2023.08–09，北京；独立完成），跟踪 50 名随机游览者；使用 Python（Jupyter）、K-Means、NLP 与 3D 打印清洗与分析轨迹。\n\n### 停留识别\n\n以 Haversine 距离与 60 秒平均速度平滑路径；速度最低 5%（v < 0.674 m/s）视为候选停留，经密度筛选与 K-Means 得到 11 处代表性站点及典型序列。\n\n### 数字—物理叠合\n\n抓取约 200 条小红书贴文做词频与情感映射，与物理停留分布叠加，形成双重密度底板。',
           image: 'Cognitive Tracks研究方法与数据处理流程图'
         },
         outcome: {
           title: '关键发现',
-          content: '可视化结果显示：停留速度谷值与显著景点相吻合；部分速度下降源于拥堵而非兴趣；不同人群在"历史/建筑/自然"等偏好上呈现截然不同的访问顺序与停留强度。据此形成访问密度图（Visiting Density Map）、情绪热力图（Digital Emotion Map）与停留点图（Physical Stopping Points Map）等多层信息底板。'
+          content: '### 速度揭示什么\n\n速度低谷往往对齐显著景点，但也有减速来自拥堵而非吸引力。\n\n### 偏好分化\n\n「历史 / 建筑 / 自然」取向的人群在路径顺序与停留强度上差异明显。\n\n### 多层地图\n\n由此沉淀访问密度图、数字情绪热力图与物理停留点图等信息层，为设计提供底座。'
         }
       }
     },
@@ -228,16 +274,16 @@ export const projectsData = {
       details: {
         about: {
           title: '概念性方案',
-          content: '本项目 基于EEG个性化的多感官与具身化展览设计 探索如何通过实时脑电波数据来塑造沉浸式空间体验。展览空间本身并非“主动”，而是由参观者的具身感知来驱动空间叙事。通过将基于脑电（EEG）的情绪识别与模块化展览设计相结合，本项目提出了一种体验驱动的系统：参观路径根据个体情绪状态实时生成。该项目以团队合作形式在 2025年清华大学建筑学院本科作品展 中展出，体现了神经科学、计算设计与空间建构的跨界融合。'
+          content: '### EEG 驱动的空间叙事\n\n「基于 EEG 个性化的多感官与具身化展览设计」探讨实时脑电如何塑造沉浸式体验。\n\n### 参观者主导\n\n空间并非预设「主动」，而是由具身感知推动叙事。\n\n### 模块化路径\n\n脑电情绪识别与模块化展陈结合，路径可随个体情感状态调整；方案于 2025 清华大学建筑学院本科作品展以团队形式展出，串联神经科学、计算设计与空间建构。'
         },
         process: {
           title: '实验实施',
-          content: '实验部分共设计并实施了三组对照实验，每组8位受试者。使用16通道的 OpenBCI 脑电设备，采样率为256 Hz，每次实验持续15–20分钟，刺激被划分为15秒的片段。实验条件包括：仅视觉、仅听觉、以及视听融合。同时收集了皮电（GSR）和肌电（EMG）等辅助生理数据以进行交叉验证。该实验框架为探讨多模态感官输入对情绪反应的交互作用提供了严谨依据。',
+          content: '### 实验设计\n\n三组对照实验，每组 8 人；16 通道 OpenBCI，采样率 256 Hz；单次 15–20 分钟，刺激以 15 秒为单元切段。\n\n### 条件与生理佐证\n\n对比纯视觉、纯听觉与视听融合；同步采集 GSR、EMG 做交叉验证。\n\n### 研究问题\n\n框架用于审视多模态输入如何共同塑造情绪反应。',
           image: 'EEG实验设置与流程'
         },
         outcome: {
           title: '数据分析',
-          content: '数据分析采用了 MNE 标准流程：带通滤波与50Hz陷波滤波、独立成分分析（ICA）去除伪迹，以及基线校正。提取特征包括 α、β、γ 三个主要频段的功率谱密度（PSD），以及时域统计特征。所有数据在参与者间标准化，情绪标签采用 Russell 的 效价-唤醒度模型。实验测试了多种机器学习方法（SVM、KNN、随机森林等），其中随机森林表现最佳。交叉验证表明，当积极或消极的视觉与听觉刺激叠加时，情绪反应往往趋向中性，但整体的正负极性仍保持。'
+          content: '### 信号处理\n\n遵循 MNE 流程：带通与 50 Hz 陷波、ICA 去伪迹、基线校正；特征含 α/β/γ PSD 与时域统计，并在被试间标准化。\n\n### 标签与模型\n\n情绪标注基于 Russell 效价—唤醒度空间；比较 SVM、KNN、随机森林等，随机森林表现最佳。\n\n### 跨模态效应\n\n交叉验证显示：积极或消极视听叠加时常使反应趋向中性，但整体正负倾向仍可辨识。'
         }
       }
     },
@@ -252,16 +298,16 @@ export const projectsData = {
       details: {
         about: {
           title: '历史背景',
-          content: '该研究以香港中环至半山区的中部扶梯沿线为研究对象。该片区是一个历史与文化交织的空间走廊，既包含如中环街市、嘉咸街市集、太古馆等历史文化遗址，也包含香港浸信会教堂、贾米亚清真寺等宗教空间。这里形成了多元的文化拼贴：中西合并的建筑风格、基督与伊斯兰宗教空间的并置、市场类型的中西对照，共同构成了复杂的城市社会节点。'
+          content: '### 走廊语境\n\n研究沿中环—半山扶梯展开，这段路径承载厚重的历史与文化层积。\n\n### 地标与共存\n\n从中环街市、嘉咸街市集、大馆，到香港浸信会教堂、清真寺等宗教场所，空间多元并置。\n\n### 城市拼贴\n\n中西建筑语法、不同信仰空间与市场类型的对照，共同构成复杂的城市节点。'
         },
         process: {
           title: '图片爬取',
-          content: '研究通过 Google Street Map API 抓取扶梯沿线的街景图像，并利用 DeepLabV3 模型进行语义分割，将建筑、树木、招牌、道路等要素从街景图中提取出来。通过自动化的图像获取与处理，形成了具有空间连续性的街景数据库，为后续的色彩与视觉感知分析提供了基础。',
+          content: '### 数据采集\n\n借助 Google 街景 API 获取扶梯沿线连续影像。\n\n### 语义分割\n\nDeepLabV3 提取建筑、树木、招牌、路面、天空等要素，为色彩与人尺度感知分析奠定统一数据底。',
           image: '香港街景图像爬取与语义分割处理流程'
         },
         outcome: {
           title: '聚类分析',
-          content: '研究对语义分割后的街景进行色彩识别与提取，并将 RGB 色彩数据转换到 HSV 空间进行特征归一化。随后通过 PCA 主成分降维及 k-means 聚类，对不同街段的色彩模式进行分类，得到具有代表性的视觉群组。进一步使用聚类结果与空间分区进行对比，揭示了街道色彩与功能区域之间的对应关系。'
+          content: '### 从像素到簇\n\n在分割结果上提取色彩，RGB 转 HSV 归一化；PCA 降维后以 k-means 划分色域模式。\n\n### 对照城市结构\n\n聚类结果与功能分区比对，揭示街道色彩与片区角色之间的关联。'
         }
       }
     },
@@ -276,16 +322,16 @@ export const projectsData = {
       details: {
         about: {
           title: '市场调研与竞品分析',
-          content: '随着中国宠物行业的快速发展，宠物数量已接近两亿，线上平台渗透率在2022年达到52%。然而，目前市面上的应用大多功能分散：有的仅限于记录宠物日常（如"有宠"），有的偏重商业化购物（如"宠物市场"），也有面向公益领养的平台（如"宠物帮领养中心"），但整体缺乏一个能够同时整合社交互动、宠物领养与线下活动的集中平台。'
+          content: '### 行业体量\n\n中国宠物经济高速增长，宠物数量接近两亿，2022 年线上渗透率约 52%。\n\n### 产品碎片化\n\n既有工具偏重日记（如「有宠」）、电商（「宠物市场」）或领养（「宠物帮领养中心」）。\n\n### 机会\n\n缺少同时整合社交、领养与线下活动的统一平台。'
         },
         process: {
           title: '产品概念框架',
-          content: '本项目提出 "Pets\' Tribe" —— 一个为宠物爱好者、宠物主人及动物组织打造的多功能移动平台。产品框架分为三大功能组：Assistance 协助：领养流程、宠物医疗、信息互助；Community 社区：动态浏览、经验分享、线下活动组织；Diary 日记：宠物日常记录与云端展示，用户可自由选择隐私等级。通过这一框架，用户群体（个体用户与组织用户）可以互补需求，形成良性社区生态。',
+          content: '### Pets\' Tribe 三角结构\n\n**协助（Assistance）** — 领养流程、宠物医疗与信息互助。\n\n**社区（Community）** — 动态、经验分享与线下活动组织。\n\n**日记（Diary）** — 日常记录与可选隐私的云端展示。\n\n### 生态闭环\n\n个体用户与机构用户互补需求，维系可持续的宠物社群。',
           image: 'Pet\'s Tribe产品概念框架图'
         },
         outcome: {
           title: 'Prototype设计',
-          content: '设计流程从低保真原型出发，逐步演进到高保真界面。最终的 Hi-Fi Prototype 采用 Figma 搭建，涵盖登录与用户分流、社区界面、协助界面和个人日记模块。设计目标包括学习成本低、功能匹配度高、操作效率快、容错率强以及具有吸引力的视觉体验。用户测试计划涵盖任务完成率、错误恢复率、SUS 可用性量表等指标，为后续迭代优化提供数据支撑。'
+          content: '### 迭代路径\n\n由低保真草图演进至高保真 Figma 原型，覆盖登录分流、社区、协助与日记。\n\n### 体验目标\n\n强调易学、功能契合、效率、容错与视觉吸引力。\n\n### 验证指标\n\n任务成功率、错误恢复与 SUS 量表将驱动下一轮优化。'
         }
       }
     },
@@ -300,16 +346,16 @@ export const projectsData = {
       details: {
         about: {
           title: '概念',
-          content: '记忆中的家由细节的温度勾勒而成。本项目通过虚拟现实（VR）重现了一对热爱园艺和室内设计的夫妻的家庭场景。他们收养了一只兔子和两只猫——雪环和可乐。在采访时，猫穿梭于花园与屋内，呈现出人与动物和谐共处的氛围。我以"空间（PLACE）"与"时间（TIME）"为双重线索，引导他们回忆并叙述了两个最具意义的场景：黄昏时分的家庭晚餐（前住所），以及夜晚在客厅中静静阅读（现住所）。'
+          content: '### 记忆里的温度\n\n家的轮廓由琐碎细节的温度勾勒。\n\n### 人物与伴侣动物\n\nVR 重现一对热衷园艺与室内设计的夫妻；他们与兔子、猫咪雪环和可乐共处，访谈时猫在花园与室内穿梭，氛围柔和。\n\n### 空间与时间双线\n\n以 PLACE 与 TIME 为线索，锚定两段记忆：旧宅黄昏的家庭晚餐，与新居夜里客厅的安静阅读。'
         },
         process: {
           title: '工作流程',
-          content: '项目采用了完整的数字化重建流程：3D 扫描：通过移动设备扫描居住空间，获取高保真度的空间模型。用户研究：通过深度访谈和草图绘制，记录他们对不同时间段与空间细节的情绪体验。Unity 场景搭建：将空间、家具与环境音效导入 Unity，实现互动性与沉浸感的虚拟空间构建。用户测试：参与者佩戴 VR 设备进入场景，体验被记忆重新唤起的"家"。',
+          content: '### 扫描\n\n移动设备扫描居住空间，获取可用网格。\n\n### 访谈与制图\n\n深度访谈与手绘记录情绪如何附着在不同时间与角落。\n\n### 搭建与测试\n\nUnity 整合模型、物件与空间音频；受试者戴头显重返「被唤醒的家」。',
           image: 'VR工作流程图：从3D扫描到Unity集成的完整流程'
         },
         outcome: {
           title: '用户体验',
-          content: '最终的 VR 场景融合了 3D 扫描的家具与环境元素、AI 生成的天空盒、以及真实录制的音景（如鸟鸣、城市噪声、宠物声）。用户在佩戴头显后，可以自由地在记忆化的居所中移动和感受，重新体会那些与时间、空间和亲密关系交织的细微瞬间。'
+          content: '### 多层氛围\n\n场景揉合扫描家具、AI 天空盒与实录音景（鸟鸣、城市底噪、宠物声等）。\n\n### 在场的回访\n\n用户可在记忆化的居所中慢行，触摸与时间、空间、亲密关系交织的瞬间。'
         }
       }
     },
@@ -324,15 +370,61 @@ export const projectsData = {
       details: {
         about: {
           title: '项目概述',
-          content: 'SyneSound 是由 X-MA Group（团队成员：Yongyi Xiong, Yunxiang Ma）开发的一个具有包容性的音乐创作系统。该项目旨在通过"视觉转化为音乐"（Visual-to-Musical）的方式，为非音乐专业人士以及听障（DHH - Deaf and Hard-of-Hearing）群体提供一种全新的创作途径。项目的核心理念是"通过视觉而非听觉来作曲"。它将联觉（Synesthesia，即一种感官刺激引发另一种感官体验的现象）作为设计隐喻和切入点，构建了一个让视觉元素可以直接转化为音乐结构的共享画布。SyneSound 并没有使用复杂的乐理符号，而是建立了一套直观的"视觉语法"，通过颜色、形状和运动来控制音乐参数。'
+          content: '### 服务对象\n\nSyneSound 由 X-MA Group（Yongyi Xiong、Yunxiang Ma）打造，面向非音乐人及听障（DHH）社群，用视觉驱动作曲。\n\n### 核心理念\n\n「用看的，而不是只用听的」完成音乐表达。\n\n### 联觉式画布\n\n以联觉为隐喻：颜色、形状与运动构成直观的视觉语法，取代繁复五线谱。'
         },
         process: {
           title: '核心功能与语义映射',
-          content: '系统建立了视觉属性到音乐元素的映射关系：调式与色彩：系统利用色调来映射音乐的调式（Mode），暖色调对应 Ionian（自然大调），黄绿色对应 Lydian/Dorian，青蓝色对应 Aeolian（自然小调），洋红-紫色对应 Phrygian，以此限制可用音符，确保非专业人士也能创作出和谐的音乐（"安全选择"）。音符与和弦：球体（Ball）代表一个音乐事件，拖入单色球体产生单音，混合颜色则自动生成和弦。旋转控制和弦转位，大小控制音符时值/持续时间，透明度控制力度/音量，位置映射到时间线（X轴）和音区/八度（Y轴）。节奏与动态：节奏通过视觉上的"颤动"（Wobble）来表现，频率对应速度和打击密度，振幅对应重音强度，相位对应摇摆节奏或人性化处理。风格：用户可以通过选择半透明的背景板来设定音乐风格（如 Ambient, Classical, Electronic, Jazz 等），这决定了生成的 BPM 范围、律动模板和配器。前端使用 React + Canvas (Konva) + Tone.js 提供自由画布、调式调色板、速度滑块和风格选择器等交互功能，用户通过拖拽球体、混合颜色和设置振动频率来完成创作。后端使用 Agentuity 作为云端网关和编排器处理数据流，系统将前端的视觉场景整合并推断用户的音乐意图，转换为 JSON 格式，利用 OpenAI 生成详细的音乐描述提示词，最后使用 Meta MusicGen（通过 Replicate 调用）将提示词渲染为最终音频。'
+          content: '### 调式与调色盘\n\n色相映射调式：暖色偏 Ionian，黄绿衔接 Lydian/Dorian，青蓝走向 Aeolian，洋红—紫落在 Phrygian，为非专业人士提供「安全」音域。\n\n### 音符与和弦\n\n球体触发事件：纯色出单音，混色成和弦；旋转调转位，尺度控时值，透明度控力度，XY 轴映射时间与音区。\n\n### 节奏与风格\n\nWobble 编码速度与密度、重音与摇摆；半透明底板锁定 Ambient / Classical / Electronic / Jazz 等风格模板与 BPM 区间。\n\n### 技术栈\n\n前端 React + Konva + Tone.js；Agentuity 编排云端；OpenAI 生成提示；Meta MusicGen（Replicate）渲染音频。'
         },
         outcome: {
           title: '产品价值与愿景',
-          content: 'SyneSound 试图解决以下痛点：降低门槛：让非音乐人和听障创作者可以通过"看"来作曲，无需依靠听力或乐理知识。透明化创作：并非简单的"黑盒"AI 生成，而是建立一个可解释的画布，让视觉元素对应明确的音乐结构。情感可视化：颜色和运动能够直接传达和谐与律动，使得创作者的情感意图对他（她）人（包括听力正常者）是清晰可读的。团队计划进行一项关于"情感一致性"（Emotional Consistency）的用户研究：听障创作者仅使用视觉画布作曲，听力正常的听众仅听生成的音频，两人背对背无交流，双方分别选择情感标签（如快乐、悲伤、神秘等）并在效价-唤醒度（Valence-Arousal）量表上打分，以验证视觉表达的情感是否通过音乐准确传达给了听众。'
+          content: '### 降低门槛\n\n无需传统听力训练也能创作。\n\n### 可解释界面\n\n画布上的图形始终对应可辨识的和声结构，而非不可见的黑盒。\n\n### 情感可读\n\n色彩与运动向外传递情绪，便于协作与共鸣。\n\n### 研究展望\n\n规划「情感一致性」实验：听障创作者仅凭画布创作，健听听众只听音频，双方在 Valence-Arousal 量表上对齐情绪标签，检验视觉—听觉的情感传递。'
+        }
+      }
+    },
+    {
+      id: 8,
+      title: 'DomestiCade',
+      category: 'xr',
+      description: '从居家混沌到算法秩序',
+      tags: ['WebXR', '浏览器AR', 'Three.js', '程序化生成', '计算机视觉', '严肃游戏'],
+      image: 'DomestiCade 浏览器 AR 平台跳跃游戏主视觉',
+      featured: true,
+      details: {
+        about: {
+          title: '概述',
+          content: '### 从照片到可玩关卡\n\nDomestiCade 是基于浏览器的 AR 平台跳跃游戏：把日常居家环境变成障碍赛道。用户拍摄周遭，系统解析物体与表面，转译为游戏元素，再重构为风格化的 AR 关卡。\n\n### 混合创作权\n\n探索「人的感知」与「机器解读」如何共享作者性——你选择场景并穿行其中，算法揭示环境中潜藏的平台结构；程序化管线再将解读转化为路径、危险物、金币与终点。'
+        },
+        process: {
+          title: '诠释与技术架构',
+          content: '### 机器学习作为语义诠释者\n\n不把 AI 当作完整世界生成器，而定位为语义诠释者：桌沿可以是平台，杯子可类比管道障碍，杂乱角落可升格为危险区。\n\n### 回到真实空间的 AR\n\n经由 WebXR，这些翻译被嵌回用户的物理房间，成为可穿梭游玩的关卡。\n\n[[IMAGE:/images/domesticade-pipeline.png|DomestiCade 系统技术管线示意图]]\n\n### 原型架构\n\n原型整合 WebXR、Three.js、Cannon.js 物理、无服务器视觉推理、程序化关卡规则与本地 3D 资产，在「贴合实拍场景」与「玩法稳定」之间取得平衡。'
+        },
+        outcome: {
+          title: '反思',
+          content: '### 以建议而非取代来设计\n\n我们体会到：当机器学习提供诠释、建议与转化，而非覆盖人的意图时，在交互系统中最具说服力。\n\n### 隐藏的可供性\n\nDomestiCade 把家视作隐藏可供性的场域——熟悉杂物融入一套崭新的空间游玩逻辑。\n\n[[IMAGE:/images/domesticade-scene.png|DomestiCade AR 游玩场景]]'
+        }
+      }
+    },
+    {
+      id: 9,
+      title: '改善视觉语言模型中的前后深度推理',
+      category: 'compdesign',
+      description: '轻量级空间提示提升 VLM 在遮挡场景下的前后关系判断稳定性。',
+      tags: ['视觉语言模型', '空间推理', 'QLoRA', 'Qwen2.5-VL', 'InstaOrder', 'COCO'],
+      image: 'VLM 前后深度推理任务与方法概览',
+      featured: true,
+      details: {
+        about: {
+          title: '动机、任务与方法',
+          content: '### 问题设定\n\n本项目研究轻量级空间提示是否能够提升视觉语言模型的前后深度推理能力。给定一张图像和两个被标注的物体，模型需要判断 Object A 位于 Object B 的前方还是后方。我们关注遮挡场景，因为当前 VLM 在这类空间关系中常常依赖不稳定的视觉捷径。\n\n[[IMAGE:/images/VLMFT-img.png|任务示例：原图与标注 Object A / B 的版本]]\n\n### 研究问题\n\n当提供显式空间元信息，例如 bounding box 坐标和二维重叠标记时，一个较小的 7B 视觉语言模型能否学习到更稳定的前后关系判断？\n\n### 数据集与任务\n\n我们使用 InstaOrder 标注，并与 COCO 2017 图像配对。每个样本包含两个被定位的物体 A 和 B，模型需要回答 A 在 B 前面还是后面。为了避免标签捷径，我们构建了方向平衡且图像不重叠的数据划分：每一对物体都会以两个方向出现，并翻转标签。\n\n最终数据集包含 26,046 个训练样本、2,746 个验证样本和 2,952 个测试样本，其中 front 与 behind 各占 50%。\n\n[[IMAGE:/images/VLMFT-sourcedata.png|InstaOrder 与 COCO 2017 配对 — 数据概览]]\n\n### 方法\n\n我们比较了 Qwen2.5-VL 的 zero-shot 与 fine-tuned 版本。所有实验都使用带有红色和蓝色框的 marked images 来标出 Object A 和 Object B。在此基础上，我们测试两类结构化文本空间提示是否能够提升推理效果：\n\nBBox cue：提供 A 和 B 的 bounding box 坐标。\n\nOverlap cue：提供两个框在二维图像中是否重叠的二元标记。\n\n主要方法使用 QLoRA 对 Qwen2.5-VL 7B 进行参数高效微调，通过 4-bit 量化和低秩适配器，让模型在不进行完整微调的情况下学习前后关系判断。'
+        },
+        process: {
+          title: '关键发现',
+          content: '### 关键发现一：减少标签偏置\n\n7B zero-shot 模型的整体表现接近随机水平，但它的错误并不是随机的。它明显偏向某一个方向：在 front 样本上达到 74.53% 准确率，但在 behind 样本上只有 26.49%。这说明模型存在严重的方向性猜测偏置。\n\n在使用空间提示进行 QLoRA 微调后，这种不平衡被大幅修正。最佳模型 7B + bbox + overlap 在 front 上达到 93.56%，在 behind 上达到 91.73%。\n\n[[IMAGE:/images/VLMFT-result1.png|按目标标签的准确率 — front/behind 偏置修正（图 4）]]\n\n### 关键发现二：空间提示让 7B 模型具备竞争力\n\n仅在 prompt 中加入空间提示，可以让 7B 模型有中等幅度提升，raw accuracy 提高到约 65–66%。但最大提升来自微调。所有 QLoRA 微调后的 7B 版本都超过 91% raw accuracy，超过了 72B zero-shot 参考模型的 70.16%。\n\n最佳配置 7B + bbox + overlap 达到：\n\n92.65% Raw Accuracy\n\n96.82% Consistency Score\n\n91.06% Pair Accuracy\n\n### 关键发现三：遮挡仍然是核心难点\n\n尽管空间提示微调显著提升了前后关系预测，遮挡仍然是困难点。最佳模型在两个框不重叠时达到 96.08% 准确率，但在两个框重叠时下降到 75.80%。\n\n这说明 bbox 坐标和二元 overlap 标记确实帮助模型利用空间结构，但它们并不能完全解决视觉上模糊的遮挡推理。\n\n[[IMAGE:/images/VLMFT-result2.png|按重叠划分的准确率 — 成效与尚未解决的局限（图 3）]]\n\n### 剩余问题\n\n随着 bbox IoU 增大，模型表现也会下降。最佳模型在 IoU 为 0 时达到 93.08% 准确率，但当 IoU 大于 0.3 时下降到 77.78%。这说明即使经过微调，更强的物体重叠仍然会让前后关系推理变得困难。\n\n[[IMAGE:/images/VLMFT-result3.png|按 bbox IoU 分桶的准确率（图 5）]]'
+        },
+        outcome: {
+          title: '反思',
+          content: '### 总结\n\n这个项目表明，在特定空间推理任务上，如果提供有针对性的监督和显式空间提示，一个较小的 VLM 可以超过更大的 zero-shot 模型。同时，结果也揭示了明确边界：在受控的 front/behind benchmark 上取得提升，并不意味着模型已经解决了通用空间推理问题。\n\n### 未来工作\n\n未来工作应进一步测试这种微调是否能迁移到更广泛的 VLM benchmark，并探索更丰富的 visibility-aware cues，例如 segmentation masks、visible area ratio、relative scale 和 depth priors。'
         }
       }
     }
