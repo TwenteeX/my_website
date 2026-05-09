@@ -147,8 +147,8 @@ const ProjectDetail = ({ language }) => {
                     {project.id === 5 && 'Yunxiang Ma, Yuying Zhang, Xinning He, Rhone Ryan Huang Ern'}
                     {project.id === 6 && (language === 'zh' ? '独立完成' : 'Individual Work')}
                     {project.id === 7 && 'Yongyi Xiong, Yunxiang Ma'}
-                    {project.id === 8 && 'Yunxiang Ma'}
-                    {project.id === 9 && 'Yunxiang Ma'}
+                    {project.id === 8 && 'Xinyi Li, Yongyi Xiong, Yunxiang Ma'}
+                    {project.id === 9 && 'Jingwu Wang, Yongyi Xiong, Yunxiang Ma'}
                   </p>
                 </div>
                 <div>
