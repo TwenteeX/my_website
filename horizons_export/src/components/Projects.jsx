@@ -1,7 +1,52 @@
-import React,{useState} from 'react';
-import {Link} from 'react-router-dom';
-import {ArrowUpRight} from 'lucide-react';
-import {projectsData} from '@/data/projects';
-export const projectImages={1:'/images/roomify-main.png',2:'/images/boardgame-head.png',3:'/images/imagine-head.png',4:'/images/hongkong-head.png',5:'/images/pet-head.png',6:'/images/vr-head.png',7:'/images/SyneSound 1.png',8:'/images/domesticade-heroimage.png',9:'/images/VLMFT-method.png'};
-const filters=[['all','All work','全部',null],['products','Products','产品',[1,5,7]],['compdesign','Computational design','计算设计',[2,3,9]],['dataviz','Data & cities','数据与城市',[4]],['xr','Spatial experiences','空间体验',[1,6,8]]];
-export default function Projects({language}){const [category,setCategory]=useState('all'); const zh=language==='zh'; const ids=filters.find(f=>f[0]===category)[3];const order=[1,9,7,8,6,3,2,4,5];const projects=[...projectsData[language]].sort((a,b)=>order.indexOf(a.id)-order.indexOf(b.id)).filter(p=>!ids||ids.includes(p.id)); return <section id="projects" className="section shell"><div className="section-heading"><div><p className="eyebrow">01 / {zh?'项目':'Selected work'}</p><h2>{zh?'研究与设计':'Research & design'}</h2></div><p>{zh?'从模型的空间理解，到人的真实体验。':'From spatial reasoning in models\nto lived experience in the world.'}</p></div><div className="filter-bar" aria-label={zh?'项目分类':'Project categories'}>{filters.map(([id,en,cn])=><button key={id} aria-pressed={id===category} className={id===category?'active':''} onClick={()=>setCategory(id)}>{zh?cn:en}</button>)}</div><div className="project-grid">{projects.map(p=><Link key={p.id} to={'/projects/'+p.id} className="project-card surface"><div className="project-image"><img src={projectImages[p.id]} alt={p.title} loading="lazy" width="720" height="450"/>{p.id===1&&<span className="image-badge">CHI 2026 · UIST 2026 Demo</span>}{p.id===7&&<span className="image-badge">NOVA Most InNOVAtive Prize</span>}</div><div className="project-copy"><div className="project-title"><h3>{p.title}</h3><ArrowUpRight size={20}/></div><p>{p.description}</p><div className="project-tags">{p.tags.filter(t=>!t.includes('CHI')&&!t.includes('UIST')&&!t.includes('NOVA')).slice(0,3).map(t=><span key={t}>{t}</span>)}</div></div></Link>)}</div></section>}
+import React from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
+import { projectsData } from '@/data/projects';
+import { orderProjects, projectCards, projectFilters, projectImages } from '@/data/projectCatalog';
+
+export default function Projects({ language }) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const zh = language === 'zh';
+  const category = projectFilters.find((filter) => filter.id === searchParams.get('category')) || projectFilters[0];
+  const allProjects = orderProjects(projectsData[language]);
+  const projects = allProjects.filter((project) => !category.ids || category.ids.includes(project.id));
+  const workSearch = searchParams.toString() ? '?' + searchParams.toString() : '';
+
+  function selectCategory(id) {
+    setSearchParams(id === 'all' ? {} : { category: id }, { preventScrollReset: true });
+    // The filter stays visible on long indexes; return the results to its lower edge.
+    document.getElementById('project-filters')?.scrollIntoView({ block: 'start', behavior: 'instant' });
+  }
+
+  return (
+    <section id="projects" className="section shell">
+      <header className="section-heading">
+        <div><p className="eyebrow">{zh ? '研究与设计' : 'Research & design'}</p><h1>{zh ? '作品' : 'Work'}</h1></div>
+        <p>{zh ? '探索空间、计算与交互之间的可能。' : 'Explorations in space, computation, and interaction.'}</p>
+      </header>
+      <div className="filter-bar" id="project-filters" role="group" aria-label={zh ? '项目分类' : 'Project categories'}>
+        {projectFilters.map((filter) => (
+          <button key={filter.id} aria-pressed={filter.id === category.id} className={filter.id === category.id ? 'active' : ''} onClick={() => selectCategory(filter.id)}>
+            {filter[language]}
+          </button>
+        ))}
+      </div>
+      <p className="sr-only" role="status" aria-live="polite">{zh ? '显示 ' + projects.length + ' 个项目' : 'Showing ' + projects.length + (projects.length === 1 ? ' project' : ' projects')}</p>
+      <div className="project-grid">
+        {projects.map((project, index) => {
+          const card = projectCards[project.id] || {};
+          return <Link key={project.id} to={'/projects/' + project.id} state={{ workSearch }} className="project-card">
+            <div className={'project-image' + (card.fit === 'contain' ? ' image-contain' : '')}>
+              <img src={card.image || projectImages[project.id]} alt="" loading={index < 3 ? 'eager' : 'lazy'} decoding="async" width="720" height="405" />
+            </div>
+            <div className="project-copy">
+              <div className="project-title"><h2>{project.title}</h2><ArrowUpRight size={16} strokeWidth={1.3} aria-hidden="true" /></div>
+              <p>{card[language] || project.description}</p>
+              <div className="project-meta"><span>{project.year}</span>{card.recognition && <span>{card.recognition}</span>}</div>
+            </div>
+          </Link>;
+        })}
+      </div>
+    </section>
+  );
+}

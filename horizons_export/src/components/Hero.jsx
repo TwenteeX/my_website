@@ -1,4 +1,18 @@
 import React from 'react';
-import {ArrowDown,ArrowUpRight} from 'lucide-react';
-import ResearchVenn from './ResearchVenn';
-export default function Hero({language}){const zh=language==='zh'; return <section id="hero" className="hero shell"><div className="hero-copy"><p className="eyebrow"><span className="status-dot"/>{zh?'计算设计 · 人机交互':'Computational design · Human–computer interaction'}</p><h1>{zh?'马云翔':'Yunxiang Ma'}<span>{zh?'从空间出发，\n理解人与智能。':'Understanding space.\nDesigning with it.'}</span></h1><p className="hero-description">{zh?'我研究人如何感知、使用与创造空间，通过具身交互、多模态人工智能和生成式方法，构建可感知、可操作的空间体验。':'I study how people perceive, use, and create space. My work brings embodied interaction, multimodal AI, and generative methods into spatial experiences people can understand and shape.'}</p><p className="hero-affiliation">{zh?'卡耐基梅隆大学 · 计算设计硕士在读':'M.S. Computational Design · Carnegie Mellon University'}</p><div className="hero-links"><a className="button-dark" href="#projects">{zh?'查看项目':'Explore my work'}<ArrowDown size={16}/></a><a className="text-link" href="/resume.pdf" target="_blank" rel="noreferrer">{zh?'查看简历':'View résumé'}<ArrowUpRight size={16}/></a></div></div><ResearchVenn language={language}/></section>}
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+
+export default function Hero({ language }) {
+  const zh = language === 'zh';
+  return (
+    <section id="hero" className="hero shell" aria-labelledby="hero-title">
+      <div className="hero-copy">
+        <p className="eyebrow hero-eyebrow">{zh ? '计算设计 · 人机交互' : 'Computational design · Human–computer interaction'}</p>
+        <h1 id="hero-title">{zh ? '你好，我是马云翔。' : 'Hi, I’m Yunxiang Ma.'}</h1>
+        <p className="hero-description"><span>{zh ? '从空间出发，' : 'Understanding space.'}</span>{' '}<span>{zh ? '理解人与智能。' : 'Designing with it.'}</span></p>
+        <Link className="hero-work-link" to="/work"><span>{zh ? '查看我的作品' : 'See my works'}</span><ArrowRight size={19} strokeWidth={1.2} /></Link>
+      </div>
+      <div className="hero-footnote"><span>{zh ? '建筑 · 计算 · 交互' : 'Architecture · Computation · Interaction'}</span><span>{zh ? '卡耐基梅隆大学 · 计算设计' : 'Computational Design · Carnegie Mellon University'}</span></div>
+    </section>
+  );
+}
