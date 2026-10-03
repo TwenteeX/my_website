@@ -356,33 +356,136 @@ export const projectsData = {
       ],
       "featured": true,
       "title": "Spatial Depth Reasoning in VLMs",
-      "description": "Fine-tuning a 7B vision-language model to make more consistent front–back judgments in images.",
+      "description": "Building a spatial-reasoning dataset and benchmark from public image resources, then fine-tuning and evaluating a 7B vision-language model end to end.",
       "year": "2026",
       "members": "Jingwu Wang, Yongyi Xiong, Yunxiang Ma",
       "sections": [
         {
-          "title": "Task & dataset",
-          "content": "Given an image and two marked objects, the model predicts whether Object A is in front of or behind Object B. We use InstaOrder annotations with COCO images and construct direction-balanced, image-disjoint splits. Each pair appears in both directions with reversed labels.\n\nThe dataset contains 26,046 training, 2,746 validation, and 2,952 test samples, with equal proportions of front and behind labels.",
+          "title": "Building the dataset, not just tuning the model",
+          "content": "Our work focused on the complete experimental pipeline: reconstructing a task-specific dataset from public image resources, designing a benchmark, establishing baselines, fine-tuning a model, and analyzing its predictions. We built on COCO 2017 images and existing InstaOrder depth annotations; our contribution was turning those resources into controlled VLM instruction examples and an evaluation workflow.\n\nThe task is deliberately narrow: given an image and two localized objects, is Object A in front of or behind Object B? We extracted object pairs, instance masks, bounding boxes, and depth-order labels, preserved instance identity, and rendered images with boxes labeled A and B. This makes the intended pair explicit even when several objects share the same category.",
           "images": [
-            "/images/VLMFT-img.png",
-            "/images/VLMFT-sourcedata.png"
-          ]
+            "/images/vlm-depth/dataset-example.png"
+          ],
+          "imageCaptions": [
+            "Final report, Figure 1 (p. 1): the original COCO image and two marked variants with the A/B identities swapped."
+          ],
+          "zoomImages": true
         },
         {
-          "title": "Controlled experiments",
-          "content": "We compared zero-shot and QLoRA-tuned Qwen2.5-VL models across eight experimental settings. The inputs combine marked images with bounding-box coordinates and a binary 2D-overlap flag. QLoRA uses 4-bit quantization and low-rank adapters to fine-tune the 7B model.\n\nI worked on data curation, experimental design, evaluation, and a reproducible training pipeline. Diagnostics examined label bias, overlap, IoU, pairwise consistency, and accuracy.",
-          "images": [
-            "/images/VLMFT-method.png"
-          ]
+          "title": "A balanced, image-disjoint benchmark",
+          "content": "Each unordered object pair becomes two directional queries, (A, B) and (B, A), with reversed front/behind labels. Every split is therefore exactly balanced: always answering “front” cannot exceed 50% accuracy. We assign all pairs from one source image to a single split, preventing the same image from appearing in both training and evaluation.\n\nThe resulting dataset contains 26,046 training queries, 2,746 validation queries, and 2,952 test queries. These counts refer to directional examples, not unique images. We checked sample counts, label balance, image-disjointness, and rendered examples before running the experiments.",
+          "images": [],
+          "table": {
+            "caption": "Dataset reconstructed from COCO 2017 images and InstaOrder annotations · final report, §2",
+            "columns": [
+              "Split",
+              "Directional queries",
+              "Front / behind"
+            ],
+            "rows": [
+              [
+                "Training",
+                "26,046",
+                "50% / 50%"
+              ],
+              [
+                "Validation",
+                "2,746",
+                "50% / 50%"
+              ],
+              [
+                "Test",
+                "2,952",
+                "50% / 50%"
+              ]
+            ]
+          }
         },
         {
-          "title": "Results & limitations",
-          "content": "The strongest configuration achieved 92.65% accuracy, 96.82% consistency, and 91.06% pair accuracy, compared with 70.16% accuracy for the 72B zero-shot reference. Directional bias decreased: front and behind accuracy reached 93.56% and 91.73%, respectively.\n\nOverlap remained difficult. Accuracy was 96.08% for non-overlapping boxes and 75.80% for overlapping boxes. These results establish improvement on this controlled task; they do not establish general spatial reasoning. Broader benchmark transfer and richer visibility cues remain future work.",
+          "title": "Evaluating relationships and generated explanations",
+          "content": "We built a shared prompt, inference, and answer-parsing pipeline. Models generate a short rationale followed by a front/behind answer; the parser maps free-form responses to front, behind, or unknown. Every setting uses the same marked images, underlying pairs, labels, and splits.\n\nAccuracy alone can hide directional guessing. Consistency Score measures whether reciprocal queries produce opposite labels; Pair Accuracy requires both directions to be correct. We also break accuracy down by target label, 2D overlap, and bounding-box IoU. A separate model-judge evaluation scores visual grounding, depth reasoning, and hallucination in the generated rationales. These scores are diagnostic signals, rather than proof that a model reasons correctly.",
           "images": [
-            "/images/VLMFT-result1.png",
-            "/images/VLMFT-result2.png",
-            "/images/VLMFT-result3.png"
-          ]
+            "/images/vlm-depth/evaluation-metrics.png"
+          ],
+          "imageCaptions": [
+            "Final report, Table 2 (p. 3): evaluation metrics for individual decisions, reciprocal pairs, and generated rationales."
+          ],
+          "zoomImages": true
+        },
+        {
+          "title": "From zero-shot baselines to QLoRA fine-tuning",
+          "content": "Our eight experimental settings compare 7B and 72B zero-shot Qwen2.5-VL baselines, three prompt-only 7B cue variants, and three QLoRA-tuned 7B variants. The spatial cues are bounding-box coordinates, a binary 2D-overlap flag, or both. Holding the data and marked-image inputs fixed lets us distinguish the effect of prompting from the effect of learning to use these cues.\n\nWe fine-tuned Qwen2.5-VL-7B with a frozen 4-bit NF4 backbone and trainable low-rank adapters: rank 64, scaling 128, dropout 0.05, bfloat16 computation, a learning rate of 1 × 10⁻⁴, and an effective batch size of 64. Training uses next-token cross-entropy over the generated target response, without a separate binary classification head.\n\nThe workflow extends through experiment scripts, distributed inference on Modal, output parsing, metric aggregation, and visualization. Main inference jobs used eight parallel containers with one NVIDIA B200 each. Our contribution is a controlled application and evaluation pipeline, rather than a new fine-tuning algorithm.",
+          "images": [
+            "/images/vlm-depth/experiment-configurations.png"
+          ],
+          "imageCaptions": [
+            "Final report, Table 3 (p. 3): all eight configurations, with the same marked-image input throughout."
+          ],
+          "zoomImages": true
+        },
+        {
+          "title": "The complete results",
+          "content": "The strongest configuration, 7B QLoRA with bounding boxes and overlap, achieved 92.65% accuracy, 96.82% consistency, and 91.06% pair accuracy. On this filtered test set, that is 42.14 percentage points above the 7B zero-shot baseline and 22.49 points above the 72B zero-shot reference. All three tuned variants exceeded 91% accuracy.\n\nPrompt-only cues raised 7B accuracy to about 65–66%, but did not produce equally reliable reciprocal decisions. For example, overlap-only prompting reached 65.18% accuracy with 40.81% consistency. Fine-tuning delivered the larger improvement. The full report table below preserves all eight settings, subgroup results, and rationale-quality diagnostics.",
+          "images": [
+            "/images/vlm-depth/results-summary.png"
+          ],
+          "imageCaptions": [
+            "Final report, Table 4 (p. 4): full experimental summary. “7B + bbox/ov” columns are QLoRA-tuned; “7B ZS + …” columns use prompting only. ZS = zero-shot; ov = overlap."
+          ],
+          "zoomImages": true,
+          "table": {
+            "caption": "Key comparisons on the same 2,952-query test set",
+            "columns": [
+              "Model / setting",
+              "Accuracy",
+              "Consistency",
+              "Pair accuracy"
+            ],
+            "rows": [
+              [
+                "7B zero-shot",
+                "50.51%",
+                "26.15%",
+                "21.61%"
+              ],
+              [
+                "72B zero-shot",
+                "70.16%",
+                "67.01%",
+                "53.66%"
+              ],
+              [
+                "7B QLoRA · bbox + overlap",
+                "92.65%",
+                "96.82%",
+                "91.06%"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Reducing directional bias; testing occlusion",
+          "content": "The untuned 7B model was near chance overall, but its errors were strongly directional: 74.53% accuracy on front queries versus 26.49% on behind queries. With combined cues and QLoRA, those figures became 93.56% and 91.73%, respectively. The improvement therefore includes a much more balanced decision rule.\n\nOcclusion remains harder. The strongest model reached 96.08% accuracy when the queried boxes did not overlap, but 75.80% when they did. Reporting these slices separately prevents the strong aggregate score from hiding the difficult cases.",
+          "images": [
+            "/images/vlm-depth/direction-accuracy.png",
+            "/images/vlm-depth/overlap-accuracy.png"
+          ],
+          "imageCaptions": [
+            "Final report, Figure 4 (p. 5): accuracy by front/behind target label.",
+            "Final report, Figure 3 (p. 5): accuracy for overlapping and non-overlapping bounding boxes."
+          ],
+          "zoomImages": true
+        },
+        {
+          "title": "Limits and next steps",
+          "content": "Performance also declines in the high-IoU bucket: the best model scored 77.78% when bounding-box IoU exceeded 0.3, compared with 93.08% at IoU = 0. Bounding boxes and a binary overlap flag are not enough to resolve every ambiguous scene.\n\nThe combined-cue model received a visual-grounding score of 4.80/5 and a 3.3% hallucination rate from the rationale judge, but the strongest evidence remains the decision and reciprocal-pair metrics. We have not established transfer to broader spatial benchmarks or verified that this specialized tuning preserves general VLM capabilities. Future work should test both, and explore richer visibility cues such as segmentation masks, visible-area ratios, relative scale, and depth-order priors.",
+          "images": [
+            "/images/vlm-depth/iou-accuracy.png"
+          ],
+          "imageCaptions": [
+            "Final report, Figure 5 (p. 5): accuracy across bounding-box IoU buckets, showing the remaining difficulty of high-overlap cases."
+          ],
+          "zoomImages": true
         }
       ],
       "links": [
@@ -750,33 +853,136 @@ export const projectsData = {
       ],
       "featured": true,
       "title": "视觉语言模型的空间深度推理",
-      "description": "微调 7B 视觉语言模型，提高图像中前后关系判断的准确性与一致性。",
+      "description": "基于公开图像资源重构空间推理数据集与 benchmark，完成 7B 视觉语言模型从基线评估到微调、实验分析的全流程。",
       "year": "2026",
       "members": "Jingwu Wang, Yongyi Xiong, Yunxiang Ma",
       "sections": [
         {
-          "title": "任务与数据集",
-          "content": "给定图像及两个标记物体，模型判断 A 在 B 的前方还是后方。研究将 InstaOrder 标注与 COCO 图像结合，构建方向平衡、图像不重叠的数据划分。同一物体对以相反方向出现，并翻转标签。\n\n数据包含 26,046 个训练样本、2,746 个验证样本与 2,952 个测试样本，前后标签各占 50%。",
+          "title": "从公开资源到自建数据集",
+          "content": "我们的工作重点是完整实验流程：基于公开图像资源重构任务数据集，设计 benchmark，建立基线，微调模型，并分析预测结果。我们使用 COCO 2017 图像和已有的 InstaOrder 深度标注；核心贡献是将这些资源整理为受控的 VLM 指令样本，并建立相应评测流程。\n\n任务聚焦一个具体问题：给定图像与两个定位后的物体，A 位于 B 的前方还是后方？我们从原始标注中提取物体对、实例掩码、边界框与前后关系标签，保留实例身份，并在图像中绘制标记为 A、B 的边界框。即使同一类别出现多个物体，模型也能明确当前要判断的是哪一对。",
           "images": [
-            "/images/VLMFT-img.png",
-            "/images/VLMFT-sourcedata.png"
-          ]
+            "/images/vlm-depth/dataset-example.png"
+          ],
+          "imageCaptions": [
+            "最终报告图 1，第 1 页：COCO 原始图像，以及交换 A/B 身份后的两种标记图像。"
+          ],
+          "zoomImages": true
         },
         {
-          "title": "受控实验",
-          "content": "研究设置八组实验，对比 Qwen2.5-VL 的零样本与 QLoRA 微调表现。输入结合标记图像、边界框坐标及二维重叠标记，通过 4-bit 量化与低秩适配器微调 7B 模型。\n\n我参与数据整理、实验设计、评估及可复现训练流程的构建，分析标签偏差、遮挡、IoU、成对一致性与准确率。",
-          "images": [
-            "/images/VLMFT-method.png"
-          ]
+          "title": "构建方向平衡、图像互斥的 benchmark",
+          "content": "每个无序物体对生成两条方向相反的查询：(A, B) 和 (B, A)，同时翻转 front/behind 标签。因此，每个数据划分的前后标签都严格各占 50%，始终回答“前方”的策略无法超过 50% 准确率。来自同一源图像的所有物体对只进入一个划分，避免训练与评估之间出现图像泄漏。\n\n最终得到 26,046 条训练样本、2,746 条验证样本和 2,952 条测试样本。这里统计的是带方向的查询样本，而非独立图像数。实验前，我们检查样本数量、标签平衡、图像互斥性，并人工核查标记图像。",
+          "images": [],
+          "table": {
+            "caption": "基于 COCO 2017 与 InstaOrder 重构的数据划分 · 最终报告第 2 节",
+            "columns": [
+              "数据划分",
+              "带方向的查询样本",
+              "前方 / 后方"
+            ],
+            "rows": [
+              [
+                "训练集",
+                "26,046",
+                "50% / 50%"
+              ],
+              [
+                "验证集",
+                "2,746",
+                "50% / 50%"
+              ],
+              [
+                "测试集",
+                "2,952",
+                "50% / 50%"
+              ]
+            ]
+          }
         },
         {
-          "title": "结果与局限",
-          "content": "最佳配置达到 92.65% 准确率、96.82% 一致性及 91.06% 成对准确率，72B 零样本参照的准确率为 70.16%。方向偏差得到改善，前方与后方标签准确率分别为 93.56% 和 91.73%。\n\n遮挡仍是难点：边界框不重叠时准确率为 96.08%，重叠时降至 75.80%。结果说明模型在该受控任务上有所改善，不能据此推断其具备通用空间推理能力。跨基准迁移与更丰富的可见性线索仍有待研究。",
+          "title": "同时评估关系判断与生成式解释",
+          "content": "我们搭建统一的提示词、推理与答案解析流程。模型先生成简短理由，再给出前后关系结论；解析器将自由文本映射为 front、behind 或 unknown。所有实验使用相同的标记图像、物体对、标签和数据划分。\n\n仅看准确率容易掩盖方向性猜测。一致性指标检查同一物体对的两次反向查询是否给出相反标签；成对准确率则要求两个方向都回答正确。我们还按前后标签、二维重叠情况和边界框 IoU 分组分析。另一个模型作为评审，对生成理由的视觉依据、深度推理与幻觉进行评分；这些评分用于诊断，不等同于对正确推理的证明。",
           "images": [
-            "/images/VLMFT-result1.png",
-            "/images/VLMFT-result2.png",
-            "/images/VLMFT-result3.png"
-          ]
+            "/images/vlm-depth/evaluation-metrics.png"
+          ],
+          "imageCaptions": [
+            "最终报告表 2，第 3 页：覆盖单次判断、反向查询与生成理由的评测指标。"
+          ],
+          "zoomImages": true
+        },
+        {
+          "title": "从零样本基线到 QLoRA 微调",
+          "content": "我们设计八组实验：7B 与 72B Qwen2.5-VL 零样本基线、三种仅在提示词中加入空间线索的 7B 变体，以及三种经过 QLoRA 微调的 7B 变体。空间线索分别为边界框坐标、二维重叠标记，以及二者组合。固定数据与标记图像输入，使实验能够区分“提供线索”和“训练模型使用线索”的作用。\n\n微调使用冻结的 4-bit NF4 骨干网络和可训练低秩适配器：rank 为 64、scaling 为 128、dropout 为 0.05、bfloat16 计算、学习率为 1 × 10⁻⁴，有效 batch size 为 64。训练目标是生成式回答的 next-token 交叉熵，而非增加独立的二分类头。\n\n全流程还包括实验脚本、Modal 分布式推理、输出解析、指标汇总与可视化。主要推理任务使用八个并行容器，每个容器配备一张 NVIDIA B200。项目贡献在于受控的任务应用和评测流程，而非提出新的微调算法。",
+          "images": [
+            "/images/vlm-depth/experiment-configurations.png"
+          ],
+          "imageCaptions": [
+            "最终报告表 3，第 3 页：八组实验配置均使用相同的标记图像输入。"
+          ],
+          "zoomImages": true
+        },
+        {
+          "title": "完整实验数据汇总",
+          "content": "最佳配置为“7B QLoRA + 边界框 + 重叠线索”，达到 92.65% 准确率、96.82% 一致性和 91.06% 成对准确率。在这个筛选后的测试集上，准确率比 7B 零样本基线高 42.14 个百分点，比 72B 零样本参照高 22.49 个百分点。三种微调配置的准确率均超过 91%。\n\n仅增加提示线索能够将 7B 准确率提升至约 65–66%，但反向查询仍不够稳定。例如，仅增加重叠提示时，准确率为 65.18%，一致性却只有 40.81%。微调带来了更显著的提升。下方原始汇总表保留全部八种配置、分组结果和理由质量指标，便于完整比较。",
+          "images": [
+            "/images/vlm-depth/results-summary.png"
+          ],
+          "imageCaptions": [
+            "最终报告表 4，第 4 页：完整实验汇总。“7B + bbox/ov”为 QLoRA 微调模型；“7B ZS + …”仅增加提示线索。ZS 表示零样本，ov 表示重叠线索。"
+          ],
+          "zoomImages": true,
+          "table": {
+            "caption": "同一组 2,952 条测试查询上的关键对比",
+            "columns": [
+              "模型 / 配置",
+              "准确率",
+              "一致性",
+              "成对准确率"
+            ],
+            "rows": [
+              [
+                "7B 零样本",
+                "50.51%",
+                "26.15%",
+                "21.61%"
+              ],
+              [
+                "72B 零样本",
+                "70.16%",
+                "67.01%",
+                "53.66%"
+              ],
+              [
+                "7B QLoRA · 边界框 + 重叠",
+                "92.65%",
+                "96.82%",
+                "91.06%"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "方向偏差与遮挡分析",
+          "content": "未微调的 7B 模型总体接近随机水平，但错误具有明显方向性：前方标签准确率为 74.53%，后方标签仅为 26.49%。经过组合线索微调后，两者分别达到 93.56% 和 91.73%。因此，改进不仅体现在总分上，也体现在更平衡的关系判断上。\n\n遮挡仍然更难。最佳模型在边界框不重叠时达到 96.08%，重叠时降至 75.80%。单独呈现这些分组，可以避免较高的总体准确率掩盖困难样本。",
+          "images": [
+            "/images/vlm-depth/direction-accuracy.png",
+            "/images/vlm-depth/overlap-accuracy.png"
+          ],
+          "imageCaptions": [
+            "最终报告图 4，第 5 页：按 front/behind 目标标签划分的准确率。",
+            "最终报告图 3，第 5 页：边界框重叠与不重叠条件下的准确率。"
+          ],
+          "zoomImages": true
+        },
+        {
+          "title": "局限与下一步",
+          "content": "高 IoU 分组同样存在性能下降：最佳模型在边界框 IoU 大于 0.3 时的准确率为 77.78%，IoU 为 0 时为 93.08%。边界框和二元重叠标记仍不足以解决所有视觉歧义。\n\n组合线索模型的评审结果为视觉依据 4.80/5、幻觉率 3.3%；但最有力的证据仍是判断准确率和反向查询指标。我们尚未验证结果能否迁移到更广泛的空间 benchmark，也未确认专项微调是否保留了模型原有的通用能力。后续工作应检验这两点，并探索分割掩码、可见面积比例、相对尺度和深度顺序先验等更丰富的线索。",
+          "images": [
+            "/images/vlm-depth/iou-accuracy.png"
+          ],
+          "imageCaptions": [
+            "最终报告图 5，第 5 页：按边界框 IoU 分组的准确率，显示高重叠样本仍然较难。"
+          ],
+          "zoomImages": true
         }
       ],
       "links": [

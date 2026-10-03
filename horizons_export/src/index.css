@@ -218,6 +218,7 @@ html[lang="zh-CN"] .hero-description { letter-spacing: .08em; }
 .detail-sidebar dd { margin: 0; line-height: 1.8; }
 .detail-tags { display: flex; flex-wrap: wrap; gap: 6px 12px; }
 .detail-tags span { font-size: 11px; }
+.detail-body { min-width: 0; }
 .detail-body > section { margin-bottom: 64px; }
 .detail-body h2 { font-size: 27px; font-weight: 400; margin-bottom: 24px; }
 .detail-body h3 { font-size: 20px; margin: 28px 0 12px; }
@@ -348,3 +349,13 @@ html[lang="zh-CN"] .hero-description { letter-spacing: .08em; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Research tables remain readable on narrow screens; PDF crops open at full size. */
+.detail-table-scroll { max-width: 100%; overflow-x: auto; margin: 28px 0; }
+.detail-table { width: 100%; min-width: 460px; border-collapse: collapse; font-size: 14px; color: var(--text); font-variant-numeric: tabular-nums; }
+.detail-table caption { text-align: left; font-size: 12px; color: var(--muted-text); padding-bottom: 14px; }
+.detail-table th, .detail-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+.detail-table thead th { font-weight: 400; color: var(--ink); border-top: 1px solid var(--line); }
+.detail-table tbody th { font-weight: 400; }
+.figure-expand { display: block; cursor: zoom-in; }
+.figure-size-link { display: inline-block; margin-left: 10px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
