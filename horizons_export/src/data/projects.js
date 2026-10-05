@@ -638,6 +638,93 @@ export const projectsData = {
           "url": "https://github.com/yongyi2002/10623_project"
         }
       ]
+    },
+    {
+      "id": 10,
+      "category": "xr",
+      "tags": [
+        "Embodied interaction",
+        "Projection",
+        "Generative AI",
+        "Prototype"
+      ],
+      "featured": true,
+      "title": "Peter Pan",
+      "year": "2026",
+      "members": "James Fu, Yunxiang Ma",
+      "coverFit": "cover",
+      "links": [],
+      "description": "A real-time embodied interaction prototype, using projected shadows to connect people, physical objects, and an animated character.",
+      "sections": [
+        {
+          "title": "Shadow as an interface",
+          "content": "Peter Pan, Where Did the Shadow Go? explores shadow as a medium for embodied interaction. A projected, shadow-like character inhabits a wall or tabletop, and people influence it by moving objects, making gestures, and casting their own shadows into the scene. The physical surroundings become the interface.\n\nDeveloped with James Fu for the Spring 2026 HyperSense course at CMU, the prototype connects camera-based perception with animated projection. Our focus was the immediate exchange between bodily action and a character’s visible response: how movement, pauses, and changes of direction make an interaction legible in a shared physical space.",
+          "images": [],
+          "imageCaptions": [],
+          "imageDimensions": [],
+          "zoomImages": true
+        },
+        {
+          "title": "Readings & brainstorming",
+          "content": "Several weeks of shared readings and discussion helped us connect embodied prompting, spatial interfaces, bodily awareness, explainable AI, and human–AI co-creation. The reading map brought these perspectives together and gave us a way to debate how people understand and influence an agent. For the prototype, we explored two ideas in particular: physical arrangements can guide behavior, and an abstract shadow can leave room for people to interpret a character’s intentions.",
+          "images": [
+            "/images/peter-pan-reading-map.jpg"
+          ],
+          "imageCaptions": [
+            "Reading map assembled by Evan from our shared readings and discussions on embodied and spatial AI interactions. Open the full-size image to explore the notes."
+          ],
+          "imageDimensions": [
+            [
+              2600,
+              868
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/peter-pan-reading-map-full.jpg"
+          ]
+        },
+        {
+          "title": "Building a real-time prototype",
+          "content": "The project moved from an initial shadow concept in March to recognition experiments and an integrated prototype in April. A camera observes the interaction area; segmentation and a vision-language model identify the character object and surrounding elements. A calibrated 2D world plane connects their positions with the projection surface.\n\nA reasoning layer interprets the scene and proposes actions, while the animation layer uses default and role-based behaviors such as walking, waiting, and jumping. The projector returns the character to the same physical surface, completing the loop. Moving a book, adding a paper platform, or placing a hand in the scene can change the conditions the character responds to.",
+          "images": [
+            "/images/peter-pan-prototype-pipeline.png",
+            "/images/peter-pan-projection-setup.jpg"
+          ],
+          "imageCaptions": [
+            "Prototype pipeline from the final slides: physical perception, scene interpretation and planning, behavior generation, and projection.",
+            "Camera and projector arrangement from the final slides, aligning the physical object, recognition area, and projected character."
+          ],
+          "imageDimensions": [
+            [
+              2050,
+              883
+            ],
+            [
+              1993,
+              853
+            ]
+          ],
+          "zoomImages": true
+        },
+        {
+          "title": "Showcase at CMU School of Design",
+          "content": "We presented the prototype at the CMU School of Design showcase, inviting visitors to interact directly with the projected character. People rearranged objects, built obstacles, tried to make the character jump, and used their own shadows to interrupt or guide it. These encounters made the prototype a shared, playful experience.\n\nThe demonstration also exposed practical design questions. Hand and arm detection was sometimes inconsistent, and visitors assigned different meanings to the same materials—for example, treating a sticky note as a path, ladder, or platform. Those responses pointed toward clearer feedback, more reliable calibration and perception, and a broader range of character behaviors.",
+          "images": [
+            "/images/peter-pan-showcase-interaction.jpg"
+          ],
+          "imageCaptions": [
+            "A visitor encounters the projected shadow character during the CMU School of Design showcase."
+          ],
+          "imageDimensions": [
+            [
+              2048,
+              1365
+            ]
+          ],
+          "zoomImages": true
+        }
+      ]
     }
   ],
   "zh": [
@@ -1277,6 +1364,93 @@ export const projectsData = {
         {
           "label": "Code · GitHub",
           "url": "https://github.com/yongyi2002/10623_project"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "category": "xr",
+      "tags": [
+        "Embodied interaction",
+        "Projection",
+        "Generative AI",
+        "Prototype"
+      ],
+      "featured": true,
+      "title": "Peter Pan",
+      "year": "2026",
+      "members": "James Fu, Yunxiang Ma",
+      "coverFit": "cover",
+      "links": [],
+      "description": "以投影中的影子为媒介，通过实时具身交互，连接人的身体动作、真实物件与动画角色。",
+      "sections": [
+        {
+          "title": "让影子成为交互媒介",
+          "content": "Peter Pan, Where Did the Shadow Go? 探索以影子为媒介的具身交互。一个影子般的动画角色被投影到墙面或桌面上，人们通过移动物件、做出手势，或让自己的影子进入场景来影响它。周围的实体空间由此成为交互界面。\n\n这个原型由我与 James Fu 在 CMU 2026 年春季 HyperSense 课程中共同完成，将摄像头感知与动画投影连接起来。我们关注身体动作与角色反馈之间的即时交流：角色的移动、停顿和转向，如何让同一物理空间中的互动变得可理解。",
+          "images": [],
+          "imageCaptions": [],
+          "imageDimensions": [],
+          "zoomImages": true
+        },
+        {
+          "title": "前期阅读与 brainstorm",
+          "content": "在数周的共同阅读与讨论中，我们梳理了具身提示、空间界面、身体感知、可解释 AI，以及人与 AI 共创等方向。Reading map 将这些观点并置，帮助我们讨论人如何理解和影响一个智能体。原型探索尤其关注两个想法：实体物件的摆放可以引导角色行为，而抽象的影子形态为使用者理解角色的意图留下空间。",
+          "images": [
+            "/images/peter-pan-reading-map.jpg"
+          ],
+          "imageCaptions": [
+            "由 Evan 整理的 reading map，汇集我们数周关于具身与空间 AI 交互的阅读、观点总结和讨论。可打开原图查看便签内容。"
+          ],
+          "imageDimensions": [
+            [
+              2600,
+              868
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/peter-pan-reading-map-full.jpg"
+          ]
+        },
+        {
+          "title": "构建实时交互原型",
+          "content": "项目从 3 月的影子概念，逐步发展为识别实验，并在 4 月完成原型整合。摄像头观察交互区域，分割模块与视觉语言模型识别角色物件及周围元素，再通过校准后的二维世界平面，将物件位置对应到投影表面。\n\n推理模块解释场景并规划动作，动画模块结合默认行为与角色化行为，呈现行走、等待、跳跃等反馈。投影仪将角色送回同一物理表面，形成持续的交互循环。移动一本书、加入纸片平台，或把手伸入场景，都可以改变角色所面对的空间条件。",
+          "images": [
+            "/images/peter-pan-prototype-pipeline.png",
+            "/images/peter-pan-projection-setup.jpg"
+          ],
+          "imageCaptions": [
+            "来自最终 slides 的原型流程：物理感知、场景解释与动作规划、行为生成，以及投影反馈。",
+            "来自最终 slides 的装置布置：摄像头与投影仪连接真实物件、识别区域和投影角色。"
+          ],
+          "imageDimensions": [
+            [
+              2050,
+              883
+            ],
+            [
+              1993,
+              853
+            ]
+          ],
+          "zoomImages": true
+        },
+        {
+          "title": "CMU School of Design showcase",
+          "content": "我们在 CMU School of Design 的 showcase 展示了原型，邀请观众直接与投影角色互动。人们会重新摆放物件、搭建障碍、尝试让角色跳跃，也会用自己的影子打断或引导它，让现场体验呈现出共同探索与游戏的氛围。\n\n展示也暴露了具体的设计问题：手和手臂的识别有时不够稳定，同一种材料也可能被观众赋予不同含义，例如将便签理解为路径、梯子或平台。这些反馈为更清晰的交互提示、更可靠的校准与感知，以及更丰富的角色行为提供了下一轮调整方向。",
+          "images": [
+            "/images/peter-pan-showcase-interaction.jpg"
+          ],
+          "imageCaptions": [
+            "CMU School of Design showcase 现场，观众与投影中的影子角色相遇。"
+          ],
+          "imageDimensions": [
+            [
+              2048,
+              1365
+            ]
+          ],
+          "zoomImages": true
         }
       ]
     }

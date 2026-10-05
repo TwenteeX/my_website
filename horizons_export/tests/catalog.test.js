@@ -33,6 +33,7 @@ test('all index covers and bilingual case-study images resolve to local assets',
       if (card.poster) assert.ok(assetExists(card.poster), 'Missing animation poster: ' + card.poster);
       for (const section of project.sections) {
         for (const image of section.images) assert.ok(assetExists(image), 'Missing image: ' + image);
+        for (const image of section.fullSizeImages || []) assert.ok(assetExists(image), 'Missing full-size figure: ' + image);
         if (section.video) {
           assert.ok(assetExists(section.video.src), 'Missing video: ' + section.video.src);
           assert.ok(assetExists(section.video.poster), 'Missing video poster: ' + section.video.poster);

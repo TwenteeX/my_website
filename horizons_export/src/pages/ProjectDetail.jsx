@@ -34,7 +34,7 @@ export default function ProjectDetail({ language }) {
       <h1>{project.title}</h1>
       <p>{project.description}</p>
     </header>
-    <div className="detail-cover">
+    <div className={'detail-cover' + (project.coverFit === 'cover' ? ' detail-cover-crop' : '')}>
       <ProjectImage key={project.id} src={projectImages[project.id]} poster={poster} alt={project.title} controls language={language} {...(poster ? { width: 1280, height: 720, style: { height: 'auto' } } : {})} />
     </div>
     <div className="detail-layout">
@@ -73,10 +73,11 @@ export default function ProjectDetail({ language }) {
           </div>}
           {s.images.map((src, j) => {
             const caption = s.imageCaptions?.[j] || `${s.title} · ${String(j + 1).padStart(2, '0')}`;
+            const fullSize = s.fullSizeImages?.[j] || src;
             const picture = <img src={src} alt={s.imageCaptions?.[j] || `${project.title} — ${s.title} ${j + 1}`} width={s.imageDimensions?.[j]?.[0]} height={s.imageDimensions?.[j]?.[1]} loading="lazy" />;
             return <figure key={src}>
-              {s.zoomImages ? <a className="figure-expand" href={src} target="_blank" rel="noreferrer" aria-label={`${zh ? '查看原图' : 'View full size'}: ${caption}`}>{picture}</a> : picture}
-              <figcaption>{caption}{s.zoomImages && <a className="figure-size-link" href={src} target="_blank" rel="noreferrer">{zh ? '查看原图 ↗' : 'View full size ↗'}</a>}</figcaption>
+              {s.zoomImages ? <a className="figure-expand" href={fullSize} target="_blank" rel="noreferrer" aria-label={`${zh ? '查看原图' : 'View full size'}: ${caption}`}>{picture}</a> : picture}
+              <figcaption>{caption}{s.zoomImages && <a className="figure-size-link" href={fullSize} target="_blank" rel="noreferrer">{zh ? '查看原图 ↗' : 'View full size ↗'}</a>}</figcaption>
             </figure>;
           })}
         </section>)}

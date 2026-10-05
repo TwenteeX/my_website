@@ -72,6 +72,8 @@ Roomify uses the complete supplied 30-second demo as a looping GIF: an 800px det
 
 ## Source notes
 
+Peter Pan (project 10) documents James Fu and Yunxiang Ma's Spring 2026 HyperSense shadow interaction prototype and CMU School of Design showcase. Text follows the owner's final course report; figures are cropped exclusively from the final slides (pages 14 and 21), with owner-supplied showcase photographs. Evan's reading map is presented as a shared reading and brainstorming artifact; a compressed inline preview links to the original full-size photograph. The case study focuses on the prototype and showcase experience.
+
 Roomify's expanded bilingual case study follows the final CHI 2026 paper, “Roomify: Spatially-Grounded Style Transformation for Immersive Virtual Environments” (https://doi.org/10.1145/3772318.3791803). New figure crops reproduce Figures 9 and 13; result tables transcribe reported means. The two videos were supplied by the website owner. Existing role and UIST demo information is retained from the original project content.
 
 Personal and project information comes from the existing repository. The journey uses the user's August 2025 Pittsburgh arrival; the résumé retains its original September 2025 academic start date. San Francisco denotes the Bay Area exchange with UC Berkeley. Map lines show the sequence of events, not specific travel routes. The map stays 2:1, with city buttons for smaller screens.
