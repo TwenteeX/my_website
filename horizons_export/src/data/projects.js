@@ -907,6 +907,264 @@ export const projectsData = {
           ]
         }
       ]
+    },
+    {
+      "id": 12,
+      "category": "architecture",
+      "featured": true,
+      "year": "2021",
+      "coverFit": "cover",
+      "links": [],
+      "title": "The Other Perspective",
+      "description": "A community installation of collected plants, metal frames, and automatic irrigation, bringing people and nature together in an urban setting.",
+      "tags": [
+        "Installation",
+        "Design + build",
+        "Community participation",
+        "Coexistence"
+      ],
+      "members": "Tsinghua University, School of Architecture · 33 student builders",
+      "facts": [
+        {
+          "label": "My role",
+          "value": "Co-director · one of two project leads"
+        },
+        {
+          "label": "Period",
+          "value": "August–October 2021"
+        },
+        {
+          "label": "Location",
+          "value": "CapitaMall, Taiyanggong, Beijing"
+        },
+        {
+          "label": "Recognition",
+          "value": "Best Popularity Award · four participating projects"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Making coexistence spatial",
+          "content": "The Other Perspective is a public installation developed through design and construction for CapitaLand’s 2021 Charity & Life Festival. The concept of coexistence brings metal structures, community plants, and the people entering the pavilion into a shared setting. The relationship between city and nature becomes something encountered through looking, moving, and pausing.\n\nWe collected potted plants from the surrounding community that were struggling under poor care, left unused, or discarded. Suspended within a metal frame and connected to automatic irrigation, they became living components of a public space. The frame expresses an urban order while providing support and conditions for continued care.\n\nI co-directed the project with another student, with responsibilities across concept and spatial design, material processing, construction, and publicity. A total of 33 students participated in the build. My role connected design intent, material and assembly decisions, fabrication arrangements, and on-site execution so the team could realize the installation together.",
+          "images": [
+            "/images/perspective-concept.jpg"
+          ],
+          "imageCaptions": [
+            "Concept-to-build diagram: nature, self, and city are translated into plants, reflective panels, aluminum frames, and a public pavilion."
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1388,
+              319
+            ]
+          ],
+          "fullSizeImages": [
+            "/images/perspective-concept.jpg"
+          ]
+        },
+        {
+          "title": "From urban outlines to an inhabitable frame",
+          "content": "The site sits at CapitaMall in Beijing’s Taiyanggong district. We abstracted and inverted the outlines of nearby buildings to develop the frame’s geometric prototype. Rectangular elements at different heights intersect to create an open, layered environment within a compact footprint. Plans and sections at successive heights study the relationship between the frame, entrances, and places to pause.\n\nThe experience is designed around everyday actions: looking through frames at other people, approaching suspended plants, resting on a timber seat, or noticing one’s reflection. The illustrated scenarios are design intentions, bringing urban structure, natural growth, and the visitor’s own presence into the same field of view.",
+          "images": [
+            "/images/perspective-site.jpg",
+            "/images/perspective-experience.jpg",
+            "/images/perspective-form.jpg"
+          ],
+          "imageCaptions": [
+            "Site and formal reference: neighboring buildings are abstracted and inverted to develop the metal frame.",
+            "Experience axonometric: open frames, suspended planting, reflective surfaces, and seating create opportunities to enter, look, and pause.",
+            "Form studies: frame compositions at different heights, with corresponding plans and sections."
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1094,
+              593
+            ],
+            [
+              1900,
+              1647
+            ],
+            [
+              1097,
+              1476
+            ]
+          ],
+          "fullSizeImages": [
+            "/images/perspective-site.jpg",
+            "/images/perspective-experience-full.jpg",
+            "/images/perspective-form.jpg"
+          ]
+        },
+        {
+          "title": "Detailing coexistence",
+          "content": "Aluminum profiles and connectors form the skeleton, integrating planting, lighting, irrigation, and reflective panels. Profile slots provide fixing points and house LED strips. Connected rectangular light loops outline the frame at night, placing its linear order alongside the less predictable forms of plants.\n\nAutomatic irrigation runs along the frame to water the hanging plants from above. Continued care is part of the coexistence concept, supported by the installation’s infrastructure. Reflective panels fit into the profile slots, overlapping views of the environment, plants, and visitors. The three-meter-square timber base is assembled to suit available board sizes; pine boards on the seats are processed into smaller pieces adapted to bodily contact and rest.",
+          "images": [
+            "/images/perspective-assembly.jpg",
+            "/images/perspective-light-system.jpg",
+            "/images/perspective-led.jpg",
+            "/images/perspective-irrigation.jpg",
+            "/images/perspective-plants.jpg",
+            "/images/perspective-reflector.jpg",
+            "/images/perspective-floor.jpg",
+            "/images/perspective-seating.jpg",
+            "/images/perspective-connectors.jpg"
+          ],
+          "imageCaptions": [
+            "Exploded assembly: aluminum frame, planting, irrigation, light strips, reflective panels, seating, and the timber base.",
+            "01 Light system: connected vertical rectangles establish a continuous illuminated outline.",
+            "02 LED strips: inserted into profile slots to integrate lighting with the frame.",
+            "03 Automatic irrigation: waters suspended plants from top to bottom and controls the amount of water.",
+            "04 Hanging plants: collected community plants create a vertical layer within the metal frame.",
+            "05 Reflective-panel connection: panels fit into profile slots to frame and reflect the surroundings.",
+            "06 Timber base: a three-meter square assembled from five pinwheel-shaped board segments to suit material sizes.",
+            "07 Pine seating: smaller boards are processed to suit human scale and fixed to the seat structure.",
+            "08 Profile connectors: internal corner components connect the aluminum members."
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1900,
+              1334
+            ],
+            [
+              667,
+              245
+            ],
+            [
+              667,
+              239
+            ],
+            [
+              667,
+              244
+            ],
+            [
+              667,
+              248
+            ],
+            [
+              667,
+              244
+            ],
+            [
+              667,
+              252
+            ],
+            [
+              667,
+              253
+            ],
+            [
+              667,
+              268
+            ]
+          ],
+          "fullSizeImages": [
+            "/images/perspective-assembly-full.jpg",
+            "/images/perspective-light-system.jpg",
+            "/images/perspective-led.jpg",
+            "/images/perspective-irrigation.jpg",
+            "/images/perspective-plants.jpg",
+            "/images/perspective-reflector.jpg",
+            "/images/perspective-floor.jpg",
+            "/images/perspective-seating.jpg",
+            "/images/perspective-connectors.jpg"
+          ],
+          "imageLayout": "grid",
+          "imageSpans": [
+            2
+          ]
+        },
+        {
+          "title": "A collective build by 33 students",
+          "content": "The construction diagram sets out four phases—plant collection, material processing, transportation, and on-site construction—with a build sequence marked from Day 1 to Day 30. Photographs document six concrete activities: collecting plants, cutting aluminum profiles, processing pine boards, assembling the frame, attaching light strips, and hanging plants.\n\nAs one of two co-directors, I contributed to the design and coordinated fabrication, construction, and publicity around a shared design intent. The participation of 33 students turned the drawn assembly into a sequence of cutting, connecting, installing, and arranging. The construction record makes that collective work visible.",
+          "images": [
+            "/images/perspective-process.jpg",
+            "/images/perspective-collecting.jpg",
+            "/images/perspective-cutting.jpg",
+            "/images/perspective-woodwork.jpg",
+            "/images/perspective-assembling.jpg",
+            "/images/perspective-lighting.jpg",
+            "/images/perspective-hanging.jpg"
+          ],
+          "imageCaptions": [
+            "Build sequence: plant collection begins on Day 1, material processing on Day 7, transportation on Day 15, followed by on-site construction through Day 30.",
+            "01 · Collecting plants",
+            "02 · Cutting aluminum",
+            "03 · Processing pine",
+            "04 · On-site assembly",
+            "05 · Attaching light strips",
+            "06 · Hanging plants"
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1900,
+              295
+            ],
+            [
+              528,
+              298
+            ],
+            [
+              528,
+              294
+            ],
+            [
+              528,
+              289
+            ],
+            [
+              528,
+              304
+            ],
+            [
+              528,
+              298
+            ],
+            [
+              528,
+              305
+            ]
+          ],
+          "fullSizeImages": [
+            "/images/perspective-process-full.jpg",
+            "/images/perspective-collecting.jpg",
+            "/images/perspective-cutting.jpg",
+            "/images/perspective-woodwork.jpg",
+            "/images/perspective-assembling.jpg",
+            "/images/perspective-lighting.jpg",
+            "/images/perspective-hanging.jpg"
+          ],
+          "imageLayout": "grid",
+          "imageSpans": [
+            3
+          ],
+          "imageColumns": 3
+        },
+        {
+          "title": "Festival exhibition and recognition",
+          "content": "The completed installation was presented at CapitaLand’s 2021 Charity & Life Festival and received the Best Popularity Award among four participating projects. Its open frame, suspended plants, lighting, and timber places to pause brought the coexistence concept into a setting the public could approach and experience.\n\nThe project connected concept design, detailing, fabrication, teamwork, and public exhibition. For me, co-direction meant moving between the overall spatial intention and the practical decisions of making, helping a shared design take shape through the work of 33 student builders.",
+          "images": [
+            "/images/perspective-cover.jpg"
+          ],
+          "imageCaptions": [
+            "Completed installation: light traces the metal frame while plants, reflective panels, and timber platforms share the space. This photograph also serves as the project cover."
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              2400,
+              1921
+            ]
+          ],
+          "fullSizeImages": [
+            "/images/perspective-cover.jpg"
+          ]
+        }
+      ]
     }
   ],
   "zh": [
@@ -1814,6 +2072,264 @@ export const projectsData = {
           "fullSizeImages": [
             "/images/batavia-spatial-sequence-full.jpg",
             "/images/batavia-exterior.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "category": "architecture",
+      "featured": true,
+      "year": "2021",
+      "coverFit": "cover",
+      "links": [],
+      "title": "另一种视角：共生装置",
+      "description": "以社区盆栽、金属框架与自动灌溉构建公共装置，在城市日常中呈现人与自然的共生。",
+      "tags": [
+        "装置设计",
+        "设计与搭建",
+        "社区参与",
+        "共生"
+      ],
+      "members": "清华大学建筑学院 · 33 位同学参与搭建",
+      "facts": [
+        {
+          "label": "我的角色",
+          "value": "联合统筹者（两人共同统筹）"
+        },
+        {
+          "label": "时间",
+          "value": "2021 年 8 月—10 月"
+        },
+        {
+          "label": "地点",
+          "value": "北京太阳宫 · 凯德 Mall"
+        },
+        {
+          "label": "获奖",
+          "value": "最佳人气奖 · 四个参展项目"
+        }
+      ],
+      "sections": [
+        {
+          "title": "让共生成为可以进入的空间",
+          "content": "The Other Perspective（另一种视角）是一项从设计走向现场搭建的公共装置，于 2021 年参加凯德 Mall 公益生活节。项目以“共生”为概念，将城市中的金属结构、社区中的植物，以及进入装置的人放入同一空间，让人与自然的关系通过停留、观看和身体体验被感知。\n\n我们收集社区内因养护不当而生长不佳、被闲置或丢弃的盆栽，将它们悬挂于金属框架中，并接入自动灌溉。植物由分散在家庭中的盆栽，成为共同构成公共空间的生命材料；框架既承载城市的秩序，也为植物继续生长提供支撑与养护条件。\n\n我与另一位同学联合统筹项目，工作覆盖概念与空间设计、材料加工、施工搭建及宣传。共有 33 位同学参与建造。我的角色是将设计意图、材料和构造选择、加工安排与现场实施连接起来，推动团队共同完成装置。",
+          "images": [
+            "/images/perspective-concept.jpg"
+          ],
+          "imageCaptions": [
+            "概念与建造流程：自然、自我与城市的关系，落实为植物、反射板、铝型材框架及公共装置。"
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1388,
+              319
+            ]
+          ],
+          "fullSizeImages": [
+            "/images/perspective-concept.jpg"
+          ]
+        },
+        {
+          "title": "从城市轮廓到可停留的框架",
+          "content": "场地位于北京太阳宫的凯德 Mall。我们观察周边建筑，将其轮廓抽象、翻转，再转化为装置的几何原型。不同高度的矩形框架相互穿插，在有限的场地中形成开放而有层次的空间。形态推演通过不同高度的平面与剖面，检验框架、入口和停留空间之间的关系。\n\n体验围绕简单的日常动作展开：穿过框架观看别人、靠近悬挂的植物、在木质座椅上休息，或在反射板中看到自己的身影。图中的体验场景是设计设想，旨在让城市结构、自然生长与人的存在同时进入视野。",
+          "images": [
+            "/images/perspective-site.jpg",
+            "/images/perspective-experience.jpg",
+            "/images/perspective-form.jpg"
+          ],
+          "imageCaptions": [
+            "场地与形态来源：抽象并翻转周边建筑，形成金属框架的原型。",
+            "体验轴测：开放框架、悬挂植物、反射面与座椅共同组织可进入、可观看、可停留的空间。",
+            "形态推演：不同高度的框架组合，以及对应的平面和剖面研究。"
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1094,
+              593
+            ],
+            [
+              1900,
+              1647
+            ],
+            [
+              1097,
+              1476
+            ]
+          ],
+          "fullSizeImages": [
+            "/images/perspective-site.jpg",
+            "/images/perspective-experience-full.jpg",
+            "/images/perspective-form.jpg"
+          ]
+        },
+        {
+          "title": "将共生落实为构造",
+          "content": "装置以铝型材和连接件组成骨架，将植物、灯带、灌溉和反射板整合在同一套构造中。型材的槽口既用于固定部件，也容纳 LED 灯带；多个矩形光带在夜间描绘框架，让金属的线性秩序与植物的自然形态并置。\n\n自动灌溉系统沿框架布置，从上向下为悬挂植物供水。植物需要持续照料，因此“共生”既是可见的空间形态，也落实为养护的支持。反射板嵌入型材槽口，使周围环境、植物与观众的身影交织。地面平台为 3 米见方，依据原材料尺寸拼合；座椅表面的松木板经过加工，回应身体接触和停留的尺度。",
+          "images": [
+            "/images/perspective-assembly.jpg",
+            "/images/perspective-light-system.jpg",
+            "/images/perspective-led.jpg",
+            "/images/perspective-irrigation.jpg",
+            "/images/perspective-plants.jpg",
+            "/images/perspective-reflector.jpg",
+            "/images/perspective-floor.jpg",
+            "/images/perspective-seating.jpg",
+            "/images/perspective-connectors.jpg"
+          ],
+          "imageCaptions": [
+            "分解轴测：铝型材骨架、悬挂植物、自动灌溉、灯带、反射板、座椅及木地台的装配关系。",
+            "01 光带系统：多个竖向矩形连接，形成整体的光线轮廓。",
+            "02 LED 灯带：嵌入铝型材槽口，使照明与框架结合。",
+            "03 自动灌溉：从上向下为悬挂植物供水，并自动控制水量。",
+            "04 悬挂植物：将社区收集的盆栽纳入金属框架，形成垂直的植物层。",
+            "05 反射板连接：板材嵌入型材槽口，形成取景与反射效果。",
+            "06 木地台：3 米见方，按照材料尺寸以五块风车状板面拼合。",
+            "07 松木座面：加工为适应人体尺度的小板，再固定于座椅骨架。",
+            "08 型材连接件：通过内置角部件连接铝型材。"
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1900,
+              1334
+            ],
+            [
+              667,
+              245
+            ],
+            [
+              667,
+              239
+            ],
+            [
+              667,
+              244
+            ],
+            [
+              667,
+              248
+            ],
+            [
+              667,
+              244
+            ],
+            [
+              667,
+              252
+            ],
+            [
+              667,
+              253
+            ],
+            [
+              667,
+              268
+            ]
+          ],
+          "fullSizeImages": [
+            "/images/perspective-assembly-full.jpg",
+            "/images/perspective-light-system.jpg",
+            "/images/perspective-led.jpg",
+            "/images/perspective-irrigation.jpg",
+            "/images/perspective-plants.jpg",
+            "/images/perspective-reflector.jpg",
+            "/images/perspective-floor.jpg",
+            "/images/perspective-seating.jpg",
+            "/images/perspective-connectors.jpg"
+          ],
+          "imageLayout": "grid",
+          "imageSpans": [
+            2
+          ]
+        },
+        {
+          "title": "33 位同学共同完成的搭建",
+          "content": "施工图将过程分为植物收集、材料加工、运输与现场搭建四个阶段，并标示从第 1 天到第 30 天的建造顺序。实际制作记录进一步展开了六个环节：收集植物、切割铝型材、加工松木板、组装框架、安装灯带，以及悬挂植物。\n\n作为两位联合统筹者之一，我参与设计，并协调加工、建造与宣传，让各环节围绕同一设计目标衔接。33 位同学的共同参与，使装置从图纸上的装配关系走向真实的切割、连接、安装和布置；施工照片保留了这一集体建造过程。",
+          "images": [
+            "/images/perspective-process.jpg",
+            "/images/perspective-collecting.jpg",
+            "/images/perspective-cutting.jpg",
+            "/images/perspective-woodwork.jpg",
+            "/images/perspective-assembling.jpg",
+            "/images/perspective-lighting.jpg",
+            "/images/perspective-hanging.jpg"
+          ],
+          "imageCaptions": [
+            "建造流程图：第 1 天开始收集植物，第 7 天材料加工，第 15 天运输，随后进入现场搭建，至第 30 天完成图示流程。",
+            "01 · 收集植物",
+            "02 · 切割铝型材",
+            "03 · 加工松木板",
+            "04 · 现场组装",
+            "05 · 安装灯带",
+            "06 · 悬挂植物"
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1900,
+              295
+            ],
+            [
+              528,
+              298
+            ],
+            [
+              528,
+              294
+            ],
+            [
+              528,
+              289
+            ],
+            [
+              528,
+              304
+            ],
+            [
+              528,
+              298
+            ],
+            [
+              528,
+              305
+            ]
+          ],
+          "fullSizeImages": [
+            "/images/perspective-process-full.jpg",
+            "/images/perspective-collecting.jpg",
+            "/images/perspective-cutting.jpg",
+            "/images/perspective-woodwork.jpg",
+            "/images/perspective-assembling.jpg",
+            "/images/perspective-lighting.jpg",
+            "/images/perspective-hanging.jpg"
+          ],
+          "imageLayout": "grid",
+          "imageSpans": [
+            3
+          ],
+          "imageColumns": 3
+        },
+        {
+          "title": "公益生活节展出与最佳人气奖",
+          "content": "完成后的装置在 2021 年凯德 Mall 公益生活节展出，并在四个参展项目中获得最佳人气奖。开放的框架、悬挂植物、灯光与木质停留空间，将“共生”转化为公众能够走近并体验的环境。\n\n这次实践把概念设计、构造细节、加工制作、团队协作与公共展示连接起来。对我而言，联合统筹意味着持续在整体空间与具体制作之间往返，让共同的设计意图通过 33 位同学的协作落地。",
+          "images": [
+            "/images/perspective-cover.jpg"
+          ],
+          "imageCaptions": [
+            "最终实景：灯带描绘金属框架，植物、反射面与木质平台共同构成装置。此图也用作项目封面。"
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              2400,
+              1921
+            ]
+          ],
+          "fullSizeImages": [
+            "/images/perspective-cover.jpg"
           ]
         }
       ]

@@ -70,3 +70,16 @@ test('the catalog preserves every project and safely includes future additions',
   const future = { id: 1000, title: 'Future project' };
   assert.equal(orderProjects([future, ...projectsData.en]).at(-1), future);
 });
+
+test('Roomify stays first while dated projects sort from newest to oldest', () => {
+  const projects = [
+    { id: 3000, year: '2024' },
+    { id: 3001, year: '2024—2025' },
+    { id: 3002, year: '2030' },
+    { id: 12, year: '2021' },
+    { id: 1, year: '2020' },
+    { id: 3003 },
+  ];
+  assert.deepEqual(orderProjects(projects).map(({ id }) => id), [1, 3002, 3001, 3000, 12, 3003]);
+  for (const language of ['en', 'zh']) assert.equal(orderProjects(projectsData[language])[0].id, 1);
+});

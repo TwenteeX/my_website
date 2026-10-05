@@ -72,16 +72,16 @@ export default function ProjectDetail({ language }) {
               <tbody>{s.table.rows.map((row, r) => <tr key={r}>{row.map((cell, c) => c === 0 ? <th scope="row" key={c}>{cell}</th> : <td key={c}>{cell}</td>)}</tr>)}</tbody>
             </table>
           </div>}
-          {s.images.map((src, j) => {
+          <div className={s.imageLayout === 'grid' ? 'detail-figure-grid' + (s.imageColumns === 3 ? ' detail-figure-grid-three' : '') : undefined}>{s.images.map((src, j) => {
             const caption = s.imageCaptions?.[j] || `${s.title} · ${String(j + 1).padStart(2, '0')}`;
             const credit = s.imageCredits?.[j];
             const fullSize = s.fullSizeImages?.[j] || src;
             const picture = <img src={src} alt={s.imageCaptions?.[j] || `${project.title} — ${s.title} ${j + 1}`} width={s.imageDimensions?.[j]?.[0]} height={s.imageDimensions?.[j]?.[1]} loading="lazy" />;
-            return <figure key={src}>
+            return <figure key={src} className={s.imageSpans?.[j] > 1 ? 'figure-wide' : undefined}>
               {s.zoomImages ? <a className="figure-expand" href={fullSize} target="_blank" rel="noreferrer" aria-label={`${zh ? '查看原图' : 'View full size'}: ${caption}`}>{picture}</a> : picture}
               <figcaption>{caption}{credit && <a className="figure-size-link" href={credit.url} target="_blank" rel="noreferrer">{credit.label} ↗</a>}{s.zoomImages && <a className="figure-size-link" href={fullSize} target="_blank" rel="noreferrer">{zh ? '查看原图 ↗' : 'View full size ↗'}</a>}</figcaption>
             </figure>;
-          })}
+          })}</div>
         </section>)}
       </article>
     </div>
