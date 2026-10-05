@@ -52,6 +52,8 @@ To add a project, add its case study in both languages, place its media in `publ
 
 Index covers can differ from detail-page covers: `projectCards[id].image` sets an optional thumbnail, while `projectImages[id]` remains the case-study cover. Existing project assets are retained; the VLM and SyneSound index covers now use more concrete examples from those assets.
 
+Roomify uses the complete supplied 30-second demo as a looping GIF: an 800px detail cover and a 480px index version. Its optional `poster` is used for reduced-motion preferences and the detail cover's pause control. Case-study sections support a `video` object (local MP4, poster, dimensions, accessible title, and caption), and `imageDimensions` reserves space for lazy-loaded figures. The user-study video retains its original H.264 video and AAC audio, with MP4 metadata moved to the beginning for streaming.
+
 ## Visual system
 
 - Locally hosted Lato: Light (300) headings, Regular (400) body, and Bold (700) emphasis. Chinese characters use the system Chinese sans-serif. Lato is a free alternative with a similar humanist character to the reference site’s Freight Neo Pro; it is not the same font.
@@ -69,6 +71,8 @@ Index covers can differ from detail-page covers: `projectCards[id].image` sets a
 `npm test` checks bilingual IDs, local media, filter references, and safe ordering when projects are added. Browser checks cover page navigation, the one-screen home, active navigation, category persistence, detail return links, mobile menu, Chinese, direct route loads, legacy links, and the journey interaction.
 
 ## Source notes
+
+Roomify's expanded bilingual case study follows the final CHI 2026 paper, “Roomify: Spatially-Grounded Style Transformation for Immersive Virtual Environments” (https://doi.org/10.1145/3772318.3791803). New figure crops reproduce Figures 9 and 13; result tables transcribe reported means. The two videos were supplied by the website owner. Existing role and UIST demo information is retained from the original project content.
 
 Personal and project information comes from the existing repository. The journey uses the user's August 2025 Pittsburgh arrival; the résumé retains its original September 2025 academic start date. San Francisco denotes the Bay Area exchange with UC Berkeley. Map lines show the sequence of events, not specific travel routes. The map stays 2:1, with city buttons for smaller screens.
 

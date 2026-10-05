@@ -12,39 +12,183 @@ export const projectsData = {
       ],
       "featured": true,
       "title": "Roomify",
-      "description": "Transforming real rooms into themed virtual environments, with spatial layout and physical affordances intact.",
+      "description": "Spatially grounded style transformation: turning real rooms into immersive virtual worlds through generative AI and cross-reality authoring.",
       "year": "2025—2026",
-      "members": "Xueyang Wang, Qinxuan Cen, Weitao Bi, Yunxiang Ma",
+      "members": "Xueyang Wang, Qinxuan Cen, Weitao Bi, Yunxiang Ma, Xin Yi, Robert Xiao, Xinyi Fu, Hewu Li",
       "sections": [
         {
-          "title": "Spatially grounded generation",
-          "content": "Roomify creates themed VR environments from real rooms. It retains the layout and functional relationships of furniture while changing their visual form. The research asks how generative environments can support immersion without removing a user’s awareness of the physical room.",
+          "title": "A new world, in the room you know",
+          "content": "Roomify transforms an ordinary room into a themed virtual environment while retaining its layout, approximate furniture geometry, and recognizable functional roles. A sofa can become a spaceship seat; a refrigerator can become a pirate’s storage barrel. The real room becomes the structure for an imagined world.\n\nThe design challenge is to support immersion without losing awareness of nearby furniture. A formative study with eight participants informed four priorities: coherent and diverse styles, spatial alignment, functional consistency, and user control.\n\nI co-designed the system and its XR interaction modules, and integrated an agent workflow connecting SLAM3R, SpatialLM, image generation, and 3D generation. The work was published at CHI 2026; a live demonstration was also accepted for UIST 2026.",
           "images": [
             "/images/roomify-head.png"
+          ],
+          "imageCaptions": [
+            "From a room scan to an editable spatial scaffold and an immersive, themed environment."
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1338,
+              836
+            ]
           ]
         },
         {
-          "title": "System & interaction",
-          "content": "The pipeline combines scene understanding, style reasoning, content generation, and spatial registration. Video SLAM and semantic parsing produce a 3D scaffold; text or image references guide the generation of objects, materials, and surroundings.\n\nI co-designed the system and its XR interaction modules, and integrated an agent workflow using SLAM3R, SpatialLM, image generation, and 3D generation. Creators can inspect a spatial scaffold in MR, edit individual objects, regenerate selected elements, and preview the result in VR.",
+          "title": "From a room scan to a generated world",
+          "content": "Scene understanding. A 30–60-second RGB video captured with a Quest 3 provides the input. SLAM3R reconstructs the room, and SpatialLM identifies its boundaries and furniture. Oriented 3D bounding boxes form a spatial scaffold that anchors later generation.\n\nStyle reasoning. An LLM agent translates text or image references into shared style, color, material, and atmosphere cues. It builds a mapping between physical objects and theme-appropriate counterparts, keeping high-level roles such as seating, storage, and support recognizable.\n\nContent generation and registration. Reference views of each object guide GPT Image-1, followed by Tripo v2.5 image-to-3D generation. Wall and floor textures and an animated skybox are generated alongside the objects. The resulting assets are scaled, oriented, and placed against the scaffold; users inspect and refine their alignment before entering VR.",
           "images": [
-            "/images/roomify-pipeline.png",
+            "/images/roomify-pipeline.png"
+          ],
+          "imageCaptions": [
+            "The four-stage pipeline connects scene understanding, style reasoning, content generation, and spatial registration."
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1529,
+              638
+            ]
+          ]
+        },
+        {
+          "title": "An authoring workflow across MR and VR",
+          "content": "In mixed reality, creators inspect the scaffold over the physical room and correct object labels, position, orientation, and scale. Text, voice, and image references let them specify a theme. Generation progress remains visible, and objects flagged as collision risks require placement confirmation before the immersive preview.\n\nCreators can reveal the real furniture through translucent generated objects, adjust individual assets, and regenerate selected elements without restarting the whole scene. Switching to VR brings the objects, room surfaces, animated surroundings, and ambient sound together. In Study 1, the complete transformation took an average of 19 minutes 46 seconds, with editing and generation overlapping.",
+          "images": [
             "/images/roomify-mr.png"
+          ],
+          "imageCaptions": [
+            "MR tools for spatial correction, multimodal style input, and selective regeneration, followed by VR preview."
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1388,
+              737
+            ]
           ]
         },
         {
-          "title": "Evaluation",
-          "content": "We evaluated Roomify with 18 VR users and 8 design professionals. Reported immersion increased by 63% over passthrough and 26% over a fully virtual baseline. Design participants rated spatial awareness at 5.95/7 and creative support at 6.08/7.\n\nThe work was accepted at CHI 2026. A live demonstration was also accepted for UIST 2026.",
+          "title": "User studies",
+          "content": "We evaluated Roomify in two complementary studies: 18 VR users explored entertainment and navigation in a transformed living room, and eight design professionals assessed it as a tool for creative prototyping. The video below introduces the study conditions, tasks, and findings.",
+          "images": [],
+          "imageCaptions": [],
+          "zoomImages": true,
+          "video": {
+            "src": "/videos/roomify-user-studies.mp4",
+            "poster": "/images/roomify-study-poster.jpg",
+            "width": 1200,
+            "height": 720,
+            "title": "Roomify user studies and evaluation",
+            "caption": "User-study walkthrough · 1 min 25 sec · Study 1: VR experience and navigation; Study 2: creative prototyping."
+          }
+        },
+        {
+          "title": "Study 1 · Immersion and spatial awareness",
+          "content": "Eighteen participants experienced three counterbalanced conditions: passthrough, Roomify, and a fully virtual skybox with proximity-based boundary warnings and no virtual furniture. They watched a movie or played a game, then completed a treasure hunt that involved finding three gems and moving from a dining chair to a real sofa.\n\nRoomify received the highest presence and experience ratings. Mean presence was 63% higher than passthrough and 26% higher than the fully virtual baseline, and 14 of 18 participants preferred Roomify. Spatial awareness fell between passthrough and fully virtual viewing—showing a trade-off rather than eliminating it.\n\nThe treasure-hunt completion time was numerically lowest with Roomify, but the difference was not statistically significant. Safety incidents were self-reported, and Roomify’s incident count lay between the two baselines. These findings apply to the specific conditions tested.",
           "images": [
-            "/images/roomify-usertest1.png",
-            "/images/roomify-analysis1.png",
-            "/images/roomify-usertest2.png",
-            "/images/roomify-analysis2.png"
+            "/images/roomify-presence-results.png",
+            "/images/roomify-usertest1.png"
+          ],
+          "imageCaptions": [
+            "Paper, Figure 9: presence, user experience, and spatial awareness. Baseline 1 = passthrough; Baseline 2 = fully virtual; Ours = Roomify.",
+            "Participant-created environments use different themes while retaining the room’s underlying spatial arrangement."
+          ],
+          "zoomImages": true,
+          "table": {
+            "caption": "Study 1 · Mean ratings on 7-point scales · N = 18",
+            "columns": [
+              "Measure",
+              "Passthrough",
+              "Fully virtual",
+              "Roomify"
+            ],
+            "rows": [
+              [
+                "Presence",
+                "3.65",
+                "4.72",
+                "5.94"
+              ],
+              [
+                "User experience",
+                "4.92",
+                "5.27",
+                "6.27"
+              ],
+              [
+                "Spatial awareness",
+                "6.20",
+                "4.41",
+                "5.10"
+              ]
+            ]
+          },
+          "imageDimensions": [
+            [
+              1293,
+              500
+            ],
+            [
+              1542,
+              1006
+            ]
           ]
+        },
+        {
+          "title": "Study 2 · A tool for creative prototyping",
+          "content": "Eight participants with backgrounds in architecture, visual arts, product design, and film compared Roomify with AI re-texturing of scanned geometry and text-to-3D generation. All methods used the same style prompts. Participants transformed both a physical living room and a ScanNet environment, freely choosing themes and comparing the results in VR.\n\nRoomify received a System Usability Scale score of 84.38/100, and all eight participants preferred it. Designers highlighted early concept exploration, client communication, and storyboarding as promising uses. The results support its role as a prototyping tool; production assets still require manual refinement.",
+          "images": [
+            "/images/roomify-method-comparison.jpg"
+          ],
+          "imageCaptions": [
+            "Paper, Figure 13: original rooms, AI re-texturing, Roomify, and text-to-3D results across maximalist, spacecraft, and kawaii themes."
+          ],
+          "zoomImages": true,
+          "table": {
+            "caption": "Study 2 · Mean ratings on 7-point scales · N = 8",
+            "columns": [
+              "Measure",
+              "AI re-texturing",
+              "Text-to-3D",
+              "Roomify"
+            ],
+            "rows": [
+              [
+                "Scene quality",
+                "3.41",
+                "4.50",
+                "5.95"
+              ],
+              [
+                "Creativity support",
+                "3.73",
+                "5.09",
+                "6.08"
+              ]
+            ]
+          },
+          "imageDimensions": [
+            [
+              1593,
+              1313
+            ]
+          ]
+        },
+        {
+          "title": "What we learned, and what comes next",
+          "content": "Spatial grounding gives generative design a useful constraint: the physical room supplies an understandable structure, while generative models offer new visual possibilities. The authoring interface is essential to this balance, giving people ways to inspect and correct what the models produce.\n\nGeneration can still distort shape, proportions, and orientation. Moving or scaling an object cannot fix every mismatch, and the current system assumes static furniture rather than tracking people or pets. It preserves broad roles and geometry, not every physical action—a barrel can suggest storage without reproducing a refrigerator’s door mechanics or cooling.\n\nThe studies involved relatively young participants and individual experiences. More precise geometry, direct control over materials and shapes, live scene updates, and broader evaluations are priorities for further work. The fully virtual baseline’s lack of furniture and active boundary warnings also limit how broadly the presence comparison can be generalized.",
+          "images": [],
+          "imageCaptions": [],
+          "zoomImages": true
         }
       ],
       "links": [
         {
-          "label": "Paper · arXiv",
+          "label": "Paper · ACM",
+          "url": "https://doi.org/10.1145/3772318.3791803"
+        },
+        {
+          "label": "Preprint · arXiv",
           "url": "https://doi.org/10.48550/arXiv.2603.04917"
         },
         {
@@ -509,43 +653,187 @@ export const projectsData = {
       ],
       "featured": true,
       "title": "Roomify",
-      "description": "将真实房间转化为主题化虚拟环境，同时保留空间布局与实体物件的使用方式。",
+      "description": "以真实空间为基础的风格转换：通过生成式 AI 与跨现实创作，将真实房间转化为沉浸式虚拟世界。",
       "year": "2025—2026",
-      "members": "Xueyang Wang, Qinxuan Cen, Weitao Bi, Yunxiang Ma",
+      "members": "Xueyang Wang, Qinxuan Cen, Weitao Bi, Yunxiang Ma, Xin Yi, Robert Xiao, Xinyi Fu, Hewu Li",
       "sections": [
         {
-          "title": "以真实空间为基础的生成",
-          "content": "Roomify 基于真实房间生成主题化 VR 环境，在改变视觉形态的同时保留家具布局与功能关系。研究关注生成式环境如何增强沉浸感，同时维持用户对物理空间的感知。",
+          "title": "在熟悉的房间里，进入另一个世界",
+          "content": "Roomify 将普通房间转化为主题化的虚拟环境，同时保留空间布局、家具的大致几何形态与可辨认的功能角色。沙发可以成为飞船座椅，冰箱可以被重新演绎为海盗船上的储物桶：真实房间为想象中的世界提供结构。\n\n项目关注的问题是：如何提升沉浸感，同时让使用者仍能感知身边的家具？我们通过一项包含 8 名参与者的前期研究，确定了四个设计重点：风格的一致性与多样性、空间对齐、功能一致性，以及用户对生成结果的控制。\n\n我参与了系统与 XR 交互模块的共同设计，并整合了连接 SLAM3R、SpatialLM、图像生成与三维生成的智能体工作流。研究发表于 CHI 2026，现场演示也获 UIST 2026 Demo 接收。",
           "images": [
             "/images/roomify-head.png"
+          ],
+          "imageCaptions": [
+            "从房间扫描、可编辑的空间框架，到主题化的沉浸式虚拟环境。"
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1338,
+              836
+            ]
           ]
         },
         {
-          "title": "系统与交互",
-          "content": "系统由场景理解、风格推理、内容生成与空间配准四个阶段组成。视频 SLAM 与语义解析构建三维框架，文本或图像参考引导物体、材质及环境生成。\n\n我参与系统与 XR 交互模块设计，整合了 SLAM3R、SpatialLM、图像生成和三维生成的智能体工作流。创作者可以在 MR 中查看空间框架、编辑物体、局部重新生成，并在 VR 中预览结果。",
+          "title": "从房间扫描到虚拟世界的生成流程",
+          "content": "场景理解。系统以 Quest 3 拍摄的 30–60 秒 RGB 房间视频作为输入，通过 SLAM3R 重建空间，再由 SpatialLM 识别房间边界与家具。带有方向信息的三维包围盒构成空间框架，为后续生成提供位置、朝向与尺度依据。\n\n风格推理。语言模型智能体将文字或参考图像转化为统一的风格、色彩、材质和氛围描述，并建立真实物件与主题化物件之间的映射，使座椅、收纳、支撑等高层次功能仍可被理解。\n\n内容生成与空间配准。系统选取每件物体的参考视角，用 GPT Image-1 生成风格化图像，再通过 Tripo v2.5 转化为三维模型；墙面、地面材质与动态天空盒同步生成。生成的资产依据空间框架调整尺度、朝向和位置，进入 VR 前由用户检查与修正对齐情况。",
           "images": [
-            "/images/roomify-pipeline.png",
+            "/images/roomify-pipeline.png"
+          ],
+          "imageCaptions": [
+            "四阶段流程：场景理解、风格推理、内容生成与空间配准。"
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1529,
+              638
+            ]
+          ]
+        },
+        {
+          "title": "在 MR 与 VR 之间创作和编辑",
+          "content": "在混合现实中，创作者可以对照真实房间检查空间框架，修正物件标签、位置、朝向和尺度，并通过文字、语音或图像描述主题。生成进度持续可见；被标记为存在碰撞风险的物件，需要在进入沉浸式预览前确认位置。\n\n用户可以将生成物件半透明化，以查看背后的真实家具，也可以只调整或重新生成某个物件，无需重启整个场景。切换至 VR 后，物件、室内表面、动态环境与氛围声音共同构成完整体验。在研究一中，完成一次环境转换平均用时 19 分 46 秒，编辑与生成过程可以交叠进行。",
+          "images": [
             "/images/roomify-mr.png"
+          ],
+          "imageCaptions": [
+            "MR 中的空间校正、多模态风格输入与局部重新生成，以及 VR 中的沉浸式预览。"
+          ],
+          "zoomImages": true,
+          "imageDimensions": [
+            [
+              1388,
+              737
+            ]
           ]
         },
         {
-          "title": "评估",
-          "content": "研究邀请 18 名 VR 用户和 8 名设计专业人士参与评估。报告的沉浸感相较透视基线提高 63%，相较全虚拟基线提高 26%。设计参与者对空间感知与创作支持的评分分别为 5.95/7 和 6.08/7。\n\n研究获 CHI 2026 录用，现场演示获 UIST 2026 Demos 录用。",
+          "title": "用户测试",
+          "content": "我们通过两项互补研究评估 Roomify：18 名 VR 用户在改造后的客厅中完成娱乐与导航任务，8 名设计专业参与者则评估其作为创意原型工具的表现。下面的视频介绍了两项研究的对照条件、任务与主要结果。",
+          "images": [],
+          "imageCaptions": [],
+          "zoomImages": true,
+          "video": {
+            "src": "/videos/roomify-user-studies.mp4",
+            "poster": "/images/roomify-study-poster.jpg",
+            "width": 1200,
+            "height": 720,
+            "title": "Roomify 用户测试与评估介绍",
+            "caption": "用户测试介绍 · 1 分 25 秒 · 研究一：VR 体验与空间导航；研究二：创意原型设计。"
+          }
+        },
+        {
+          "title": "研究一 · 沉浸感与空间感知",
+          "content": "18 名参与者以平衡顺序体验三种条件：视频透视、Roomify，以及不包含虚拟家具、带有接近边界提示的全虚拟天空盒环境。他们先观看影片或体验游戏，再使用虚拟手电筒寻找三颗宝石，并从餐椅移动到真实沙发，以评估空间导航与家具交互。\n\nRoomify 获得了最高的临场感与体验评分。平均临场感评分比视频透视高 63%，比全虚拟基线高 26%；18 人中有 14 人更偏好 Roomify。其空间感知评分介于两种基线之间，说明系统在沉浸感与现实感知之间提供了一种折中。\n\n寻宝任务中，Roomify 的平均完成时间最短，但差异未达到统计显著性。安全事件由参与者自行报告，Roomify 的平均事件次数同样介于两种基线之间。这些结果应在本研究的具体对照条件下理解。",
           "images": [
-            "/images/roomify-usertest1.png",
-            "/images/roomify-analysis1.png",
-            "/images/roomify-usertest2.png",
-            "/images/roomify-analysis2.png"
+            "/images/roomify-presence-results.png",
+            "/images/roomify-usertest1.png"
+          ],
+          "imageCaptions": [
+            "论文图 9：临场感、用户体验与空间感知。Baseline 1 为视频透视，Baseline 2 为全虚拟环境，Ours 为 Roomify。",
+            "参与者创作的多种主题环境：视觉风格发生变化，房间的基础空间关系得以保留。"
+          ],
+          "zoomImages": true,
+          "table": {
+            "caption": "研究一 · 7 分量表的平均评分 · N = 18",
+            "columns": [
+              "指标",
+              "视频透视",
+              "全虚拟环境",
+              "Roomify"
+            ],
+            "rows": [
+              [
+                "临场感",
+                "3.65",
+                "4.72",
+                "5.94"
+              ],
+              [
+                "用户体验",
+                "4.92",
+                "5.27",
+                "6.27"
+              ],
+              [
+                "空间感知",
+                "6.20",
+                "4.41",
+                "5.10"
+              ]
+            ]
+          },
+          "imageDimensions": [
+            [
+              1293,
+              500
+            ],
+            [
+              1542,
+              1006
+            ]
           ]
+        },
+        {
+          "title": "研究二 · 面向创意探索的原型工具",
+          "content": "8 名具有建筑、视觉艺术、产品设计和影视背景的参与者，将 Roomify 与两种生成方法进行比较：对扫描几何重新生成材质，以及直接通过文字生成三维模型。三种方法使用相同的风格提示词。参与者自由选择主题，分别改造真实客厅与 ScanNet 场景，并在 VR 中比较生成结果。\n\nRoomify 的系统可用性量表（SUS）得分为 84.38/100，8 名参与者均将其选为最偏好的方法。设计者看好它在早期概念探索、客户沟通和分镜预演中的用途；面向正式生产的资产仍需要进一步的人工修整。",
+          "images": [
+            "/images/roomify-method-comparison.jpg"
+          ],
+          "imageCaptions": [
+            "论文图 13：原始房间、AI 材质重绘、Roomify 与文字生成三维模型的对比，覆盖极繁主义、飞船与可爱风格。"
+          ],
+          "zoomImages": true,
+          "table": {
+            "caption": "研究二 · 7 分量表的平均评分 · N = 8",
+            "columns": [
+              "指标",
+              "AI 材质重绘",
+              "文字生成三维",
+              "Roomify"
+            ],
+            "rows": [
+              [
+                "场景质量",
+                "3.41",
+                "4.50",
+                "5.95"
+              ],
+              [
+                "创意支持",
+                "3.73",
+                "5.09",
+                "6.08"
+              ]
+            ]
+          },
+          "imageDimensions": [
+            [
+              1593,
+              1313
+            ]
+          ]
+        },
+        {
+          "title": "设计启示与下一步",
+          "content": "真实空间为生成式设计提供了有意义的约束：房间本身给出可理解的结构，生成模型则带来新的视觉可能。创作界面是两者之间的重要连接，让使用者能够检查、修正和控制模型的输出。\n\n生成结果仍可能出现形状、比例或朝向偏差，移动与缩放不能修复所有问题。当前系统假定家具保持静止，尚不能持续追踪人或宠物；它保留的是大致几何形态和功能角色，而非全部物理操作。例如，储物桶可以表达收纳功能，却不会复现冰箱的开门机制或制冷功能。\n\n两项研究主要面向较年轻的参与者和单人体验。更准确的几何约束、对材质与形态的直接控制、动态场景更新，以及更广泛的用户评估，是后续的研究方向。全虚拟基线未包含家具且启用了边界提示，因此临场感结果也不宜直接推广到所有全虚拟环境。",
+          "images": [],
+          "imageCaptions": [],
+          "zoomImages": true
         }
       ],
       "links": [
         {
-          "label": "Paper · arXiv",
+          "label": "正式论文 · ACM",
+          "url": "https://doi.org/10.1145/3772318.3791803"
+        },
+        {
+          "label": "预印本 · arXiv",
           "url": "https://doi.org/10.48550/arXiv.2603.04917"
         },
         {
-          "label": "Code · GitHub",
+          "label": "代码 · GitHub",
           "url": "https://github.com/NiceStone-Hill/Virtual_Merge_Generation"
         }
       ]

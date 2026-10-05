@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import ProjectImage from '@/components/ProjectImage';
 import { projectsData } from '@/data/projects';
 import { orderProjects, projectCards, projectFilters, projectImages } from '@/data/projectCatalog';
 
@@ -37,7 +38,7 @@ export default function Projects({ language }) {
           const card = projectCards[project.id] || {};
           return <Link key={project.id} to={'/projects/' + project.id} state={{ workSearch }} className="project-card">
             <div className={'project-image' + (card.fit === 'contain' ? ' image-contain' : '')}>
-              <img src={card.image || projectImages[project.id]} alt="" loading={index < 3 ? 'eager' : 'lazy'} decoding="async" width="720" height="405" />
+              <ProjectImage src={card.image || projectImages[project.id]} poster={card.poster} alt="" loading={index < 3 ? 'eager' : 'lazy'} decoding="async" width="720" height="405" />
             </div>
             <div className="project-copy">
               <div className="project-title"><h2>{project.title}</h2><ArrowUpRight size={16} strokeWidth={1.3} aria-hidden="true" /></div>

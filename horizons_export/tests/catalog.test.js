@@ -30,8 +30,14 @@ test('all index covers and bilingual case-study images resolve to local assets',
       const card = projectCards[project.id];
       assert.ok(card?.[language], 'Missing short summary: ' + project.id);
       if (card.image) assert.ok(assetExists(card.image), 'Missing index cover: ' + card.image);
+      if (card.poster) assert.ok(assetExists(card.poster), 'Missing animation poster: ' + card.poster);
       for (const section of project.sections) {
         for (const image of section.images) assert.ok(assetExists(image), 'Missing image: ' + image);
+        if (section.video) {
+          assert.ok(assetExists(section.video.src), 'Missing video: ' + section.video.src);
+          assert.ok(assetExists(section.video.poster), 'Missing video poster: ' + section.video.poster);
+          assert.ok(section.video.title.trim(), 'Missing video accessible title');
+        }
       }
     }
     for (const interest of interestsData[language]) {
