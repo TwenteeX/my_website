@@ -332,39 +332,340 @@ export const projectsData = {
       "id": 5,
       "category": "products",
       "tags": [
+        "Relational Design",
+        "Service Design",
         "UX Design",
-        "Mobile App",
-        "Product Design"
+        "Mobile App"
       ],
       "featured": false,
       "title": "Pet’s Tribe",
-      "description": "A mobile product concept bringing pet communities, adoption support, and everyday care into one place.",
+      "description": "A pet-care app built around mutual help between people, communities, veterinary hospitals, and animal-protection organizations.",
       "year": "2023",
       "members": "Yunxiang Ma, Yuying Zhang, Xinning He, Rhone Ryan Huang Ern",
       "sections": [
         {
-          "title": "Product question",
-          "content": "Pet owners and animal organizations often use separate services for community, adoption, and daily care. Pet’s Tribe explores how these activities could share a consistent mobile experience. Competitor research informed three areas: assistance, community, and a personal diary.",
-          "images": []
+          "title": "01 · What can the information age offer pets?",
+          "content": "Breaking information barriers makes it easier for people to connect. Pet’s Tribe begins with a further question: how can those connections benefit pets? I drew a concept map around four stakeholders—users, communities, veterinary hospitals, and animal-protection organizations—with pets at its center.\n\nFor each stakeholder, I described what they can offer and what they need. Pairing one participant’s offer with another’s need reveals opportunities for mutual help. This relational connection is the premise of the app: information becomes useful when it helps someone find the people, knowledge, or support needed to care for an animal.",
+          "images": [
+            "/images/pet-structure.png"
+          ],
+          "imageCaptions": [
+            "The original concept map: four stakeholders, their offers and needs, and mutual-help links around pets."
+          ],
+          "imageDimensions": [
+            [
+              1728,
+              606
+            ]
+          ],
+          "zoomImages": true,
+          "fullWidth": true,
+          "tableAfterImages": true,
+          "table": {
+            "caption": "Reading the concept map: what each participant contributes and seeks.",
+            "columns": [
+              "Stakeholder",
+              "Offer to others",
+              "Need from others"
+            ],
+            "rows": [
+              [
+                "Users",
+                "Time, voluntary work, and everyday care experience",
+                "Assistance and reliable care information"
+              ],
+              [
+                "Community",
+                "Peer assistance and shared knowledge",
+                "Participation and volunteers"
+              ],
+              [
+                "Veterinary hospitals",
+                "Veterinary expertise and care information",
+                "Ways to reach people and share guidance"
+              ],
+              [
+                "Animal-protection organizations",
+                "Rescue and adoption support",
+                "Support for ongoing animal-protection work"
+              ]
+            ]
+          }
         },
         {
-          "title": "Information architecture",
-          "content": "The assistance area supports adoption and care information. Community features organize posts and offline activities. The diary lets owners document daily life with privacy controls. Storyboards connect these features to different user needs and routines.",
+          "title": "02 · From mutual help to everyday actions",
+          "content": "These relationships suggest a different way to organize a pet-care app. A user seeking help can connect with a community that offers experience; someone who can volunteer can meet an organization that needs support. Veterinary knowledge can reach people facing care questions, while rescue and adoption information can find people able to act on it.\n\nI translated these opportunities into three connected areas: Community makes people and activities discoverable; Care brings together adoption, veterinary support, and volunteering; Profile keeps everyday moments and relevant information close. The same person can move between seeking help and offering it.\n\nThe storyboard explores three possible journeys: joining a volunteer activity, preparing to adopt, and finding companionship through pet meetups. These are design scenarios showing how a connection might become action.",
           "images": [
-            "/images/pet-structure.png",
             "/images/pet-storyboard.png"
-          ]
+          ],
+          "imageCaptions": [
+            "Early storyboard: volunteering, adoption, and pet companionship turn information exchange into possible care actions."
+          ],
+          "imageDimensions": [
+            [
+              1086,
+              1140
+            ]
+          ],
+          "zoomImages": true
         },
         {
-          "title": "Prototype & next evaluation",
-          "content": "The design progressed from sketches to a high-fidelity Figma prototype covering sign-in, user pathways, community, assistance, and diary screens. Planned usability evaluation would measure task completion, error recovery, and System Usability Scale scores; these are proposed measures, not reported results.",
+          "title": "03 · Join the network",
+          "content": "The entry flow welcomes both pet owners and people who are simply exploring. A profile introduces a companion without making pet ownership a prerequisite for participating. This keeps volunteering, learning, and adoption open to a wider community.",
           "images": [
-            "/images/pet-prototype1.png",
-            "/images/pet-prototype2.png"
-          ]
+            "/images/pets-tribe-sign-in.webp",
+            "/images/pets-tribe-profile-setup.webp",
+            "/images/pets-tribe-pet-type.webp"
+          ],
+          "imageCaptions": [
+            "Sign in — enter a shared pet-care community.",
+            "Profile setup — add a pet or explore first.",
+            "Pet type — introduce the companion behind the profile."
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "04 · Discover people, places, and shared activities",
+          "content": "Community stories make everyday experiences visible. Nearby discovery connects that online activity with the surrounding city, and pet profiles give those connections a recognizable identity. Filters let people narrow the network to their current needs; event listings create opportunities to meet and help beyond the screen.",
+          "images": [
+            "/images/pets-tribe-community.webp",
+            "/images/pets-tribe-nearby.webp",
+            "/images/pets-tribe-pet-friends.webp",
+            "/images/pets-tribe-community-filters.webp",
+            "/images/pets-tribe-nearby-filters.webp",
+            "/images/pets-tribe-create-menu.webp",
+            "/images/pets-tribe-nearby-events.webp",
+            "/images/pets-tribe-events.webp"
+          ],
+          "imageCaptions": [
+            "Community — shared stories as an entry point to connection.",
+            "Nearby — pets and local opportunities in one map.",
+            "Pet friends — discover companions and their people.",
+            "Community filters — focus on a relevant pet type.",
+            "Nearby filters — refine distance, breed, and preferences.",
+            "Create menu — offer a story, an event, or a volunteer opportunity.",
+            "Nearby events — connect a place with a shared activity.",
+            "Events — turn discovery into a reason to meet."
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "05 · Find and sustain care",
+          "content": "The Care area brings different forms of assistance into the same journey. Browsing companions leads to an individual adoption story and preparation for a long-term commitment. Saved care information helps people return to a pet or cause, while veterinary support and volunteer opportunities connect expertise and available time with a concrete need.",
+          "images": [
+            "/images/pets-tribe-care.webp",
+            "/images/pets-tribe-companions.webp",
+            "/images/pets-tribe-adoption-detail.webp",
+            "/images/pets-tribe-adoption-preparation.webp",
+            "/images/pets-tribe-saved-care.webp",
+            "/images/pets-tribe-veterinary-support.webp",
+            "/images/pets-tribe-volunteer.webp"
+          ],
+          "imageCaptions": [
+            "Care — adoption, health, and volunteering share an entry point.",
+            "Find a companion — make pets awaiting homes discoverable.",
+            "Adoption detail — understand an individual pet before acting.",
+            "Adoption preparation — consider the care a household can provide.",
+            "Care collection — stay connected with saved pets and rescue stories.",
+            "Veterinary support — make expert information easier to find.",
+            "Volunteer opportunities — connect people’s time with collective care."
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "06 · Keep everyday relationships close",
+          "content": "A pet-owner profile brings daily moments and care shortcuts together. A personal profile also accommodates participants without a pet. The diary records the small experiences through which a companion becomes part of everyday life, giving the network continuity beyond a single post or activity.",
+          "images": [
+            "/images/pets-tribe-pet-profile.webp",
+            "/images/pets-tribe-personal-profile.webp",
+            "/images/pets-tribe-diary.webp"
+          ],
+          "imageCaptions": [
+            "Pet-owner profile — everyday moments and care records.",
+            "Personal profile — participation with or without a pet.",
+            "Diary — a continuing record of life together."
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "07 · Give organizations a place in the network",
+          "content": "Organizations need a way to participate as contributors and coordinators. Team access, an activity dashboard, and a volunteer publishing flow provide a distinct organizational pathway: an institution can make its work visible, describe what help is needed, and invite people to contribute.",
+          "images": [
+            "/images/pets-tribe-organization-access.webp",
+            "/images/pets-tribe-organization.webp",
+            "/images/pets-tribe-publish-volunteer.webp"
+          ],
+          "imageCaptions": [
+            "Organization access — connect with a shelter or volunteer team.",
+            "Organization profile — coordinate activities and community participation.",
+            "Publish volunteering — describe a need and invite support."
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "08 · Make contributing straightforward",
+          "content": "Posting a moment, organizing an event, and introducing a pet are recurring contributions to the network. The forms keep each action focused, with familiar controls and clear information fields. The refreshed iOS-style interface uses English copy, consistent line icons, and a restrained warm accent to make these different pathways feel like one product.",
+          "images": [
+            "/images/pets-tribe-media.webp",
+            "/images/pets-tribe-publish-event.webp",
+            "/images/pets-tribe-edit-pet.webp"
+          ],
+          "imageCaptions": [
+            "Choose media — share an everyday moment.",
+            "Create an event — turn an idea into a shared activity.",
+            "Edit pet profile — make a companion’s identity and needs legible."
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "09 · The benefit lies in the connection",
+          "content": "The project’s central proposition is that pets can benefit from relationships among the people and institutions around them. An offer becomes more valuable when it reaches a matching need: knowledge can become more informed care, available time can become volunteer work, and a visible rescue story can become an adoption opportunity.\n\nThese are intended benefits of the design. The prototype has not established changes in animal welfare or measured usability outcomes. A next evaluation would follow tasks across stakeholder boundaries—finding advice, joining an activity, or preparing to adopt—and examine whether people understand the exchange, find relevant support, and complete the journey.",
+          "images": []
         }
       ],
-      "links": []
+      "links": [
+        {
+          "label": "Explore the Figma prototype",
+          "url": "https://www.figma.com/design/5k9mEe4NBWjBUdK6ZHYpsq?node-id=29-1404"
+        }
+      ],
+      "coverInSections": true,
+      "facts": [
+        {
+          "label": "My contribution",
+          "value": "Stakeholder concept map & mutual-help framing"
+        },
+        {
+          "label": "Interface refresh",
+          "value": "2026"
+        }
+      ]
     },
     {
       "id": 6,
@@ -443,6 +744,22 @@ export const projectsData = {
           "images": [
             "/images/SyneSound 5.png",
             "/images/SyneSound 6.png"
+          ]
+        },
+        {
+          "title": "Recognition",
+          "content": "SyneSound received CMU NOVA’s Most InNOVAtive Prize. The photograph below records the award ceremony with our team, X-MA.",
+          "images": [
+            "/images/synesound-award-ceremony.webp"
+          ],
+          "imageCaptions": [
+            "Award ceremony — Yongyi Xiong and Yunxiang Ma, team X-MA."
+          ],
+          "imageDimensions": [
+            [
+              1800,
+              1350
+            ]
           ]
         }
       ],
@@ -1500,39 +1817,340 @@ export const projectsData = {
       "id": 5,
       "category": "products",
       "tags": [
+        "Relational Design",
+        "Service Design",
         "UX Design",
-        "Mobile App",
-        "Product Design"
+        "Mobile App"
       ],
       "featured": false,
       "title": "Pet’s Tribe",
-      "description": "整合宠物社区、领养协助与日常记录的移动产品概念。",
+      "description": "以用户、社区、宠物医院与宠物保护组织之间的互助关系，为宠物创造照护机会。",
       "year": "2023",
       "members": "Yunxiang Ma, Yuying Zhang, Xinning He, Rhone Ryan Huang Ern",
       "sections": [
         {
-          "title": "产品问题",
-          "content": "宠物主人与动物组织常需分别使用社区、领养及日常照护服务。Pet’s Tribe 研究如何将这些活动整合为一致的移动体验，竞品分析形成协助、社区与个人日记三个方向。",
-          "images": []
+          "title": "01 · 信息时代能为宠物带来什么？",
+          "content": "信息时代打破了人与人之间的信息桎梏。但连接变得更容易之后，它能为宠物带来什么？Pet’s Tribe 从这个问题出发。我以宠物为中心，绘制了四类参与者的概念关系图：用户、社区、宠物医院和宠物保护组织。\n\n对于每一类参与者，我用 Offer to 与 Need 分别总结其能够提供的帮助和需要获得的支持。一方的付出与另一方的需求相遇，就可能形成一条互助关系。这种关系连接（relational connection）是 App 的设计缘由：当信息帮助人们找到合适的人、知识与资源时，连接才有机会转化为对宠物的实际照护。",
+          "images": [
+            "/images/pet-structure.png"
+          ],
+          "imageCaptions": [
+            "最初的概念关系图：以宠物为中心，梳理四类参与者的 Offer / Need，并建立相互帮助的连接。"
+          ],
+          "imageDimensions": [
+            [
+              1728,
+              606
+            ]
+          ],
+          "zoomImages": true,
+          "fullWidth": true,
+          "tableAfterImages": true,
+          "table": {
+            "caption": "读懂概念图：各方能够付出什么，又需要什么。",
+            "columns": [
+              "参与者",
+              "能够提供 · Offer to",
+              "需要获得 · Need"
+            ],
+            "rows": [
+              [
+                "用户",
+                "时间、志愿服务与日常照护经验",
+                "协助与可靠的照护信息"
+              ],
+              [
+                "社区",
+                "同伴互助与共同积累的知识",
+                "参与者与志愿者"
+              ],
+              [
+                "宠物医院",
+                "专业诊疗知识与照护信息",
+                "触达人群、传播专业知识的渠道"
+              ],
+              [
+                "宠物保护组织",
+                "救助与领养支持",
+                "持续开展动物保护工作的支持"
+              ]
+            ]
+          }
         },
         {
-          "title": "信息架构",
-          "content": "协助模块组织领养流程与照护信息，社区模块承载帖子与线下活动，日记模块用于记录日常并设置可见范围。故事板将这些功能与不同用户的需求和习惯联系起来。",
+          "title": "02 · 让互助关系进入日常行动",
+          "content": "这些关系为宠物 App 提供了组织功能的依据：需要帮助的用户可以找到有经验的社区；愿意付出时间的人可以连接需要支持的组织；医院的专业知识可以触达有照护疑问的人；救助与领养信息则可以找到愿意采取行动的人。\n\n我将这些互助契机转译为三个相互关联的模块：Community 让人和活动被发现；Care 汇集领养、诊疗支持与志愿服务；Profile 保存日常记录与相关信息。同一个参与者既可以寻求帮助，也可以成为帮助的提供者。\n\n前期故事板探索了三条可能的路径：参加志愿活动、准备领养，以及通过宠物聚会建立陪伴关系。这些设计情境呈现信息连接如何有机会走向实际行动。",
           "images": [
-            "/images/pet-structure.png",
             "/images/pet-storyboard.png"
-          ]
+          ],
+          "imageCaptions": [
+            "前期故事板：志愿服务、领养与宠物陪伴，展示从信息交流走向照护行动的可能路径。"
+          ],
+          "imageDimensions": [
+            [
+              1086,
+              1140
+            ]
+          ],
+          "zoomImages": true
         },
         {
-          "title": "原型与后续评估",
-          "content": "设计从草图发展为 Figma 高保真原型，涵盖登录、用户分流、社区、协助与日记。后续可用性评估计划关注任务完成率、错误恢复及 SUS 评分；这些是拟采用的指标，并非已完成的测试结果。",
+          "title": "03 · 加入互助网络",
+          "content": "入口同时欢迎宠物主人和希望先了解社区的人。创建档案帮助参与者介绍自己的伙伴，但拥有宠物并非参与的前提。志愿服务、学习与领养由此可以面向更广泛的人群。",
           "images": [
-            "/images/pet-prototype1.png",
-            "/images/pet-prototype2.png"
-          ]
+            "/images/pets-tribe-sign-in.webp",
+            "/images/pets-tribe-profile-setup.webp",
+            "/images/pets-tribe-pet-type.webp"
+          ],
+          "imageCaptions": [
+            "登录：进入共同照护宠物的社区。",
+            "档案引导：添加宠物，也可以先探索。",
+            "宠物类型：介绍档案背后的伙伴。"
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "04 · 发现身边的人、地点与共同活动",
+          "content": "社区让日常经验被看见；附近地图把线上活动与周围的城市联系起来；宠物档案则为这些连接赋予具体的身份。筛选帮助人们聚焦当下的需求，活动页面提供走出屏幕、相遇与互助的机会。",
+          "images": [
+            "/images/pets-tribe-community.webp",
+            "/images/pets-tribe-nearby.webp",
+            "/images/pets-tribe-pet-friends.webp",
+            "/images/pets-tribe-community-filters.webp",
+            "/images/pets-tribe-nearby-filters.webp",
+            "/images/pets-tribe-create-menu.webp",
+            "/images/pets-tribe-nearby-events.webp",
+            "/images/pets-tribe-events.webp"
+          ],
+          "imageCaptions": [
+            "社区：通过共同分享的故事建立连接。",
+            "附近地图：发现宠物与本地机会。",
+            "宠物朋友：认识伙伴及其主人。",
+            "社区筛选：聚焦相关宠物类型。",
+            "附近筛选：按距离、品种与偏好缩小范围。",
+            "创建入口：贡献故事、活动或志愿机会。",
+            "附近活动：让地点与共同活动相连接。",
+            "活动列表：把发现转化为相遇的理由。"
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "05 · 寻找并延续照护",
+          "content": "Care 将不同形式的协助放入连续的路径。从浏览待领养宠物，到了解个体经历，再到准备长期照护，参与者逐步认识自己的责任。收藏让人们持续关注宠物与救助；诊疗支持和志愿机会则把专业知识、可投入的时间与具体需求联系起来。",
+          "images": [
+            "/images/pets-tribe-care.webp",
+            "/images/pets-tribe-companions.webp",
+            "/images/pets-tribe-adoption-detail.webp",
+            "/images/pets-tribe-adoption-preparation.webp",
+            "/images/pets-tribe-saved-care.webp",
+            "/images/pets-tribe-veterinary-support.webp",
+            "/images/pets-tribe-volunteer.webp"
+          ],
+          "imageCaptions": [
+            "照护入口：领养、健康与志愿服务共同呈现。",
+            "寻找伙伴：让等待家庭的宠物被发现。",
+            "领养详情：在行动前了解一只具体的宠物。",
+            "领养准备：考虑家庭能够提供怎样的照护。",
+            "照护收藏：持续关注宠物与救助故事。",
+            "诊疗支持：让专业信息更容易被找到。",
+            "志愿机会：把个人的时间连接到集体照护。"
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "06 · 保存日常中的关系",
+          "content": "宠物主人档案将日常点滴与照护入口放在一起，个人档案也容纳暂时没有宠物的参与者。日记记录伙伴进入日常生活的细小经历，让网络中的关系不止于一条帖子或一次活动。",
+          "images": [
+            "/images/pets-tribe-pet-profile.webp",
+            "/images/pets-tribe-personal-profile.webp",
+            "/images/pets-tribe-diary.webp"
+          ],
+          "imageCaptions": [
+            "宠物主人档案：日常分享与照护记录。",
+            "个人档案：无论是否养宠，都可以参与。",
+            "日记：持续记录共同生活。"
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "07 · 让组织成为网络中的参与者",
+          "content": "组织既提供帮助，也需要协调来自他人的支持。团队接入、活动管理与志愿发布构成独立的组织路径：机构能够展示正在开展的工作，说明需要什么帮助，并邀请人们参与。",
+          "images": [
+            "/images/pets-tribe-organization-access.webp",
+            "/images/pets-tribe-organization.webp",
+            "/images/pets-tribe-publish-volunteer.webp"
+          ],
+          "imageCaptions": [
+            "组织接入：连接收容机构或志愿团队。",
+            "组织档案：协调活动与社区参与。",
+            "发布志愿：表达需求，邀请支持。"
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "08 · 让贡献更容易发生",
+          "content": "发布日常、组织活动和介绍宠物，都是向这个网络贡献信息的方式。表单围绕单一行动组织，采用一致的控件与清晰的信息字段。新版 iOS 风格界面以英文文案、统一的线性图标和克制的暖色强调，让不同参与路径属于同一个产品。",
+          "images": [
+            "/images/pets-tribe-media.webp",
+            "/images/pets-tribe-publish-event.webp",
+            "/images/pets-tribe-edit-pet.webp"
+          ],
+          "imageCaptions": [
+            "选择媒体：分享日常中的一个时刻。",
+            "创建活动：把想法变成共同参与的机会。",
+            "编辑宠物档案：让伙伴的身份与需求更清楚。"
+          ],
+          "imageDimensions": [
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ],
+            [
+              390,
+              844
+            ]
+          ],
+          "imageLayout": "screens",
+          "zoomImages": true
+        },
+        {
+          "title": "09 · 连接本身，成为照护的契机",
+          "content": "这个项目的核心主张，是宠物能够从周围的人与机构之间的关系中受益。当一方能够提供的东西遇见另一方的需要，知识才可能转化为更有依据的照护，空闲时间才可能转化为志愿行动，救助故事才可能转化为领养机会。\n\n这些是设计希望促成的结果。当前原型尚未验证动物福利的变化，也没有已测得的可用性结果。后续评估可以追踪跨参与者的任务路径，例如寻找照护建议、加入活动或准备领养，了解人们是否理解互助关系、找到相关支持，并顺利完成行动。",
+          "images": []
         }
       ],
-      "links": []
+      "links": [
+        {
+          "label": "查看 Figma 原型",
+          "url": "https://www.figma.com/design/5k9mEe4NBWjBUdK6ZHYpsq?node-id=29-1404"
+        }
+      ],
+      "coverInSections": true,
+      "facts": [
+        {
+          "label": "我的工作",
+          "value": "参与者概念图与互助关系的设计表述"
+        },
+        {
+          "label": "界面更新",
+          "value": "2026"
+        }
+      ]
     },
     {
       "id": 6,
@@ -1611,6 +2229,22 @@ export const projectsData = {
           "images": [
             "/images/SyneSound 5.png",
             "/images/SyneSound 6.png"
+          ]
+        },
+        {
+          "title": "获奖现场",
+          "content": "SyneSound 获得 CMU NOVA Most InNOVAtive Prize。下图记录了团队 X-MA 在获奖现场的合影。",
+          "images": [
+            "/images/synesound-award-ceremony.webp"
+          ],
+          "imageCaptions": [
+            "获奖现场：团队 X-MA，Yongyi Xiong 与 Yunxiang Ma。"
+          ],
+          "imageDimensions": [
+            [
+              1800,
+              1350
+            ]
           ]
         }
       ],

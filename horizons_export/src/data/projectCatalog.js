@@ -5,7 +5,7 @@ export const projectOrder = [1, 10, 9, 8, 7, 3, 6, 4, 11, 2, 5, 12];
 export const projectImages = {
   1: '/images/roomify-demo.gif', 2: '/images/boardgame-head.png',
   3: '/images/imagine-head.png', 4: '/images/hongkong-head.png',
-  5: '/images/pet-head.png', 6: '/images/vr-head.png',
+  5: '/images/pets-tribe-cover-motion.webp', 6: '/images/vr-head.png',
   7: '/images/SyneSound 1.png', 8: '/images/domesticade-heroimage.png',
   9: '/images/VLMFT-method.png',
   10: '/images/peter-pan-showcase-cover.jpg',
@@ -24,7 +24,7 @@ export const projectCards = {
   3: { en: 'From emotional responses to exhibition spaces.', zh: '从情绪感知到展览空间设计。' },
   2: { en: 'Campus movement translated into a game and AR guide.', zh: '将校园行为数据转化为桌游与 AR 导览。' },
   4: { en: 'Reading a city through its street-level colors.', zh: '通过街道色彩，观察与理解城市。' },
-  5: { en: 'A place for pet communities, adoption, and care.', zh: '连接宠物社群、领养与日常照护。' },
+  5: { en: 'Mutual help between people, with pets at the center.', zh: '以宠物为中心，建立人与机构之间的互助关系。', poster: '/images/pets-tribe-cover-poster.webp' },
 };
 export const projectFilters = [
   { id: 'all', en: 'All work', zh: '全部', ids: null },

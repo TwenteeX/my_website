@@ -17,6 +17,17 @@ export default function About({ language }) {
           <a className="text-link" href="/resume.pdf" download="Yunxiang_Ma_Resume.pdf">{zh ? '下载 PDF' : 'Download PDF'}<Download size={14} /></a>
         </div>
       </div>
+      <figure className="about-portrait">
+        <img src="/images/yunxiang-tsinghua-graduation.webp" alt={zh ? '马云翔在清华大学毕业时的留影' : 'Yunxiang Ma at his Tsinghua University graduation'} width={1400} height={1400} />
+        <figcaption>{zh ? '清华大学毕业留影' : 'Graduation at Tsinghua University'}</figcaption>
+      </figure>
+    </div>
+    <div className="about-research">
+      <div className="about-research-copy">
+        <p className="eyebrow">{zh ? '研究兴趣' : 'Research interests'}</p>
+        <h2>{zh ? '从关系中理解空间' : 'Understanding space through relationships'}</h2>
+        <p>{zh ? '我关注人如何通过身体与环境交互，以及人工智能如何理解这些关系、支持新的空间体验。' : 'I explore how people interact with their surroundings through the body, and how AI can understand those relationships to support new spatial experiences.'}</p>
+      </div>
       <ResearchVenn language={language} />
     </div>
   </section>;

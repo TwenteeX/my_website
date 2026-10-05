@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight, ArrowRight } from 'lucide-react';
 import { projectsData } from '@/data/projects';
 import { projectImages, projectCards, orderProjects } from '@/data/projectCatalog';
 import ProjectImage from '@/components/ProjectImage';
+import ProjectSection from '@/components/ProjectSection';
 
 export default function ProjectDetail({ language }) {
   const { id } = useParams();
@@ -22,6 +23,8 @@ export default function ProjectDetail({ language }) {
 
   const next = projects[(projects.indexOf(project) + 1) % projects.length];
   const poster = projectCards[project.id]?.poster;
+  const intro = project.sections[0]?.fullWidth ? project.sections[0] : null;
+  const sections = intro ? project.sections.slice(1) : project.sections;
 
   return <main tabIndex={-1} id="main" className="detail-page shell">
     <Helmet>
@@ -34,9 +37,10 @@ export default function ProjectDetail({ language }) {
       <h1>{project.title}</h1>
       <p>{project.description}</p>
     </header>
-    <div className={'detail-cover' + (project.coverFit === 'cover' ? ' detail-cover-crop' : '')}>
+    {!project.coverInSections && <div className={'detail-cover' + (project.coverFit === 'cover' ? ' detail-cover-crop' : '')}>
       <ProjectImage key={project.id} src={projectImages[project.id]} poster={poster} alt={project.title} controls language={language} {...(poster ? { width: 1280, height: 720, style: { height: 'auto' } } : {})} />
-    </div>
+    </div>}
+    {intro && <div className="detail-body detail-intro"><ProjectSection section={intro} project={project} language={language} /></div>}
     <div className="detail-layout">
       <aside>
         <dl className="detail-sidebar">
@@ -55,34 +59,7 @@ export default function ProjectDetail({ language }) {
           <h2>{zh ? '演示' : 'Demonstration'}</h2>
           <iframe className="practice-player" src="https://www.youtube.com/embed/qbZ14Et57BM" title="SyneSound demonstration" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
         </section>}
-        {project.sections.map(s => <section key={s.title}>
-          <h2>{s.title}</h2>
-          {s.content.split('\n\n').map((p, j) => <p key={j} style={{ marginBottom: 16 }}>{p}</p>)}
-          {s.video && <figure className="detail-video">
-            <video key={s.video.src} controls playsInline preload="metadata" poster={s.video.poster} width={s.video.width} height={s.video.height} aria-label={s.video.title}>
-              <source src={s.video.src} type="video/mp4" />
-              <a href={s.video.src}>{zh ? '下载视频' : 'Download video'}</a>
-            </video>
-            <figcaption>{s.video.caption}</figcaption>
-          </figure>}
-          {s.table && <div className="detail-table-scroll" role="region" aria-label={s.table.caption} tabIndex={0}>
-            <table className="detail-table">
-              <caption>{s.table.caption}</caption>
-              <thead><tr>{s.table.columns.map(c => <th scope="col" key={c}>{c}</th>)}</tr></thead>
-              <tbody>{s.table.rows.map((row, r) => <tr key={r}>{row.map((cell, c) => c === 0 ? <th scope="row" key={c}>{cell}</th> : <td key={c}>{cell}</td>)}</tr>)}</tbody>
-            </table>
-          </div>}
-          <div className={s.imageLayout === 'grid' ? 'detail-figure-grid' + (s.imageColumns === 3 ? ' detail-figure-grid-three' : '') : undefined}>{s.images.map((src, j) => {
-            const caption = s.imageCaptions?.[j] || `${s.title} · ${String(j + 1).padStart(2, '0')}`;
-            const credit = s.imageCredits?.[j];
-            const fullSize = s.fullSizeImages?.[j] || src;
-            const picture = <img src={src} alt={s.imageCaptions?.[j] || `${project.title} — ${s.title} ${j + 1}`} width={s.imageDimensions?.[j]?.[0]} height={s.imageDimensions?.[j]?.[1]} loading="lazy" />;
-            return <figure key={src} className={s.imageSpans?.[j] > 1 ? 'figure-wide' : undefined}>
-              {s.zoomImages ? <a className="figure-expand" href={fullSize} target="_blank" rel="noreferrer" aria-label={`${zh ? '查看原图' : 'View full size'}: ${caption}`}>{picture}</a> : picture}
-              <figcaption>{caption}{credit && <a className="figure-size-link" href={credit.url} target="_blank" rel="noreferrer">{credit.label} ↗</a>}{s.zoomImages && <a className="figure-size-link" href={fullSize} target="_blank" rel="noreferrer">{zh ? '查看原图 ↗' : 'View full size ↗'}</a>}</figcaption>
-            </figure>;
-          })}</div>
-        </section>)}
+        {sections.map(s => <ProjectSection key={s.title} section={s} project={project} language={language} />)}
       </article>
     </div>
     <div className="detail-next">
