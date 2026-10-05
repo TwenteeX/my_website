@@ -42,6 +42,7 @@ export default function ProjectDetail({ language }) {
         <dl className="detail-sidebar">
           <div><dt>{zh ? '年份' : 'Year'}</dt><dd>{project.year}</dd></div>
           <div><dt>{zh ? '团队' : 'Team'}</dt><dd>{project.members}</dd></div>
+          {project.facts?.map(fact => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}
           <div><dt>{zh ? '方向与方法' : 'Focus & methods'}</dt><dd className="detail-tags">{project.tags.map(t => <span key={t}>{t}</span>)}</dd></div>
           {project.links.length > 0 && <div>
             <dt>{zh ? '研究资料' : 'Resources'}</dt>
@@ -73,11 +74,12 @@ export default function ProjectDetail({ language }) {
           </div>}
           {s.images.map((src, j) => {
             const caption = s.imageCaptions?.[j] || `${s.title} · ${String(j + 1).padStart(2, '0')}`;
+            const credit = s.imageCredits?.[j];
             const fullSize = s.fullSizeImages?.[j] || src;
             const picture = <img src={src} alt={s.imageCaptions?.[j] || `${project.title} — ${s.title} ${j + 1}`} width={s.imageDimensions?.[j]?.[0]} height={s.imageDimensions?.[j]?.[1]} loading="lazy" />;
             return <figure key={src}>
               {s.zoomImages ? <a className="figure-expand" href={fullSize} target="_blank" rel="noreferrer" aria-label={`${zh ? '查看原图' : 'View full size'}: ${caption}`}>{picture}</a> : picture}
-              <figcaption>{caption}{s.zoomImages && <a className="figure-size-link" href={fullSize} target="_blank" rel="noreferrer">{zh ? '查看原图 ↗' : 'View full size ↗'}</a>}</figcaption>
+              <figcaption>{caption}{credit && <a className="figure-size-link" href={credit.url} target="_blank" rel="noreferrer">{credit.label} ↗</a>}{s.zoomImages && <a className="figure-size-link" href={fullSize} target="_blank" rel="noreferrer">{zh ? '查看原图 ↗' : 'View full size ↗'}</a>}</figcaption>
             </figure>;
           })}
         </section>)}

@@ -41,7 +41,7 @@ export default function Projects({ language }) {
               <ProjectImage src={card.image || projectImages[project.id]} poster={card.poster} alt="" loading={index < 3 ? 'eager' : 'lazy'} decoding="async" width="720" height="405" />
             </div>
             <div className="project-copy">
-              <div className="project-title"><h2>{project.title}</h2><ArrowUpRight size={16} strokeWidth={1.3} aria-hidden="true" /></div>
+              <div className="project-title"><h2>{card.title?.[language] || project.title}</h2><ArrowUpRight size={16} strokeWidth={1.3} aria-hidden="true" /></div>
               <p>{card[language] || project.description}</p>
               <div className="project-meta"><span>{project.year}</span>{card.recognition && <span>{card.recognition}</span>}</div>
             </div>

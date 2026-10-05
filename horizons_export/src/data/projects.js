@@ -725,6 +725,188 @@ export const projectsData = {
           "zoomImages": true
         }
       ]
+    },
+    {
+      "id": 11,
+      "category": "architecture",
+      "featured": true,
+      "tags": [
+        "Architecture",
+        "Film translation",
+        "Museum design",
+        "Spatial narrative"
+      ],
+      "title": "Sinking Batavia: Museum of Accrete Culture",
+      "description": "An architectural translation of The Florida Project: three narrative worlds become a museum on Jakarta’s changing coast.",
+      "year": "2023",
+      "members": "Individual project · Yunxiang Ma",
+      "facts": [
+        {
+          "label": "Location",
+          "value": "Jakarta, Indonesia"
+        },
+        {
+          "label": "Area",
+          "value": "2,920 m²"
+        },
+        {
+          "label": "Studio tutor",
+          "value": "Lu Fan (范路)"
+        }
+      ],
+      "links": [
+        {
+          "label": "Film reference · A24",
+          "url": "https://a24films.com/films/the-florida-project"
+        },
+        {
+          "label": "Jakarta · Land subsidence",
+          "url": "https://www.esdm.go.id/en/media-center/news-archives/head-of-geological-agency-groundwater-depletion-rate-can-be-slowed-down"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Translating The Florida Project",
+          "content": "Sean Baker’s The Florida Project (2017) follows six-year-old Moonee and her mother Halley in a motel near a world of promised escape. Children’s play, adult precarity, and the everyday work of motel manager Bobby coexist in the same brightly colored setting. The film offers a starting point for thinking about how one place can hold different, sometimes conflicting realities.\n\nI studied the film through frames, camera movement, and recurring scenes. Wide-angle views flatten the motel frontage into an apparently ordinary backdrop; two-shots reveal tension between people; following shots move with the children; close-ups bring emotional complexity into focus. These observations become architectural questions about framing, movement, visibility, and the relationship between an individual and a larger environment.",
+          "images": [
+            "/images/batavia-florida-project.jpg",
+            "/images/batavia-film-analysis.jpg"
+          ],
+          "imageCaptions": [
+            "The Florida Project (2017), directed by Sean Baker. Official landscape promotional image published by A24.",
+            "Study of lens language: wide-angle views, two-shots, following shots, and close-ups, translated into spatial relationships."
+          ],
+          "imageDimensions": [
+            [
+              2400,
+              823
+            ],
+            [
+              1833,
+              1039
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/batavia-florida-project.jpg",
+            "/images/batavia-film-analysis.jpg"
+          ],
+          "imageCredits": [
+            {
+              "label": "A24",
+              "url": "https://a24films.com/films/the-florida-project"
+            }
+          ]
+        },
+        {
+          "title": "Three loops, three worlds",
+          "content": "Three narrative loops organize the reading. LOOP 1 traces Halley’s downward trajectory as her circumstances grow more constrained. LOOP 2 follows the mother–daughter relationship, connecting Moonee’s imaginative everyday world with Halley’s material pressures. LOOP 3 follows Bobby’s routine: a comparatively stable presence whose care and responsibilities repeatedly intersect with the residents’ lives.\n\nFrom these intertwined loops, the project constructs UTOPIA, SELF, and REALITY. Rather than a strict Platonic opposition between Being and Becoming, this three-part structure leaves room for ambiguity: an imagined world, a situated self, and external conditions continually affect one another. The architectural translation works through layered spaces, shifting viewpoints, and connections between levels, allowing visitors to encounter these worlds as permeable relationships.",
+          "images": [
+            "/images/batavia-narrative-loops.jpg",
+            "/images/batavia-three-worlds.jpg"
+          ],
+          "imageCaptions": [
+            "The three recurring narratives connect Halley, Moonee, and Bobby through contrasting trajectories and dependencies.",
+            "UTOPIA / SELF / REALITY: conceptual studies linking cinematic frames, spatial layers, and the position of the observer."
+          ],
+          "imageDimensions": [
+            [
+              1717,
+              1742
+            ],
+            [
+              1656,
+              830
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/batavia-narrative-loops.jpg",
+            "/images/batavia-three-worlds.jpg"
+          ]
+        },
+        {
+          "title": "Jakarta: a shore in transition",
+          "content": "The 2023 academic proposal locates the museum in Jakarta, where land subsidence and coastal exposure make the relationship between city and sea a pressing spatial question. Indonesia’s 2022 decision to legislate a new capital forms part of this changing urban context. The design imagines an abandoned coastal district toward 2050 as a speculative scenario, asking how architecture might remain entangled with a shifting shoreline over several decades.\n\nBatavia, Jakarta’s former colonial name, points to another kind of accumulation. The research collage brings local, colonial, and incoming cultures into the same frame. The museum treats cultural identity as an ongoing process of coexistence and accretion. Its galleries and shared routes place these layers in relation to one another, while the site itself becomes a setting for reflecting on what a changing city carries forward.",
+          "images": [
+            "/images/batavia-site.jpg",
+            "/images/batavia-cultural-layers.jpg"
+          ],
+          "imageCaptions": [
+            "Site study and master plan for the speculative coastal museum in Jakarta.",
+            "Cultural research collage: Jayakarta, Batavia, and Jakarta, with local, colonial, and incoming cultural layers."
+          ],
+          "imageDimensions": [
+            [
+              2200,
+              719
+            ],
+            [
+              2200,
+              824
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/batavia-site-full.jpg",
+            "/images/batavia-cultural-layers-full.jpg"
+          ]
+        },
+        {
+          "title": "Sky, ground, underground",
+          "content": "The building translates the three meaning worlds into a sectional composition of sky, ground, and underground. Most of the museum sits below grade, while elements above the surface establish a relationship with the landscape and open sky. The levels echo the film’s layered realities without fixing each visitor’s experience to a single interpretation.\n\nCurved wall segments form the principal supports and shape column-free exhibition spaces. Two ring corridors at staggered heights connect galleries devoted to local, colonial, and incoming cultures, together with temporary exhibition and shared spaces. Two light shafts and one vertical circulation shaft link the layers from above to below. Movement, daylight, and framed views make the section legible: visitors descend through the building while retaining glimpses of the world overhead.",
+          "images": [
+            "/images/batavia-plans.jpg",
+            "/images/batavia-section.jpg"
+          ],
+          "imageCaptions": [
+            "Plans across three levels: curved gallery walls, staggered ring corridors, and the shafts that connect them.",
+            "Section A–A: a low profile above ground and a layered sequence of galleries, circulation, and light below."
+          ],
+          "imageDimensions": [
+            [
+              2200,
+              438
+            ],
+            [
+              2200,
+              852
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/batavia-plans-full.jpg",
+            "/images/batavia-section-full.jpg"
+          ]
+        },
+        {
+          "title": "A cinematic route through light",
+          "content": "The final spatial sequence tests how cinematic ideas can be experienced through walking. Gallery passages alternate with openings and places to pause; changes in level reveal different relationships between the visitor, the curved walls, and the light shafts. Looking upward from the lower galleries offers a different reading of the same structure encountered from above.\n\nThe nine viewpoints pair an exploded axonometric with interior scenes, following the route from the upper spaces into the underground galleries. Daylit voids and darker exhibition rooms create changes in atmosphere along this route. The exterior rendering places the museum against an imagined coastal horizon, while the final interior rendering—used as the project cover—brings sky, circulation, and exhibition space into one frame.",
+          "images": [
+            "/images/batavia-spatial-sequence.jpg",
+            "/images/batavia-exterior.jpg"
+          ],
+          "imageCaptions": [
+            "Space tour sequence: an exploded axonometric and nine viewpoints through light shafts, passages, stairs, and galleries.",
+            "Exterior study: the museum’s upper profile meets the imagined coastal landscape."
+          ],
+          "imageDimensions": [
+            [
+              2200,
+              1554
+            ],
+            [
+              2062,
+              1097
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/batavia-spatial-sequence-full.jpg",
+            "/images/batavia-exterior.jpg"
+          ]
+        }
+      ]
     }
   ],
   "zh": [
@@ -1451,6 +1633,188 @@ export const projectsData = {
             ]
           ],
           "zoomImages": true
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "category": "architecture",
+      "featured": true,
+      "tags": [
+        "建筑设计",
+        "电影转译",
+        "博物馆",
+        "空间叙事"
+      ],
+      "title": "巴达维亚之沉没：文化共生博物馆",
+      "description": "电影《佛罗里达乐园》影像空间转译：以三条叙事 LOOP 与三层意义世界，构想雅加达变化海岸上的博物馆。",
+      "year": "2023",
+      "members": "个人设计 · 马云翔",
+      "facts": [
+        {
+          "label": "选址",
+          "value": "雅加达，印度尼西亚"
+        },
+        {
+          "label": "建筑面积",
+          "value": "2,920 m²"
+        },
+        {
+          "label": "指导教师",
+          "value": "范路"
+        }
+      ],
+      "links": [
+        {
+          "label": "电影资料 · A24",
+          "url": "https://a24films.com/films/the-florida-project"
+        },
+        {
+          "label": "雅加达 · 地面沉降",
+          "url": "https://www.esdm.go.id/en/media-center/news-archives/head-of-geological-agency-groundwater-depletion-rate-can-be-slowed-down"
+        }
+      ],
+      "sections": [
+        {
+          "title": "《佛罗里达乐园》的空间转译",
+          "content": "肖恩·贝克执导的《佛罗里达乐园》（2017）围绕六岁的 Moonee、母亲 Halley，以及汽车旅馆经理 Bobby 展开。孩子的游戏、成人的生存压力与维持旅馆运转的日常，共存于同一片色彩明亮的环境中。电影由此提供了一个空间命题：同一个地方，如何容纳不同甚至彼此冲突的现实？\n\n我从画面构图、镜头运动与反复出现的场景入手，分析影片的空间语言。广角镜头将旅馆立面呈现为平直、客观的背景；双人镜头凸显人物关系中的冲突与紧张；跟随镜头进入孩子主观而生动的行动；特写则聚焦人物复杂的情绪。这些观察被转化为建筑中的取景、行进、可见性，以及个体与环境之间的关系。",
+          "images": [
+            "/images/batavia-florida-project.jpg",
+            "/images/batavia-film-analysis.jpg"
+          ],
+          "imageCaptions": [
+            "《佛罗里达乐园》（2017），肖恩·贝克导演。横版宣传图来自 A24 官方电影页面。",
+            "镜头语言分析：广角、双人镜头、跟随镜头与特写，及其对应的空间关系研究。"
+          ],
+          "imageDimensions": [
+            [
+              2400,
+              823
+            ],
+            [
+              1833,
+              1039
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/batavia-florida-project.jpg",
+            "/images/batavia-film-analysis.jpg"
+          ],
+          "imageCredits": [
+            {
+              "label": "A24",
+              "url": "https://a24films.com/films/the-florida-project"
+            }
+          ]
+        },
+        {
+          "title": "三条 LOOP 与三层意义世界",
+          "content": "叙事分析提取了三条相互缠绕的 LOOP。LOOP 1 描绘 Halley 的生活逐渐下沉，外部处境持续收紧；LOOP 2 围绕母女之间的依赖，将 Moonee 的日常想象与 Halley 的现实压力连接起来；LOOP 3 追踪旅馆经理 Bobby 的日常，他以相对稳定的自身位置，在照护、管理与居民生活之间不断往返。\n\n在此基础上，项目建构了 UTOPIA、SELF、REALITY 三层意义世界。区别于柏拉图式 Being / Becoming 的二元对立，三段式结构保留了更模糊的中间地带：想象中的世界、身处其中的自我与外部现实不断互相影响。建筑通过空间叠合、视点变化与层间连接，让三层世界成为可以穿越和重新理解的关系，而非互不相通的分类。",
+          "images": [
+            "/images/batavia-narrative-loops.jpg",
+            "/images/batavia-three-worlds.jpg"
+          ],
+          "imageCaptions": [
+            "电影叙事拼贴：Halley、Moonee 与 Bobby 的三条 LOOP，以不同轨迹与人物依赖组织空间概念。",
+            "UTOPIA / SELF / REALITY：将电影画面、空间层次与观察者的位置并置，提取三重意义世界。"
+          ],
+          "imageDimensions": [
+            [
+              1717,
+              1742
+            ],
+            [
+              1656,
+              830
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/batavia-narrative-loops.jpg",
+            "/images/batavia-three-worlds.jpg"
+          ]
+        },
+        {
+          "title": "雅加达：变化中的海岸",
+          "content": "这份 2023 年的课程设计选址于印度尼西亚雅加达。持续的地面沉降与沿海风险，使城市与海洋的关系成为重要的空间议题；2022 年印度尼西亚通过新首都相关法律，也构成城市转变的背景。项目以面向 2050 年的废城海岸作为构想情景，探讨一座建筑如何在未来数十年中，与变化的地面和海平面持续纠缠。\n\n“巴达维亚”是雅加达历史上的殖民时期名称，也指向文化的层层积累。前期拼贴将本土文化、殖民文化与外来文化放入同一时间与空间框架。博物馆以文化共生为主题，通过展厅与共享路径，让不同文化层次彼此相遇；不断变化的城市本身，也成为思考记忆、延续与未来的场所。",
+          "images": [
+            "/images/batavia-site.jpg",
+            "/images/batavia-cultural-layers.jpg"
+          ],
+          "imageCaptions": [
+            "雅加达海岸场地研究与博物馆总平面，呈现构想情景中的城市、岸线与建筑关系。",
+            "文化研究拼贴：从 Jayakarta、Batavia 到 Jakarta，梳理本土、殖民与外来文化的交叠。"
+          ],
+          "imageDimensions": [
+            [
+              2200,
+              719
+            ],
+            [
+              2200,
+              824
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/batavia-site-full.jpg",
+            "/images/batavia-cultural-layers-full.jpg"
+          ]
+        },
+        {
+          "title": "天空、地面与地下",
+          "content": "建筑采用天空—地面—地下的三段式构图，将三层意义世界转译为剖面中的空间关系。主体展览空间沉入地下，地表以上的构筑则与周围地景和天空建立联系。三层空间呼应电影中的多重现实，同时为访客保留不同的观看与理解方式。\n\n多段曲面片墙承担主要支撑，围合出无柱的展览空间；两层高低错落的环廊串联本土、殖民与外来文化展厅，以及临时展览和共享空间。两个采光桶与一个纵向交通桶自上而下贯穿建筑，将天空、地面与地下连接起来。行进路径、自然光与被框取的视野共同呈现剖面层次，使访客在向下深入建筑时，仍能看到上方世界的片段。",
+          "images": [
+            "/images/batavia-plans.jpg",
+            "/images/batavia-section.jpg"
+          ],
+          "imageCaptions": [
+            "三层平面：曲面展墙、错层环廊，以及连接各层的采光与交通空间。",
+            "A–A 剖面：地表以上的低矮轮廓，与地下展厅、环廊和采光空间的层叠关系。"
+          ],
+          "imageDimensions": [
+            [
+              2200,
+              438
+            ],
+            [
+              2200,
+              852
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/batavia-plans-full.jpg",
+            "/images/batavia-section-full.jpg"
+          ]
+        },
+        {
+          "title": "以光组织空间游览序列",
+          "content": "最终的空间游览序列，检验电影中的观看方式如何转化为身体行进的体验。展厅通道与开敞空间、停留节点交替出现；高度变化让访客重新理解自身与片墙、采光桶之间的关系。从地下仰望时，同一结构又呈现出不同于地面俯视的空间感受。\n\n九个视点将分解轴测与室内场景对应，沿着上部空间逐步进入地下展厅。明亮的采光空腔与较暗的展览空间，形成连续行进中的氛围变化。室外渲染将建筑放入想象中的海岸地景；作为项目封面的最后一张室内渲染，则把天空、纵向交通与展览空间收束于同一画面。",
+          "images": [
+            "/images/batavia-spatial-sequence.jpg",
+            "/images/batavia-exterior.jpg"
+          ],
+          "imageCaptions": [
+            "空间游览序列：分解轴测与九个视点，串联采光桶、通道、楼梯与不同层次的展厅。",
+            "室外空间研究：博物馆的地表轮廓与构想中的海岸地景相接。"
+          ],
+          "imageDimensions": [
+            [
+              2200,
+              1554
+            ],
+            [
+              2062,
+              1097
+            ]
+          ],
+          "zoomImages": true,
+          "fullSizeImages": [
+            "/images/batavia-spatial-sequence-full.jpg",
+            "/images/batavia-exterior.jpg"
+          ]
         }
       ]
     }

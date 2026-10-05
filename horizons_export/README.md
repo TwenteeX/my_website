@@ -50,9 +50,11 @@ The header indicates the current section, including on detail pages. The mobile 
 
 To add a project, add its case study in both languages, place its media in `public/images/`, and add an entry to `projectImages` and `projectCards`. Add its ID to `projectOrder` and the appropriate filters. Unranked projects appear after explicitly ordered entries. There is no limit on the number of projects displayed.
 
-Index covers can differ from detail-page covers: `projectCards[id].image` sets an optional thumbnail, while `projectImages[id]` remains the case-study cover. Existing project assets are retained; the VLM and SyneSound index covers now use more concrete examples from those assets.
+Index covers can differ from detail-page covers: `projectCards[id].image` sets an optional thumbnail, while `projectImages[id]` remains the case-study cover. An optional bilingual `projectCards[id].title` supplies a shorter index title. Existing project assets are retained; the VLM and SyneSound index covers now use more concrete examples from those assets.
 
 Roomify uses the complete supplied 30-second demo as a looping GIF: an 800px detail cover and a 480px index version. Its optional `poster` is used for reduced-motion preferences and the detail cover's pause control. Case-study sections support a `video` object (local MP4, poster, dimensions, accessible title, and caption), and `imageDimensions` reserves space for lazy-loaded figures. The user-study video retains its original H.264 video and AAC audio, with MP4 metadata moved to the beginning for streaming.
+
+Case studies can include additional sidebar `facts` (label/value pairs). Figures support `fullSizeImages` for larger drawing previews and `imageCredits` (label/URL pairs) for source attribution beside a caption.
 
 ## Visual system
 
@@ -71,6 +73,8 @@ Roomify uses the complete supplied 30-second demo as a looping GIF: an 800px det
 `npm test` checks bilingual IDs, local media, filter references, and safe ordering when projects are added. Browser checks cover page navigation, the one-screen home, active navigation, category persistence, detail return links, mobile menu, Chinese, direct route loads, legacy links, and the journey interaction.
 
 ## Source notes
+
+Sinking Batavia (project 11) is Yunxiang Ma's 2023 academic museum proposal, based on the owner-supplied description and six-page architecture portfolio PDF. The cover is the clean rendering embedded on the last page; the exterior rendering is extracted from the first page. Film analysis, narrative loops, three-world concepts, site studies, cultural collages, plans, sections, and the spatial sequence are cropped from pages 2–5. Larger versions of the architectural boards are linked from the figures. The landscape film reference is A24's official promotional image for *The Florida Project* (2017), credited and linked beside the image: https://a24films.com/films/the-florida-project. The 2050 abandoned coast is presented as the design's speculative scenario, not a certain prediction. Context sources: Indonesia's Geological Agency on Jakarta's land subsidence (https://www.esdm.go.id/en/media-center/news-archives/head-of-geological-agency-groundwater-depletion-rate-can-be-slowed-down) and the Presidential Staff Office on the 2022 capital relocation law (https://www.ksp.go.id/moeldoko-pemindahan-ikn-sudah-final-dan-tidak-perlu-lagi-diperdebatkan.html).
 
 Peter Pan (project 10) documents James Fu and Yunxiang Ma's Spring 2026 HyperSense shadow interaction prototype and CMU School of Design showcase. Text follows the owner's final course report; figures are cropped exclusively from the final slides (pages 14 and 21), with owner-supplied showcase photographs. Evan's reading map is presented as a shared reading and brainstorming artifact; a compressed inline preview links to the original full-size photograph. The case study focuses on the prototype and showcase experience.
 
