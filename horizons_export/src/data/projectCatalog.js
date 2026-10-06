@@ -7,7 +7,7 @@ export const projectImages = {
   3: '/images/imagine-head.png', 4: '/images/hongkong-head.png',
   5: '/images/pets-tribe-cover-motion.webp', 6: '/images/vr-head.png',
   7: '/images/SyneSound 1.png', 8: '/images/domesticade-heroimage.png',
-  9: '/images/VLMFT-method.png',
+  9: '/images/vlm-depth/method-overview.png',
   10: '/images/peter-pan-showcase-cover.jpg',
   11: '/images/batavia-cover.jpg',
   12: '/images/perspective-cover.jpg',

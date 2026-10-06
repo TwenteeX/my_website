@@ -816,7 +816,8 @@ export const projectsData = {
         "COCO"
       ],
       "featured": true,
-      "title": "Spatial Depth Reasoning in VLMs",
+      "title": "Improving Spatial Depth Reasoning in VLMs",
+      "coverStyle": "method",
       "description": "Building a spatial-reasoning dataset and benchmark from public image resources, then fine-tuning and evaluating a 7B vision-language model end to end.",
       "year": "2026",
       "members": "Jingwu Wang, Yongyi Xiong, Yunxiang Ma",
@@ -2301,7 +2302,8 @@ export const projectsData = {
         "COCO"
       ],
       "featured": true,
-      "title": "视觉语言模型的空间深度推理",
+      "title": "提升视觉语言模型的空间深度推理能力",
+      "coverStyle": "method",
       "description": "基于公开图像资源重构空间推理数据集与 benchmark，完成 7B 视觉语言模型从基线评估到微调、实验分析的全流程。",
       "year": "2026",
       "members": "Jingwu Wang, Yongyi Xiong, Yunxiang Ma",

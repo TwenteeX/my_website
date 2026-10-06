@@ -60,6 +60,8 @@ Set a section's `imageLayout` to `grid` for two columns on desktop and one on ph
 
 Set `imageLayout` to `screens` for mobile interface screenshots: three columns on desktop and a keyboard-focusable horizontal gallery on phones. Screens retain their original proportions and link to full-size images when `zoomImages` is enabled. A first section with `fullWidth: true` appears above the sidebar layout; `tableAfterImages` places its supporting table after the figures. Use project-level `coverInSections: true` when the opening chapter already provides the primary visual. These sections are rendered by `src/components/ProjectSection.jsx`.
 
+The depth-reasoning case study uses `coverStyle: 'method'` and `MethodFigure.jsx` for its wide method diagram. On phones, the figure scrolls horizontally without shrinking its labels; a full-image link, editable Figma source, and expandable text version of the example JSON prompt accompany it. The prompt is defined in `src/data/vlmMethod.js`.
+
 ## Visual system
 
 - Locally hosted Lato: Light (300) headings, Regular (400) body, and Bold (700) emphasis. Chinese characters use the system Chinese sans-serif. Lato is a free alternative with a similar humanist character to the reference site’s Freight Neo Pro; it is not the same font.
@@ -77,6 +79,8 @@ Set `imageLayout` to `screens` for mobile interface screenshots: three columns o
 `npm test` checks bilingual IDs, local media, filter references, and safe ordering when projects are added. Browser checks cover page navigation, the one-screen home, active navigation, category persistence, detail return links, mobile menu, Chinese, direct route loads, legacy links, and the journey interaction.
 
 ## Source notes
+
+Improving Spatial Depth Reasoning in VLMs (project 9) retains the final report's original dataset and result figures. The method overview was redrawn as editable Lato text, auto-layout groups, and vector connectors in the existing Figma file, on the page “Spatial depth reasoning · method” (frame 65:4630). The illustration retains the four stages, eight experimental configurations, QLoRA parameters, and reasoning/answer evaluations. Its JSON file is an illustrative assembled prompt, not a claim about the original dataset's storage schema. Coordinates refer to the marked baseball example cropped from the repository's existing COCO/InstaOrder comparison figure; the front/behind output instruction follows the report's generation and parsing protocol. The original method bitmap remains available in the repository.
 
 Pet’s Tribe (project 5) leads with the owner's original stakeholder map and explanation of offers, needs, mutual help, and relational benefits for pets. The original storyboard is retained. Twenty-seven refreshed interface views come from the existing Figma file (5k9mEe4NBWjBUdK6ZHYpsq), grouped into onboarding, discovery, care, profiles, organizational participation, and contribution. Lossless WebP exports preserve interface text. Its animated WebP work cover holds the concept map, crossfades to fourteen interface views scrolling horizontally, and returns to the concept without a jump. Reduced-motion preferences use the static concept poster. The asset can be regenerated with Python and Pillow using `scripts/generate-pets-tribe-cover.py`; no animation dependency is needed at runtime. The original 2023 project date is retained, with the 2026 interface refresh recorded separately. Care outcomes and future evaluation are described as design intentions rather than measured results.
 

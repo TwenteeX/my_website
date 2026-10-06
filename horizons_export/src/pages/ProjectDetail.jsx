@@ -6,6 +6,7 @@ import { projectsData } from '@/data/projects';
 import { projectImages, projectCards, orderProjects } from '@/data/projectCatalog';
 import ProjectImage from '@/components/ProjectImage';
 import ProjectSection from '@/components/ProjectSection';
+import MethodFigure from '@/components/MethodFigure';
 
 export default function ProjectDetail({ language }) {
   const { id } = useParams();
@@ -37,9 +38,9 @@ export default function ProjectDetail({ language }) {
       <h1>{project.title}</h1>
       <p>{project.description}</p>
     </header>
-    {!project.coverInSections && <div className={'detail-cover' + (project.coverFit === 'cover' ? ' detail-cover-crop' : '')}>
+    {!project.coverInSections && (project.coverStyle === 'method' ? <MethodFigure src={projectImages[project.id]} language={language} /> : <div className={'detail-cover' + (project.coverFit === 'cover' ? ' detail-cover-crop' : '')}>
       <ProjectImage key={project.id} src={projectImages[project.id]} poster={poster} alt={project.title} controls language={language} {...(poster ? { width: 1280, height: 720, style: { height: 'auto' } } : {})} />
-    </div>}
+    </div>)}
     {intro && <div className="detail-body detail-intro"><ProjectSection section={intro} project={project} language={language} /></div>}
     <div className="detail-layout">
       <aside>
