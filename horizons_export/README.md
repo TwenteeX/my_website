@@ -56,11 +56,13 @@ Roomify uses the complete supplied 30-second demo as a looping GIF: an 800px det
 
 Case studies can include additional sidebar `facts` (label/value pairs). Figures support `fullSizeImages` for larger drawing previews and `imageCredits` (label/URL pairs) for source attribution beside a caption.
 
-Set a section's `imageLayout` to `grid` for two columns on desktop and one on phones. Set `imageColumns` to `3` for a fixed three-column gallery, used for the six small construction photographs in project 12. Optional `imageSpans` entries greater than `1` let a drawing span the full grid, above smaller details or construction photographs. The three-column photographs use consistent 16:9 frames and short bilingual captions.
+Set a section's `imageLayout` to `grid` for two columns on desktop and one on phones. Set `imageColumns` to `3` for a fixed three-column gallery, used for the six small construction photographs in project 12. Optional `imageSpans` entries greater than `1` let a drawing span the full grid, above smaller details or construction photographs. The three-column photographs use consistent 16:9 frames and short bilingual captions. Set `imageColumns` to `4` for four columns on desktop and two on phones, used for the eight component details. Per-image `imageSizes: ['half']` centers the corresponding figure at half the available width.
 
 Set `imageLayout` to `screens` for mobile interface screenshots: three columns on desktop and a keyboard-focusable horizontal gallery on phones. Screens retain their original proportions and link to full-size images when `zoomImages` is enabled. A first section with `fullWidth: true` appears above the sidebar layout; `tableAfterImages` places its supporting table after the figures. Use project-level `coverInSections: true` when the opening chapter already provides the primary visual. These sections are rendered by `src/components/ProjectSection.jsx`.
 
 The depth-reasoning case study uses `coverStyle: 'method'` and `MethodFigure.jsx` for its wide method diagram. On phones, the figure scrolls horizontally without shrinking its labels; a full-image link, editable Figma source, and expandable text version of the example JSON prompt accompany it. The prompt is defined in `src/data/vlmMethod.js`.
+
+Use `imageLayout: 'plots'` for three compact result charts in one row, preserving complete axes and legends. On phones, the row scrolls horizontally; each chart links to its full-size image.
 
 ## Visual system
 

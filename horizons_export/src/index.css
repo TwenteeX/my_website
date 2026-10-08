@@ -256,6 +256,7 @@ html[lang="zh-CN"] .hero-description { letter-spacing: .08em; }
 .detail-body h3 { font-size: 20px; margin: 28px 0 12px; }
 .detail-body p { font-size: 17px; line-height: 1.85; color: var(--text); max-width: 70ch; }
 .detail-body figure { margin: 28px 0; }
+.detail-body .figure-half { width: 50%; margin-inline: auto; }
 .detail-body img { width: 100%; height: auto; border-radius: 3px; }
 .detail-video video { display: block; width: 100%; height: auto; border-radius: 3px; background: #111; }
 .detail-body figcaption { font-size: 11px; color: var(--muted-text); margin-top: 12px; }
@@ -268,15 +269,32 @@ html[lang="zh-CN"] .hero-description { letter-spacing: .08em; }
 .detail-screen-grid img { display: block; width: 100%; height: auto; border-radius: 24px; }
 .detail-screen-grid figcaption { font-size: 12px; line-height: 1.7; }
 .screen-gallery-hint { display: none; }
+.detail-plot-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; margin: 28px 0; }
+.detail-plot-grid figure { margin: 0; min-width: 0; }
+.detail-plot-grid img { display: block; aspect-ratio: 4/3; object-fit: contain; }
+.detail-plot-grid figcaption { line-height: 1.7; }
+.detail-plot-grid .figure-size-link { display: block; margin: 6px 0 0; }
+.plot-gallery-hint { display: none; }
+@media (max-width: 600px) {
+  .detail-plot-grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(76vw,280px); overflow-x: auto; gap: 18px; scroll-snap-type: x proximity; padding-bottom: 8px; }
+  .detail-plot-grid figure { scroll-snap-align: start; }
+  .detail-body .plot-gallery-hint { display: block; font-size: 12px; color: var(--muted-text); margin-top: 24px; }
+}
 .detail-figure-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 24px; margin: 28px 0; }
 .detail-figure-grid figure { margin: 0; }
 .detail-figure-grid .figure-wide { grid-column: 1 / -1; }
 .detail-figure-grid-three { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px 16px; }
 .detail-figure-grid-three figure:not(.figure-wide) img { aspect-ratio: 16/9; object-fit: cover; }
+.detail-figure-grid-four { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 28px 18px; }
+.detail-figure-grid-four figure { min-width: 0; }
+.detail-figure-grid-four figure:not(.figure-wide) img { aspect-ratio: 5/2; object-fit: contain; }
+.detail-figure-grid-four figcaption { line-height: 1.7; }
+.detail-figure-grid-four .figure-size-link { display: block; margin: 6px 0 0; }
 @media (max-width: 600px) {
-  .detail-figure-grid:not(.detail-figure-grid-three) { grid-template-columns: 1fr; }
+  .detail-figure-grid:not(.detail-figure-grid-three):not(.detail-figure-grid-four) { grid-template-columns: 1fr; }
   .detail-figure-grid-three { gap: 20px 10px; }
   .detail-figure-grid-three figcaption { font-size: 10px; }
+  .detail-figure-grid-four { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 16px; }
 }
 .detail-next { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding: 30px 0; margin: 24px 0 48px; border-top: 1px solid var(--line); font-size: 13px; color: var(--text); }
 .detail-next > a { min-height: 44px; display: inline-flex; align-items: center; }

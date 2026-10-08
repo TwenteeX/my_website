@@ -926,28 +926,26 @@ export const projectsData = {
           }
         },
         {
-          "title": "Reducing directional bias; testing occlusion",
+          "title": "Directional bias, occlusion & overlap",
           "content": "The untuned 7B model was near chance overall, but its errors were strongly directional: 74.53% accuracy on front queries versus 26.49% on behind queries. With combined cues and QLoRA, those figures became 93.56% and 91.73%, respectively. The improvement therefore includes a much more balanced decision rule.\n\nOcclusion remains harder. The strongest model reached 96.08% accuracy when the queried boxes did not overlap, but 75.80% when they did. Reporting these slices separately prevents the strong aggregate score from hiding the difficult cases.",
           "images": [
             "/images/vlm-depth/direction-accuracy.png",
-            "/images/vlm-depth/overlap-accuracy.png"
+            "/images/vlm-depth/overlap-accuracy.png",
+            "/images/vlm-depth/iou-accuracy.png"
           ],
           "imageCaptions": [
-            "Final report, Figure 4 (p. 5): accuracy by front/behind target label.",
-            "Final report, Figure 3 (p. 5): accuracy for overlapping and non-overlapping bounding boxes."
+            "Front / behind labels · Figure 4, p. 5.",
+            "Overlapping vs. separate boxes · Figure 3, p. 5.",
+            "Bounding-box IoU buckets · Figure 5, p. 5."
           ],
+          "imageLayout": "plots",
+          "imageDimensions": [[1008, 587], [1008, 579], [1008, 791]],
           "zoomImages": true
         },
         {
           "title": "Limits and next steps",
           "content": "Performance also declines in the high-IoU bucket: the best model scored 77.78% when bounding-box IoU exceeded 0.3, compared with 93.08% at IoU = 0. Bounding boxes and a binary overlap flag are not enough to resolve every ambiguous scene.\n\nThe combined-cue model received a visual-grounding score of 4.80/5 and a 3.3% hallucination rate from the rationale judge, but the strongest evidence remains the decision and reciprocal-pair metrics. We have not established transfer to broader spatial benchmarks or verified that this specialized tuning preserves general VLM capabilities. Future work should test both, and explore richer visibility cues such as segmentation masks, visible-area ratios, relative scale, and depth-order priors.",
-          "images": [
-            "/images/vlm-depth/iou-accuracy.png"
-          ],
-          "imageCaptions": [
-            "Final report, Figure 5 (p. 5): accuracy across bounding-box IoU buckets, showing the remaining difficulty of high-overlap cases."
-          ],
-          "zoomImages": true
+          "images": []
         }
       ],
       "links": [
@@ -1309,6 +1307,7 @@ export const projectsData = {
               1476
             ]
           ],
+          "imageSizes": ["half"],
           "fullSizeImages": [
             "/images/perspective-site.jpg",
             "/images/perspective-experience-full.jpg",
@@ -1391,8 +1390,9 @@ export const projectsData = {
             "/images/perspective-connectors.jpg"
           ],
           "imageLayout": "grid",
+          "imageColumns": 4,
           "imageSpans": [
-            2
+            4
           ]
         },
         {
@@ -2412,28 +2412,26 @@ export const projectsData = {
           }
         },
         {
-          "title": "方向偏差与遮挡分析",
+          "title": "方向偏差、遮挡与重叠分析",
           "content": "未微调的 7B 模型总体接近随机水平，但错误具有明显方向性：前方标签准确率为 74.53%，后方标签仅为 26.49%。经过组合线索微调后，两者分别达到 93.56% 和 91.73%。因此，改进不仅体现在总分上，也体现在更平衡的关系判断上。\n\n遮挡仍然更难。最佳模型在边界框不重叠时达到 96.08%，重叠时降至 75.80%。单独呈现这些分组，可以避免较高的总体准确率掩盖困难样本。",
           "images": [
             "/images/vlm-depth/direction-accuracy.png",
-            "/images/vlm-depth/overlap-accuracy.png"
+            "/images/vlm-depth/overlap-accuracy.png",
+            "/images/vlm-depth/iou-accuracy.png"
           ],
           "imageCaptions": [
-            "最终报告图 4，第 5 页：按 front/behind 目标标签划分的准确率。",
-            "最终报告图 3，第 5 页：边界框重叠与不重叠条件下的准确率。"
+            "前方 / 后方标签 · 报告图 4，第 5 页。",
+            "重叠 / 不重叠条件 · 报告图 3，第 5 页。",
+            "边界框 IoU 分组 · 报告图 5，第 5 页。"
           ],
+          "imageLayout": "plots",
+          "imageDimensions": [[1008, 587], [1008, 579], [1008, 791]],
           "zoomImages": true
         },
         {
           "title": "局限与下一步",
           "content": "高 IoU 分组同样存在性能下降：最佳模型在边界框 IoU 大于 0.3 时的准确率为 77.78%，IoU 为 0 时为 93.08%。边界框和二元重叠标记仍不足以解决所有视觉歧义。\n\n组合线索模型的评审结果为视觉依据 4.80/5、幻觉率 3.3%；但最有力的证据仍是判断准确率和反向查询指标。我们尚未验证结果能否迁移到更广泛的空间 benchmark，也未确认专项微调是否保留了模型原有的通用能力。后续工作应检验这两点，并探索分割掩码、可见面积比例、相对尺度和深度顺序先验等更丰富的线索。",
-          "images": [
-            "/images/vlm-depth/iou-accuracy.png"
-          ],
-          "imageCaptions": [
-            "最终报告图 5，第 5 页：按边界框 IoU 分组的准确率，显示高重叠样本仍然较难。"
-          ],
-          "zoomImages": true
+          "images": []
         }
       ],
       "links": [
@@ -2795,6 +2793,7 @@ export const projectsData = {
               1476
             ]
           ],
+          "imageSizes": ["half"],
           "fullSizeImages": [
             "/images/perspective-site.jpg",
             "/images/perspective-experience-full.jpg",
@@ -2877,8 +2876,9 @@ export const projectsData = {
             "/images/perspective-connectors.jpg"
           ],
           "imageLayout": "grid",
+          "imageColumns": 4,
           "imageSpans": [
-            2
+            4
           ]
         },
         {
