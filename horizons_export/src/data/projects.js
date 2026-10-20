@@ -615,7 +615,7 @@ export const projectsData = {
         },
         {
           "title": "08 · Make contributing straightforward",
-          "content": "Posting a moment, organizing an event, and introducing a pet are recurring contributions to the network. The forms keep each action focused, with familiar controls and clear information fields. The refreshed iOS-style interface uses English copy, consistent line icons, and a restrained warm accent to make these different pathways feel like one product.",
+          "content": "Posting a moment, organizing an event, and introducing a pet are recurring contributions to the network. The forms keep each action focused, with familiar controls and clear information fields. The iOS-style interface uses English copy, consistent line icons, and a restrained warm accent to make these different pathways feel like one product.",
           "images": [
             "/images/pets-tribe-media.webp",
             "/images/pets-tribe-publish-event.webp",
@@ -660,10 +660,6 @@ export const projectsData = {
         {
           "label": "My contribution",
           "value": "Stakeholder concept map & mutual-help framing"
-        },
-        {
-          "label": "Interface refresh",
-          "value": "2026"
         }
       ]
     },
@@ -2101,7 +2097,7 @@ export const projectsData = {
         },
         {
           "title": "08 · 让贡献更容易发生",
-          "content": "发布日常、组织活动和介绍宠物，都是向这个网络贡献信息的方式。表单围绕单一行动组织，采用一致的控件与清晰的信息字段。新版 iOS 风格界面以英文文案、统一的线性图标和克制的暖色强调，让不同参与路径属于同一个产品。",
+          "content": "发布日常、组织活动和介绍宠物，都是向这个网络贡献信息的方式。表单围绕单一行动组织，采用一致的控件与清晰的信息字段。iOS 风格界面以英文文案、统一的线性图标和克制的暖色强调，让不同参与路径属于同一个产品。",
           "images": [
             "/images/pets-tribe-media.webp",
             "/images/pets-tribe-publish-event.webp",
@@ -2146,10 +2142,6 @@ export const projectsData = {
         {
           "label": "我的工作",
           "value": "参与者概念图与互助关系的设计表述"
-        },
-        {
-          "label": "界面更新",
-          "value": "2026"
         }
       ]
     },
